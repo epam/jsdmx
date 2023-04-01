@@ -1,0 +1,107 @@
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'signing'
+    apply plugin: 'maven-publish'
+    apply plugin: 'checkstyle'
+
+    checkstyle {
+        toolVersion = "9.3"
+        showViolations = true
+    }
+
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+    ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
+
+    repositories {
+        mavenCentral()
+    }
+
+    tasks.withType(Jar) {
+        destinationDirectory = file("$rootDir/build/deploy")
+    }
+
+    tasks.withType(Checkstyle) {
+        reports {
+            html.stylesheet resources.text.fromFile("$rootDir/config/checkstyle/checkstyle-report.xsl")
+        }
+        ignoreFailures = false
+    }
+
+    java {
+        withJavadocJar()
+        withSourcesJar()
+    }
+
+    publishing {
+        repositories {
+            maven {
+                url System.getenv('MAVEN_REPOSITORY')
+
+                credentials {
+                    username System.getenv('MAVEN_USERNAME')
+                    password System.getenv('MAVEN_PASSWORD')
+                }
+            }
+
+            maven {
+                name 'Local'
+                url rootProject.uri('build/localRepo')
+            }
+        }
+
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+
+                pom {
+                    name = 'sdmxsource'
+                    packaging = 'jar'
+                    description = 'Open source reference implementation of SDMX'
+                    url = 'https://github.com/epam/jsdmx.git'
+
+                    scm {
+                        connection = 'scm:https://github.com/epam/jsdmx.git'
+                        developerConnection = 'scm:git:https://github.com/epam/jsdmx.git'
+                        url = 'https://github.com/epam/jsdmx.git'
+                    }
+
+                    licenses {
+                        license {
+                            name = 'Apache License 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0'
+                        }
+                    }
+                }
+            }
+        }
+
+        signing {
+            def signingKey = System.getenv("SIGNING_KEY")
+            def signingPassword = System.getenv("SIGNING_PASSWORD")
+
+            useInMemoryPgpKeys(signingKey, signingPassword)
+            sign publishing.publications.mavenJava
+
+            required { isReleaseVersion }
+        }
+    }
+
+    dependencies {
+        compileOnly("org.projectlombok:lombok:${lombok_version}")
+        annotationProcessor("org.projectlombok:lombok:${lombok_version}")
+
+        testImplementation("org.junit.jupiter:junit-jupiter-api:${jupiter_version}")
+        testImplementation("org.junit.jupiter:junit-jupiter-params:${jupiter_version}")
+        testImplementation("org.assertj:assertj-core:${assertj_version}")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+
+        testCompileOnly("org.projectlombok:lombok:${lombok_version}")
+        testAnnotationProcessor("org.projectlombok:lombok:${lombok_version}")
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
