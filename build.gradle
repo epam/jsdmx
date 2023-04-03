@@ -37,6 +37,7 @@ subprojects {
     publishing {
         repositories {
             maven {
+                name 'Central'
                 url System.getenv('MAVEN_REPOSITORY')
 
                 credentials {

@@ -109,7 +109,7 @@ jobs:
           java-version: 11
           distribution: 'temurin'
       - name: Publish jars
-        run: ./gradlew publishAll
+        run: ./gradlew publishAllPublicationsToCentralRepository
         env:
           MAVEN_REPOSITORY: ${{ secrets.MAVEN_REPOSITORY }}
           MAVEN_USERNAME:   ${{ secrets.MAVEN_USERNAME }}
