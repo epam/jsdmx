@@ -57,9 +57,9 @@ subprojects {
                 from components.java
 
                 pom {
-                    name = 'sdmxsource'
+                    name = 'jSDMX'
                     packaging = 'jar'
-                    description = 'Open source reference implementation of SDMX'
+                    description = 'Open source implementation of SDMX 3.0 for Java'
                     url = 'https://github.com/epam/jsdmx.git'
 
                     scm {
@@ -71,7 +71,7 @@ subprojects {
                     licenses {
                         license {
                             name = 'Apache License 2.0'
-                            url = 'http://www.apache.org/licenses/LICENSE-2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
                         }
                     }
                 }
