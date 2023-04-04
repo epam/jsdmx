@@ -37,18 +37,12 @@ subprojects {
     publishing {
         repositories {
             maven {
-                name 'Central'
                 url System.getenv('MAVEN_REPOSITORY')
 
                 credentials {
                     username System.getenv('MAVEN_USERNAME')
                     password System.getenv('MAVEN_PASSWORD')
                 }
-            }
-
-            maven {
-                name 'Local'
-                url rootProject.uri('build/localRepo')
             }
         }
 
@@ -72,6 +66,33 @@ subprojects {
                         license {
                             name = 'Apache License 2.0'
                             url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id = 'buhaiovos'
+                            name = 'Oleksandr Buhaiov'
+                            email = 'oleksandr.buhaiov@gmail.com'
+                            url = 'https://github.com/buhaiovos'
+                            organization = 'EPAM Systems'
+                            organizationUrl = 'https://www.epam.com/'
+                        }
+                        developer {
+                            id = 'YakubenkoIv'
+                            name = 'Ivan Yakubenko'
+                            email = 'vanya.yakubenko@gmail.com'
+                            url = 'https://github.com/YakubenkoIv'
+                            organization = 'EPAM Systems'
+                            organizationUrl = 'https://www.epam.com/'
+                        }
+                        developer {
+                            id = 'IrynaShved'
+                            name = 'Iryna Shved'
+                            email = 'iryna.a.shved@gmail.com'
+                            url = 'https://github.com/IrynaShved'
+                            organization = 'EPAM Systems'
+                            organizationUrl = 'https://www.epam.com/'
                         }
                     }
                 }
