@@ -94,6 +94,14 @@ subprojects {
                             organization = 'EPAM Systems'
                             organizationUrl = 'https://www.epam.com/'
                         }
+                        developer {
+                            id = 'KyryloHontar'
+                            name = 'Kyrylo Hontar'
+                            email = 'Kyrylo_Hontar@Epam.com'
+                            url = 'https://github.com/khontarE'
+                            organization = 'EPAM Systems'
+                            organizationUrl = 'https://www.epam.com/'
+                        }
                     }
                 }
             }
