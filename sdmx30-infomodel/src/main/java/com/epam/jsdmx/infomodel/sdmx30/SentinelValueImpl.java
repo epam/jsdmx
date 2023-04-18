@@ -1,8 +1,10 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class SentinelValueImpl implements SentinelValue {
 
     private String value;
