@@ -6,12 +6,14 @@ import java.time.Instant;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * Describes how the source value maps to the target value
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
 public class ItemMapImpl extends AnnotableArtefactImpl implements ItemMap {
 
     private String source;
