@@ -25,7 +25,7 @@ public final class VersionReference extends AbstractVersionReference {
         Pair.of(PATCH_WILDCARD_PATTERN, (String s) -> new VersionReference(Version.createFromString(removeWildcard(s)), WildcardScope.PATCH))
     );
 
-    private VersionReference(Version version, WildcardScope scope) {
+    public VersionReference(Version version, WildcardScope scope) {
         super(version, scope);
     }
 
