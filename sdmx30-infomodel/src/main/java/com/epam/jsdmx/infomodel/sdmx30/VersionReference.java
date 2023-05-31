@@ -50,6 +50,15 @@ public final class VersionReference extends AbstractVersionReference {
     }
 
     /**
+     * Creates a {@link VersionReference} from a specific {@link Version} and {@link WildcardScope}.
+     * @param version version to be referenced
+     * @param scope version component to be wildcarded
+     */
+    public static VersionReference createFromVersionAndWildcardScope(Version version, WildcardScope scope) {
+        return new VersionReference(version, scope);
+    }
+
+    /**
      * @return comparator for {@link VersionReference} instances
      */
     public static Comparator<VersionReference> getComparator() {
