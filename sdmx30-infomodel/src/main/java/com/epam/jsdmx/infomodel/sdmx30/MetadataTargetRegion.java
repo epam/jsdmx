@@ -1,5 +1,6 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
+import java.time.Instant;
 import java.util.List;
 
 /**
@@ -17,4 +18,14 @@ public interface MetadataTargetRegion extends Copyable {
      * A set of permissible values for one component of the axis.
      */
     List<MemberSelection> getMemberSelections();
+
+    /**
+     * Date from which the MetadataTargetRegion is valid.
+     */
+    Instant getValidFrom();
+
+    /**
+     * Date from which the MetadataTargetRegion is superseded.
+     */
+    Instant getValidTo();
 }
