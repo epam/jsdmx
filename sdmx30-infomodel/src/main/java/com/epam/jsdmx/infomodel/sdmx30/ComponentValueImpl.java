@@ -14,11 +14,15 @@ public class ComponentValueImpl implements ComponentValue {
 
     private String value;
     private String componentId;
+    private boolean included;
+    private boolean removePrefix;
     private List<TimeDimensionValue> timeDimensionValues = new ArrayList<>();
 
     public ComponentValueImpl(ComponentValue from) {
         this.value = from.getValue();
         this.componentId = from.getComponentId();
+        this.included = from.isIncluded();
+        this.removePrefix = from.isRemovePrefix();
         this.timeDimensionValues = StreamUtils.streamOfNullable(from.getTimeDimensionValues())
             .map(TimeDimensionValue::clone)
             .collect(toList());
