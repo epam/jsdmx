@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * A specific operation, performed on data or metadata in order to validate or to derive new information according to a given set of rules.
  */
-public interface ProcessStep extends IdentifiableArtefact, Copyable {
+public interface ProcessStep extends NameableArtefact, Copyable {
     /**
      * Association to the Process Artefact that identifies the objects which are input to the Process Step.
      */

@@ -8,8 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@EqualsAndHashCode
-public class ProcessArtefactImpl implements ProcessArtefact {
+@EqualsAndHashCode(callSuper = true)
+public class ProcessArtefactImpl extends AnnotableArtefactImpl implements ProcessArtefact {
 
     private String localId;
     private ArtefactReference artefact;

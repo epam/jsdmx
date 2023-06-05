@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class ProcessStepImpl extends IdentifiableArtefactImpl implements ProcessStep {
+public class ProcessStepImpl extends NameableArtefactImpl implements ProcessStep {
 
     private List<ProcessArtefact> inputs = new ArrayList<>();
     private List<ProcessArtefact> outputs = new ArrayList<>();

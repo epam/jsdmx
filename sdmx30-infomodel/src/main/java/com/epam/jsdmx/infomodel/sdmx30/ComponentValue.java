@@ -17,6 +17,16 @@ public interface ComponentValue extends Copyable {
     String getComponentId();
 
     /**
+     * Indicates whether the ComponentValue is included in the constraint definition or excluded from the constraint definition.
+     */
+    boolean isIncluded();
+
+    /**
+     * Indicates whether the Codes should keep or not the prefix, as defined in the extension of Codelist.
+     */
+    boolean isRemovePrefix();
+
+    /**
      * The values of the Time Dimension component.
      */
     List<TimeDimensionValue> getTimeDimensionValues();
