@@ -1,3 +1,4 @@
+![CI](https://github.com/epam/jsdmx/actions/workflows/ci.yml/badge.svg)
 # jSDMX: Java Library for SDMX 3.0
 
 Based on the latest version of the [SDMX 3.0 Specifications](https://sdmx.org/?page_id=5008), this library provides Java classes and utilities for working with the SDMX 3.0 Information Model. It is designed to help developers implement SDMX-compliant applications for exchanging

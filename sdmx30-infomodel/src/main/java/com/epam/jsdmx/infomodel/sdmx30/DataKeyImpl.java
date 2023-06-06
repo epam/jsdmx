@@ -7,14 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class DataKeyImpl implements DataKey {
+@EqualsAndHashCode(callSuper = true)
+public class DataKeyImpl extends AnnotableArtefactImpl implements DataKey {
 
     private boolean included;
     private List<ComponentValue> keyValues = new ArrayList<>();
+    private List<MemberSelection> memberSelections = new ArrayList<>();
     private Instant validFrom;
     private Instant validTo;
 
@@ -24,6 +27,9 @@ public class DataKeyImpl implements DataKey {
         this.validTo = from.getValidTo();
         this.keyValues = StreamUtils.streamOfNullable(from.getKeyValues())
             .map(ComponentValue::clone)
+            .collect(toList());
+        this.memberSelections = StreamUtils.streamOfNullable(from.getMemberSelections())
+            .map(selection -> (MemberSelection) selection.clone())
             .collect(toList());
     }
 
