@@ -12,7 +12,7 @@ public interface Transition extends IdentifiableArtefact {
     /**
      * Associates the Process Step that is the target of the Transition.
      */
-    ArtefactReference getTargetProcessStep();
+    String getTargetProcessStep();
 
     /**
      * Associates a textual description of the Transition.
