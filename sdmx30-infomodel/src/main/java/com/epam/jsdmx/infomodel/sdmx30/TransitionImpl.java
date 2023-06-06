@@ -12,7 +12,7 @@ import lombok.Setter;
 public class TransitionImpl extends IdentifiableArtefactImpl implements Transition {
 
     private String localId;
-    private ArtefactReference targetProcessStep;
+    private String targetProcessStep;
     private InternationalString condition;
 
     @Override
