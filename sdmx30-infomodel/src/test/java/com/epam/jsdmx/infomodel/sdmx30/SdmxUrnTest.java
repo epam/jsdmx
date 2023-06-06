@@ -95,7 +95,9 @@ class SdmxUrnTest {
             Arguments.of("urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ECB:ECB_EXR12(1.42.69-draft).sdmx_compact.full.compact"),
             Arguments.of("urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ECB:ECB_EXR12(1.42.69-draft).sdmx_full.compact.full.compact.full"),
 
-            Arguments.of("urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=EC-B:ECB_EXR12(1.42.69-draft).sdmx_full.compact.full.compact.full")
+            Arguments.of("urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=EC-B:ECB_EXR12(1.42.69-draft).sdmx_full.compact.full.compact.full"),
+
+            Arguments.of("urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=EC-B.A.B:ECB_EXR12(1.42.69-draft).sdmx_full.compact.full.compact.full")
         );
     }
 
