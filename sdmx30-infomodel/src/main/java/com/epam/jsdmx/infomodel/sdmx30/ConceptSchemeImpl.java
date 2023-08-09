@@ -3,6 +3,7 @@ package com.epam.jsdmx.infomodel.sdmx30;
 import static java.util.stream.Collectors.toSet;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -36,7 +37,10 @@ public class ConceptSchemeImpl
     private Stream<CrossReference> findEnumeratedConceptReferences(Concept concept) {
         final var crossRefStreamBuilder = Stream.<CrossReference>builder();
 
-        if (concept.getCoreRepresentation().isEnumerated()) {
+        final boolean isEnumerated = Optional.ofNullable(concept.getCoreRepresentation())
+            .map(Representation::isEnumerated)
+            .orElse(false);
+        if (isEnumerated) {
             crossRefStreamBuilder.accept(
                 new CrossReferenceImpl(this, concept.getCoreRepresentation().enumerated())
             );
