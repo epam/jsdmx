@@ -12,7 +12,7 @@ import lombok.SneakyThrows;
 @Getter
 @Setter
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = false, onlyExplicitlyIncluded = true)
+@EqualsAndHashCode(callSuper = true, onlyExplicitlyIncluded = true)
 public abstract class IdentifiableArtefactImpl
     extends AnnotableArtefactImpl
     implements IdentifiableArtefact {
