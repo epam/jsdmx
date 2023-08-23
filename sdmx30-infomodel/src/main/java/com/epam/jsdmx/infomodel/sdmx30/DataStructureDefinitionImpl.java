@@ -1,5 +1,6 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
+import static java.util.Optional.ofNullable;
 import static java.util.function.Function.identity;
 import static java.util.function.Predicate.not;
 import static java.util.stream.Collectors.toList;
@@ -59,9 +60,16 @@ public class DataStructureDefinitionImpl
         return getComponentListsStream()
             .map(ComponentList::getComponents)
             .flatMap(List::stream)
-            .map(Component::getConceptIdentity)
-            .map(c -> toReference(c, StructureClassImpl.CONCEPT_SCHEME))
+            .flatMap(this::getComponentReferences)
             .collect(toSet());
+    }
+
+    private Stream<ArtefactReference> getComponentReferences(Component component) {
+        return Stream.<ArtefactReference>builder()
+            .add(toReference(component.getConceptIdentity(), StructureClassImpl.CONCEPT_SCHEME))
+            .add(ofNullable(component.getLocalRepresentation()).map(Representation::enumerated).orElse(null))
+            .build()
+            .filter(Objects::nonNull);
     }
 
     private Stream<ComponentList<? extends Component>> getComponentListsStream() {
