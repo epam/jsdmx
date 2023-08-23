@@ -169,8 +169,7 @@ class DataStructureDefinitionTest {
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:ATTRIBUTE_CONCEPT_SCH_2(1.0)",
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:ATTRIBUTE_CONCEPT_SCH_2(1.1)",
                 "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=META:meta(1.0)",
-                "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=AGNC:ID(1.0)"
-            );
+                "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=AGNC:ID(1.0)");
     }
 
 }
