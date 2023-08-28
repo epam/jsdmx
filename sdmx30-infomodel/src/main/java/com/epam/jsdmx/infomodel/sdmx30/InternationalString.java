@@ -1,7 +1,11 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
+
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -36,11 +40,29 @@ public class InternationalString extends InternationalObject<String> {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (o == null) {
+            return Objects.equals(
+                collectNotEmptyLocales(getAll()),
+                Map.of()
+            );
+        }
+        if (getClass() != o.getClass()) {
             return false;
         }
         InternationalString that = (InternationalString) o;
-        return Objects.equals(getAll(), that.getAll());
+        return Objects.equals(
+            collectNotEmptyLocales(getAll()),
+            collectNotEmptyLocales(that.getAll())
+        );
+    }
+
+    private Map<String, String> collectNotEmptyLocales(Map<String, String> locales) {
+        if (locales == null) {
+            return Map.of();
+        }
+        return locales.entrySet().stream()
+            .filter(entry -> isNotEmpty(entry.getValue()))
+            .collect(Collectors.toMap(Entry::getKey, Entry::getValue));
     }
 
     @Override

@@ -49,7 +49,10 @@ public abstract class NameableArtefactImpl
         if (!super.equals(o)) {
             return false;
         }
-        return Objects.equals(this.getName(), other.getName());
+        return Objects.equals(
+            Optional.ofNullable(getName()).orElseGet(InternationalString::new),
+            Optional.ofNullable(other.getName()).orElseGet(InternationalString::new)
+        );
     }
 
     protected boolean canEqual(final Object other) {
