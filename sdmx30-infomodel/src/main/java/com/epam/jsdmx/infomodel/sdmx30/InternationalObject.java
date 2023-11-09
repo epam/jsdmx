@@ -126,6 +126,14 @@ public abstract class InternationalObject<T> {
             });
     }
 
+
+    /**
+     * @return mapping of locales to localised values.
+     */
+    public Map<Locale, T> getLocalisations() {
+        return localisations;
+    }
+
     /**
      * @return true if there are no localised values and false otherwise.
      */
