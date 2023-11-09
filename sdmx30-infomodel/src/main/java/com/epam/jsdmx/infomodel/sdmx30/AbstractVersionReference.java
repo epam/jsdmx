@@ -53,10 +53,11 @@ abstract class AbstractVersionReference {
     }
 
     protected static <T extends AbstractVersionReference> T createFromString(List<Pair<Pattern, Function<String, T>>> creators, String version) {
-        return creators.stream()
-            .filter(p -> p.getLeft().matcher(version).matches())
-            .findFirst()
-            .map(p -> p.getRight().apply(version))
-            .orElseThrow(() -> new IllegalArgumentException("Invalid version: " + version));
+        for (var creator : creators) {
+            if (creator.getLeft().matcher(version).matches()) {
+                return creator.getRight().apply(version);
+            }
+        }
+        throw new IllegalArgumentException("Invalid version: " + version);
     }
 }
