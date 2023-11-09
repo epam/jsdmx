@@ -8,9 +8,11 @@ import java.util.Locale;
 import java.util.Locale.LanguageRange;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang3.tuple.Pair;
 
 /**
  * Base class for objects objects which need to be internationalised.
@@ -128,10 +130,12 @@ public abstract class InternationalObject<T> {
 
 
     /**
-     * @return mapping of locales to localised values.
+     * @return mapping of language tags to localised values represented as stream of entries. See {@link Locale#toLanguageTag()}.
      */
-    public Map<Locale, T> getLocalisations() {
-        return localisations;
+    public Stream<Map.Entry<String, T>> getAllAsStream() {
+        return localisations.entrySet()
+            .stream()
+            .map(entry -> Pair.of(entry.getKey().toLanguageTag(), entry.getValue()));
     }
 
     /**
