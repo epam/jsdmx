@@ -70,6 +70,16 @@ class InternationalObjectTest {
     }
 
     @Test
+    void testCopyConstructorWithEmptyValue() {
+        InternationalObject<String> oldOne = new InternationalObject<>() { };
+
+        var newOne = new InternationalObject<>(oldOne) { };
+
+        assertThat(newOne.getForDefaultLocale()).isEqualTo(null);
+        assertThat(newOne.get("uk")).isEmpty();
+    }
+
+    @Test
     void testAddingValuesFromMapAndGettingThemAsMap() {
         subject.addAll(Map.of("uk", "значення", "en", "value"));
 

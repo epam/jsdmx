@@ -35,7 +35,7 @@ public abstract class InternationalObject<T> {
      */
     public InternationalObject(InternationalObject<T> from) {
         this._default = from._default;
-        this.others = new ArrayList<>(from.others);
+        this.others = from.others == null ? null : new ArrayList<>(from.others);
     }
 
     /**
