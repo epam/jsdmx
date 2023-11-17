@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 class InternationalObjectTest {
 
-    InternationalObject<String> subject = new InternationalObject<>() {};
+    InternationalObject<String> subject = new InternationalObject<>() { };
 
     @Test
     void testAddingDefaultValue() {
@@ -59,11 +59,11 @@ class InternationalObjectTest {
 
     @Test
     void testCopyConstructor() {
-        InternationalObject<String> oldOne = new InternationalObject<>() {};
+        InternationalObject<String> oldOne = new InternationalObject<>() { };
         oldOne.addForDefaultLocale("value");
         oldOne.add("uk", "значення");
 
-        var newOne = new InternationalObject<>(oldOne) {};
+        var newOne = new InternationalObject<>(oldOne) { };
 
         assertThat(newOne.getForDefaultLocale()).isEqualTo("value");
         assertThat(newOne.get("uk")).contains("значення");
