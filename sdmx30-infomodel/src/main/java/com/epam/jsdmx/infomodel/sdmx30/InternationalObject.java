@@ -1,17 +1,18 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Locale.LanguageRange;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 /**
@@ -23,7 +24,8 @@ import org.apache.commons.lang3.tuple.Pair;
  */
 public abstract class InternationalObject<T> {
 
-    private final LinkedHashMap<Locale, T> localisations = new LinkedHashMap<>();
+    private Localisation _default;
+    private List<Localisation> others;
 
     public InternationalObject() {
     }
@@ -32,7 +34,8 @@ public abstract class InternationalObject<T> {
      * Copy constructor.
      */
     public InternationalObject(InternationalObject<T> from) {
-        localisations.putAll(from.localisations);
+        this._default = from._default;
+        this.others = from.others == null ? null : new ArrayList<>(from.others);
     }
 
     /**
@@ -55,7 +58,7 @@ public abstract class InternationalObject<T> {
      * @param value localised value for default locale
      */
     public void addForDefaultLocale(T value) {
-        localisations.put(DefaultLocaleHolder.INSTANCE.get(), value);
+        _default = new Localisation(DefaultLocaleHolder.INSTANCE.getLanguageTag(), value);
     }
 
     /**
@@ -65,7 +68,14 @@ public abstract class InternationalObject<T> {
      * @param value    localised value for given locale
      */
     public void add(String language, T value) {
-        localisations.put(Locale.forLanguageTag(language), value);
+        if (Objects.equals(language, DefaultLocaleHolder.INSTANCE.getLanguageTag())) {
+            addForDefaultLocale(value);
+        } else {
+            if (others == null) {
+                others = new ArrayList<>();
+            }
+            others.add(new Localisation(language, value));
+        }
     }
 
     /**
@@ -74,14 +84,24 @@ public abstract class InternationalObject<T> {
      * @param values language tag to localised value mapping
      */
     public void addAll(Map<String, T> values) {
-        values.forEach((language, value) -> localisations.put(Locale.forLanguageTag(language), value));
+        if (values == null) {
+            return;
+        }
+
+        values.forEach((language, value) -> {
+            if (Objects.equals(language, DefaultLocaleHolder.INSTANCE.getLanguageTag())) {
+                addForDefaultLocale(value);
+            } else {
+                add(language, value);
+            }
+        });
     }
 
     /**
      * @return value for the default locale which is hold by {@link DefaultLocaleHolder}.
      */
     public T getForDefaultLocale() {
-        return localisations.get(DefaultLocaleHolder.INSTANCE.get());
+        return _default != null ? _default.getValue() : null;
     }
 
     /**
@@ -103,29 +123,35 @@ public abstract class InternationalObject<T> {
      * @return value for the given locale's language tag.
      */
     public Optional<T> get(String language) {
-        return Optional.ofNullable(localisations.get(Locale.forLanguageTag(language)));
+        if (Objects.equals(language, DefaultLocaleHolder.INSTANCE.getLanguageTag())) {
+            return Optional.ofNullable(getForDefaultLocale());
+        } else {
+            return StreamUtils.streamOfNullable(others)
+                .filter(localisation -> Objects.equals(localisation.getLanguage(), language))
+                .findFirst()
+                .map(Localisation::getValue);
+        }
     }
 
     /**
      * @return value for the given locale.
      */
     public Optional<T> get(Locale locale) {
-        return Optional.ofNullable(localisations.get(locale));
+        return get(locale.toLanguageTag());
     }
 
     /**
      * @return mapping of language tags to localised values. See {@link Locale#toLanguageTag()}.
      */
     public Map<String, T> getAll() {
-        return localisations.entrySet()
-            .stream()
-            .reduce(new HashMap<>(), (Map<String, T> map, Map.Entry<Locale, T> entry) -> {
-                map.put(entry.getKey().toLanguageTag(), entry.getValue());
-                return map;
-            }, (lMap, rMap) -> {
-                lMap.putAll(rMap);
-                return lMap;
-            });
+        final Map<String, T> result = new HashMap<>();
+        if (_default != null) {
+            result.put(_default.getLanguage(), _default.getValue());
+        }
+        if (others != null) {
+            others.forEach(localisation -> result.put(localisation.getLanguage(), localisation.getValue()));
+        }
+        return result;
     }
 
 
@@ -133,24 +159,35 @@ public abstract class InternationalObject<T> {
      * @return mapping of language tags to localised values represented as stream of entries. See {@link Locale#toLanguageTag()}.
      */
     public Stream<Map.Entry<String, T>> getAllAsStream() {
-        return localisations.entrySet()
-            .stream()
-            .map(entry -> Pair.of(entry.getKey().toLanguageTag(), entry.getValue()));
+        return Stream.concat(Stream.ofNullable(_default), StreamUtils.streamOfNullable(others))
+            .map(localisation -> Pair.of(localisation.getLanguage(), localisation.getValue()));
     }
 
     /**
      * @return true if there are no localised values and false otherwise.
      */
     public boolean isEmpty() {
-        return MapUtils.isEmpty(localisations)
-            || areAllElementsEmpty(localisations.values());
+        return (CollectionUtils.isEmpty(others) && _default == null)
+            || areAllElementsEmpty();
     }
 
     protected boolean isEmpty(T value) {
         return value == null;
     }
 
-    private boolean areAllElementsEmpty(Collection<T> values) {
-        return values.stream().allMatch(this::isEmpty);
+    private boolean areAllElementsEmpty() {
+        return Stream.concat(
+                Stream.ofNullable(_default),
+                StreamUtils.streamOfNullable(others)
+            )
+            .allMatch(localisation -> isEmpty(localisation.getValue()));
     }
+
+    @RequiredArgsConstructor
+    @Getter
+    private class Localisation {
+        private final String language;
+        private final T value;
+    }
+
 }
