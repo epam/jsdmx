@@ -40,7 +40,7 @@ class VersionReferenceTest {
     }
 
     @Test
-    void createLatestVersionReferenceMajor() {
+    void createLatestVersionReferenceMajorFromString() {
         VersionReference subject = VersionReference.createFromString("1+.0.0");
 
         assertThat(subject.toString()).isEqualTo("1+.0.0");
@@ -49,7 +49,7 @@ class VersionReferenceTest {
     }
 
     @Test
-    void createLatestVersionReferenceMinor() {
+    void createLatestVersionReferenceMinorFromString() {
         VersionReference subject = VersionReference.createFromString("1.2+.0");
 
         assertThat(subject.toString()).isEqualTo("1.2+.0");
@@ -58,8 +58,38 @@ class VersionReferenceTest {
     }
 
     @Test
-    void createLatestVersionReferencePatch() {
+    void createLatestVersionReferencePatchFromString() {
         VersionReference subject = VersionReference.createFromString("1.2.1+");
+
+        assertThat(subject.toString()).isEqualTo("1.2.1+");
+        assertThat(subject.getScope()).isEqualTo(WildcardScope.PATCH);
+        assertThat(subject.isWildcarded()).isTrue();
+    }
+
+    @Test
+    void createLatestVersionReferenceMajor() {
+        Version version = Version.createFromString("1.0.0");
+        VersionReference subject = VersionReference.createFromVersionAndWildcardScope(version, WildcardScope.MAJOR);
+
+        assertThat(subject.toString()).isEqualTo("1+.0.0");
+        assertThat(subject.getScope()).isEqualTo(WildcardScope.MAJOR);
+        assertThat(subject.isWildcarded()).isTrue();
+    }
+
+    @Test
+    void createLatestVersionReferenceMinor() {
+        Version version = Version.createFromString("1.2.0");
+        VersionReference subject = VersionReference.createFromVersionAndWildcardScope(version, WildcardScope.MINOR);
+
+        assertThat(subject.toString()).isEqualTo("1.2+.0");
+        assertThat(subject.getScope()).isEqualTo(WildcardScope.MINOR);
+        assertThat(subject.isWildcarded()).isTrue();
+    }
+
+    @Test
+    void createLatestVersionReferencePatch() {
+        Version version = Version.createFromString("1.2.1");
+        VersionReference subject = VersionReference.createFromVersionAndWildcardScope(version, WildcardScope.PATCH);
 
         assertThat(subject.toString()).isEqualTo("1.2.1+");
         assertThat(subject.getScope()).isEqualTo(WildcardScope.PATCH);
