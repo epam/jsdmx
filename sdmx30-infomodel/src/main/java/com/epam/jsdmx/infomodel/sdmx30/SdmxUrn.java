@@ -99,7 +99,8 @@ public class SdmxUrn {
     }
 
     /**
-     * @deprecated due to reporting incorrect structure class for items fo item schemes and (m)dsd components. Use {@link #getItemUrnString(ArtefactReference, IdentifiableArtefact)}
+     * @deprecated due to reporting incorrect structure class for items fo item schemes and (m)dsd components.
+     * Use {@link #getItemUrnString(ArtefactReference, IdentifiableArtefact)}
      */
     @Deprecated
     public static String getItemUrnString(String containerUrn, String containedId) {
@@ -107,6 +108,12 @@ public class SdmxUrn {
     }
 
     public static String getItemUrnString(ArtefactReference container, IdentifiableArtefact contained) {
+        if (container == null) {
+            throw new IllegalArgumentException("Container reference should not be null");
+        }
+        if (contained == null) {
+            throw new IllegalArgumentException("Contained artefact should not be null");
+        }
         return toFullItemUrnString(
             contained.getStructureClass(),
             container.getOrganisationId(),
