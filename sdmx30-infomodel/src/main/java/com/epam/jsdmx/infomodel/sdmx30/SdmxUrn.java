@@ -98,8 +98,29 @@ public class SdmxUrn {
         return toShortItemUrnString(components.getAgency(), components.getId(), components.getVersion(), components.getItemId());
     }
 
+    /**
+     * @deprecated due to reporting incorrect structure class for items fo item schemes and (m)dsd components. Use {@link #getItemUrnString(ArtefactReference, IdentifiableArtefact)}
+     */
+    @Deprecated
     public static String getItemUrnString(String containerUrn, String containedId) {
         return containerUrn + "." + containedId;
+    }
+
+    public static String getItemUrnString(ArtefactReference container, IdentifiableArtefact contained) {
+        return toFullItemUrnString(
+            contained.getStructureClass(),
+            container.getOrganisationId(),
+            container.getId(),
+            getVersionString(container),
+            contained.getId()
+        );
+    }
+
+    private static String getVersionString(ArtefactReference ref) {
+        if (ref != null && ref.getVersion() != null) {
+            return ref.getVersion().toString();
+        }
+        return null;
     }
 
     private static String getStructureClass(String urn) {
