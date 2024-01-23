@@ -231,4 +231,22 @@ class SdmxUrnTest {
         assertThat(t).hasMessage("Contained artefact should not be null");
     }
 
+    @Test
+    void testGetItemUrnString_whenContainerIsItemItself() {
+        var container = new IdentifiableArtefactReferenceImpl(
+            "parentId",
+            "agency",
+            "1.0.0",
+            StructureClassImpl.CATEGORY,
+            "rootCategory"
+        );
+
+        var contained = new CategoryImpl();
+        contained.setId("childCategory");
+
+        var actual = SdmxUrn.getItemUrnString(container, contained);
+
+        assertThat(actual).isEqualTo("urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=agency:parentId(1.0.0).rootCategory.childCategory");
+    }
+
 }
