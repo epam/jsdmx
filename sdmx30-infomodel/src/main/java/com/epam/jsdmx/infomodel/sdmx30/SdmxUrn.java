@@ -102,7 +102,7 @@ public class SdmxUrn {
      * @deprecated due to reporting incorrect structure class for items fo item schemes and (m)dsd components.
      * Use {@link #getItemUrnString(ArtefactReference, IdentifiableArtefact)}
      */
-    @Deprecated
+    @Deprecated(forRemoval = true)
     public static String getItemUrnString(String containerUrn, String containedId) {
         return containerUrn + "." + containedId;
     }
@@ -124,10 +124,7 @@ public class SdmxUrn {
     }
 
     private static String getVersionString(ArtefactReference ref) {
-        if (ref != null && ref.getVersion() != null) {
-            return ref.getVersion().toString();
-        }
-        return null;
+        return ref != null && ref.getVersion() != null ? ref.getVersion().toString() : null;
     }
 
     private static String getStructureClass(String urn) {
