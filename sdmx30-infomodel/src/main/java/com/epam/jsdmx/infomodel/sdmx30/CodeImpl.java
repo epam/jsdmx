@@ -23,7 +23,7 @@ public class CodeImpl
 
     @Override
     public StructureClass getStructureClass() {
-        return StructureClassImpl.CODELIST;
+        return StructureClassImpl.CODE;
     }
 
     @Override

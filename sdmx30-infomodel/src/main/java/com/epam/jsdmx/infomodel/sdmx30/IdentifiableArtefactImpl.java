@@ -41,7 +41,7 @@ public abstract class IdentifiableArtefactImpl
         if (container == null) {
             throw new IllegalStateException("Get urn of non-maintainable object with null parent reference");
         }
-        return SdmxUrn.getItemUrnString(container.getUrn(), getId());
+        return SdmxUrn.getItemUrnString(container, this);
     }
 
     @Override

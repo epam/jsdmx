@@ -1,6 +1,7 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -187,6 +188,47 @@ class SdmxUrnTest {
                 .version("1.42.69-draft")
                 .build())
         );
+    }
+
+    @Test
+    void testGetItemUrnString() {
+        var container = new MaintainableArtefactReference(
+            "parentId",
+            "agency",
+            "1.0.0",
+            StructureClassImpl.DATA_STRUCTURE
+        );
+
+        var contained = new DimensionImpl();
+        contained.setId("dimensionId");
+
+        var actual = SdmxUrn.getItemUrnString(container, contained);
+
+        assertThat(actual).isEqualTo("urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=agency:parentId(1.0.0).dimensionId");
+    }
+
+    @Test
+    void testGetItemUrnString_whenContainerIsNull() {
+        var item = new DimensionImpl();
+        item.setId("dimensionId");
+
+        var t = assertThrows(IllegalArgumentException.class, () -> SdmxUrn.getItemUrnString(null, item));
+
+        assertThat(t).hasMessage("Container reference should not be null");
+    }
+
+    @Test
+    void testGetItemUrnString_whenContainedIsNull() {
+        var container = new MaintainableArtefactReference(
+            "parentId",
+            "agency",
+            "1.0.0",
+            StructureClassImpl.DATA_STRUCTURE
+        );
+
+        var t = assertThrows(IllegalArgumentException.class, () -> SdmxUrn.getItemUrnString(container, null));
+
+        assertThat(t).hasMessage("Contained artefact should not be null");
     }
 
 }
