@@ -119,7 +119,7 @@ public class SdmxUrn {
             container.getOrganisationId(),
             container.getId(),
             getVersionString(container),
-            contained.getId()
+            StringUtils.isEmpty(container.getItemId()) ? contained.getId() : container.getItemId() + "." + contained.getId()
         );
     }
 
