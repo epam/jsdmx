@@ -35,7 +35,7 @@ class DataStructureDefinitionTest {
 
         Set<CrossReference> crossReferences = subject.getReferencedArtefacts();
 
-        assertThat(crossReferences).hasSize(4);
+        assertThat(crossReferences).hasSize(5);
 
         assertThat(crossReferences)
             .extracting(CrossReference::getUrn)
@@ -43,7 +43,8 @@ class DataStructureDefinitionTest {
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:MEASURE_CONCEPT_SCH_1(1.0)",
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:MEASURE_CONCEPT_SCH_2(1.0)",
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:MEASURE_CONCEPT_SCH_2(1.1)",
-                "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=AGNC:ID(1.0)"
+                "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=AGNC:ID(1.0)",
+                "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:MEASURE_CONCEPT_SCH_3(1.0)"
             );
     }
 
@@ -61,6 +62,7 @@ class DataStructureDefinitionTest {
 
         var m4 = new MeasureImpl();
         m4.setConceptIdentity(new IdentifiableArtefactReferenceImpl("MEASURE_CONCEPT_SCH_2", "AGNC", "1.1", StructureClassImpl.CONCEPT, "cncpt3"));
+        m4.setConceptRoles(List.of(new IdentifiableArtefactReferenceImpl("MEASURE_CONCEPT_SCH_3", "AGNC", "1.0", StructureClassImpl.CONCEPT, "role")));
 
         d.setComponents(List.of(m1, m2, m3, m4));
         return d;
@@ -74,7 +76,7 @@ class DataStructureDefinitionTest {
 
         Set<CrossReference> crossReferences = subject.getReferencedArtefacts();
 
-        assertThat(crossReferences).hasSize(4);
+        assertThat(crossReferences).hasSize(5);
 
         assertThat(crossReferences)
             .extracting(CrossReference::getUrn)
@@ -82,7 +84,8 @@ class DataStructureDefinitionTest {
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:DIMENSION_CONCEPT_SCH_1(1.0)",
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:DIMENSION_CONCEPT_SCH_2(1.0)",
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:DIMENSION_CONCEPT_SCH_2(1.1)",
-                "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=AGNC:ID(1.0)"
+                "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=AGNC:ID(1.0)",
+                "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:DIMENSION_CONCEPT_SCH_3(1.0)"
             );
     }
 
@@ -101,6 +104,7 @@ class DataStructureDefinitionTest {
 
         var d4 = new DimensionImpl();
         d4.setConceptIdentity(new IdentifiableArtefactReferenceImpl("DIMENSION_CONCEPT_SCH_2", "AGNC", "1.1", StructureClassImpl.CONCEPT, "cncpt3"));
+        d4.setConceptRoles(List.of(new IdentifiableArtefactReferenceImpl("DIMENSION_CONCEPT_SCH_3", "AGNC", "1.0", StructureClassImpl.CONCEPT, "role")));
 
         dd.setComponents(List.of(d1, d2, d3, d4));
         return dd;
@@ -114,7 +118,7 @@ class DataStructureDefinitionTest {
 
         Set<CrossReference> crossReferences = subject.getReferencedArtefacts();
 
-        assertThat(crossReferences).hasSize(4);
+        assertThat(crossReferences).hasSize(6);
 
         assertThat(crossReferences)
             .extracting(CrossReference::getUrn)
@@ -122,7 +126,9 @@ class DataStructureDefinitionTest {
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:ATTRIBUTE_CONCEPT_SCH_1(1.0)",
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:ATTRIBUTE_CONCEPT_SCH_2(1.0)",
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:ATTRIBUTE_CONCEPT_SCH_2(1.1)",
-                "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=AGNC:ID(1.0)"
+                "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=AGNC:ID(1.0)",
+                "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:ATTRIBUTE_CONCEPT_SCH_3(1.0)",
+                "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:ATTRIBUTE_CONCEPT_SCH_4(1.0)"
             );
     }
 
@@ -141,6 +147,9 @@ class DataStructureDefinitionTest {
 
         var a4 = new DataAttributeImpl();
         a4.setConceptIdentity(new IdentifiableArtefactReferenceImpl("ATTRIBUTE_CONCEPT_SCH_2", "AGNC", "1.1", StructureClassImpl.CONCEPT, "cncpt3"));
+        a4.setConceptRoles(List.of(
+            new IdentifiableArtefactReferenceImpl("ATTRIBUTE_CONCEPT_SCH_3", "AGNC", "1.0", StructureClassImpl.CONCEPT, "role1"),
+            new IdentifiableArtefactReferenceImpl("ATTRIBUTE_CONCEPT_SCH_4", "AGNC", "1.0", StructureClassImpl.CONCEPT, "role2")));
 
         ad.setComponents(List.of(a1, a2, a3, a4));
         return ad;
@@ -169,7 +178,11 @@ class DataStructureDefinitionTest {
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:ATTRIBUTE_CONCEPT_SCH_2(1.0)",
                 "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:ATTRIBUTE_CONCEPT_SCH_2(1.1)",
                 "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=META:meta(1.0)",
-                "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=AGNC:ID(1.0)");
+                "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=AGNC:ID(1.0)",
+                "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:MEASURE_CONCEPT_SCH_3(1.0)",
+                "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:DIMENSION_CONCEPT_SCH_3(1.0)",
+                "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:ATTRIBUTE_CONCEPT_SCH_3(1.0)",
+                "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=AGNC:ATTRIBUTE_CONCEPT_SCH_4(1.0)");
     }
 
 }

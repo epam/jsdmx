@@ -1,5 +1,7 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
+import static org.apache.commons.collections4.ListUtils.emptyIfNull;
+
 import static java.util.Optional.ofNullable;
 import static java.util.function.Function.identity;
 import static java.util.function.Predicate.not;
@@ -25,6 +27,8 @@ import lombok.Setter;
 public class DataStructureDefinitionImpl
     extends StructureImpl
     implements DataStructureDefinition {
+
+    private static final StructureClassImpl CS = StructureClassImpl.CONCEPT_SCHEME;
 
     private MeasureDescriptorImpl measureDescriptor;
     private DimensionDescriptorImpl dimensionDescriptor;
@@ -65,11 +69,26 @@ public class DataStructureDefinitionImpl
     }
 
     private Stream<ArtefactReference> getComponentReferences(Component component) {
-        return Stream.<ArtefactReference>builder()
-            .add(toReference(component.getConceptIdentity(), StructureClassImpl.CONCEPT_SCHEME))
-            .add(ofNullable(component.getLocalRepresentation()).map(Representation::enumerated).orElse(null))
+        final var builder = Stream.<ArtefactReference>builder();
+
+        builder.add(toReference(component.getConceptIdentity(), CS));
+        builder.add(ofNullable(component.getLocalRepresentation()).map(Representation::enumerated).orElse(null));
+        getConceptRoles(component).forEach(role -> builder.add(toReference(role, CS)));
+
+        return builder
             .build()
             .filter(Objects::nonNull);
+    }
+
+    private List<ArtefactReference> getConceptRoles(Component component) {
+        if (component instanceof Measure) {
+            return emptyIfNull(((Measure) component).getConceptRoles());
+        } else if (component instanceof DataAttribute) {
+            return emptyIfNull(((DataAttribute) component).getConceptRoles());
+        } else if (component instanceof Dimension) {
+            return emptyIfNull(((Dimension) component).getConceptRoles());
+        }
+        return List.of();
     }
 
     private Stream<ComponentList<? extends Component>> getComponentListsStream() {
