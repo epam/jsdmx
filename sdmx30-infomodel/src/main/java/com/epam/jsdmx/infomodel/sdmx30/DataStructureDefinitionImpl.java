@@ -1,13 +1,12 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
-import static org.apache.commons.collections4.ListUtils.emptyIfNull;
-
 import static java.util.Optional.ofNullable;
 import static java.util.function.Function.identity;
 import static java.util.function.Predicate.not;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
 import static java.util.stream.Collectors.toSet;
+import static org.apache.commons.collections4.ListUtils.emptyIfNull;
 
 import java.util.ArrayList;
 import java.util.HashSet;
