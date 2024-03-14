@@ -69,7 +69,7 @@ public final class VersionReference extends AbstractVersionReference {
                         scope = WildcardScope.PATCH;
                         break;
                     case EXTENSION:
-                        break;
+                        throw new IllegalArgumentException();
                 }
             } else if (c == '.') {
                 switch (p) {
@@ -86,7 +86,6 @@ public final class VersionReference extends AbstractVersionReference {
                         throw new IllegalChannelGroupException();
                 }
             } else if (c == '-') {
-                p = Position.EXTENSION;
                 extensionFrom = i + 1;
                 break;
             } else {
