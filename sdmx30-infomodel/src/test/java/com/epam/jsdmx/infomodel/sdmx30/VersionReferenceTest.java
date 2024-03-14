@@ -1,6 +1,7 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.Comparator;
 import java.util.stream.Stream;
@@ -11,6 +12,28 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 class VersionReferenceTest {
+
+    @ParameterizedTest
+    @MethodSource
+    void testInvalidFormats(String invalidInput) {
+        assertThrows(IllegalArgumentException.class, () -> VersionReference.createFromString(invalidInput));
+    }
+
+    private static Stream<Arguments> testInvalidFormats() {
+        return Stream.of(
+            Arguments.of(""),
+            Arguments.of("."),
+            Arguments.of("+"),
+            Arguments.of("-"),
+            Arguments.of("1"),
+            Arguments.of("1."),
+            Arguments.of("1.0."),
+            Arguments.of("1.0-draft"),
+            Arguments.of("1.0.0."),
+            Arguments.of("1.0.0-"),
+            Arguments.of("1.aba.0")
+        );
+    }
 
     @Test
     void createFixedVersionReference() {

@@ -2,11 +2,11 @@ package com.epam.jsdmx.infomodel.sdmx30;
 
 import static com.epam.jsdmx.infomodel.sdmx30.WildcardScope.MAJOR;
 import static com.epam.jsdmx.infomodel.sdmx30.WildcardScope.MINOR;
+import static com.epam.jsdmx.infomodel.sdmx30.WildcardScope.NONE;
 
+import java.nio.channels.IllegalChannelGroupException;
 import java.util.Comparator;
 import java.util.Objects;
-
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * Represents a wildcarded reference to a specific version of an artefact which is resolved according to the SDMX version management rules,
@@ -24,51 +24,104 @@ public final class VersionReference extends AbstractVersionReference {
      * @param version valid string representation of a referenced version
      */
     public static VersionReference createFromString(String version) {
-        final String[] split = StringUtils.split(version, '.');
-        if (split.length == 2) {
-            final short major = Short.parseShort(split[0]);
-            final short minor = Short.parseShort(split[1]);
-            return new VersionReference(Version.createFromComponents(major, minor), WildcardScope.NONE);
+        try {
+            return parse(version);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid version: " + version);
         }
-        if (split.length != 3) {
-            throw new IllegalArgumentException("Invalid version format: " + version);
-        }
-        final WildcardScope scope = findWildcardScope(split);
-        final short major = Short.parseShort(scope == MAJOR ? StringUtils.substringBefore(split[0], '+') : split[0]);
-        final short minor = Short.parseShort(scope == MINOR ? StringUtils.substringBefore(split[1], '+') : split[1]);
-
-        final String[] patchSplit = StringUtils.split(split[2], '-');
-        short patch;
-        if (patchSplit.length > 1) {
-            if (scope != WildcardScope.NONE) {
-                // if the version is wildcarded, there is no extension expected
-                throw new IllegalArgumentException("Invalid version format: " + version);
-            }
-            patch = Short.parseShort(patchSplit[0]);
-        } else {
-            patch = Short.parseShort(scope == WildcardScope.PATCH ? StringUtils.substringBefore(split[2], '+') : split[2]);
-        }
-        return new VersionReference(
-            Version.createFromComponents(
-                major,
-                minor,
-                patch,
-                patchSplit.length > 1 ? StringUtils.substringAfter(split[2], "-") : ""
-            ),
-            scope
-        );
     }
 
-    private static WildcardScope findWildcardScope(String[] components) {
-        if (StringUtils.endsWith(components[0], "+")) {
-            return MAJOR;
-        } else if (StringUtils.endsWith(components[1], "+")) {
-            return MINOR;
-        } else if (StringUtils.endsWith(components[2], "+")) {
-            return WildcardScope.PATCH;
-        } else {
-            return WildcardScope.NONE;
+    private static VersionReference parse(String version) {
+        WildcardScope scope = NONE;
+        int majorUntil = -1;
+        int minorFrom = -1;
+        int minorUntil = -1;
+        int patchFrom = -1;
+        int patchUntil = -1;
+        int extensionFrom = -1;
+        Position p = Position.MAJOR;
+        final int inputLength = version.length();
+        for (int i = 0; i < inputLength; i++) {
+            char c = version.charAt(i);
+            if (c > 47 & c < 58) {
+                switch (p) {
+                    case MAJOR:
+                        majorUntil = i;
+                        break;
+                    case MINOR:
+                        minorUntil = i;
+                        break;
+                    case PATCH:
+                        patchUntil = i;
+                        break;
+                    default:
+                        throw new IllegalArgumentException();
+                }
+            } else if (c == '+') {
+                switch (p) {
+                    case MAJOR:
+                        scope = MAJOR;
+                        break;
+                    case MINOR:
+                        scope = MINOR;
+                        break;
+                    case PATCH:
+                        scope = WildcardScope.PATCH;
+                        break;
+                    case EXTENSION:
+                        break;
+                }
+            } else if (c == '.') {
+                switch (p) {
+                    case MAJOR:
+                        p = Position.MINOR;
+                        minorFrom = i + 1;
+                        break;
+                    case MINOR:
+                        p = Position.PATCH;
+                        patchFrom = i + 1;
+                        break;
+                    case PATCH:
+                    case EXTENSION:
+                        throw new IllegalChannelGroupException();
+                }
+            } else if (c == '-') {
+                p = Position.EXTENSION;
+                extensionFrom = i + 1;
+                break;
+            } else {
+                throw new IllegalArgumentException("Invalid version: " + version);
+            }
         }
+        short major = Short.parseShort(version.substring(0, majorUntil + 1));
+
+        if (minorFrom == -1 || minorFrom >= inputLength) {
+            throw new IllegalArgumentException("Invalid version: " + version);
+        }
+
+        short minor = Short.parseShort(version.substring(minorFrom, minorUntil + 1));
+
+        if (patchFrom > 0 && patchFrom >= inputLength) {
+            throw new IllegalArgumentException("Invalid version: " + version);
+        }
+
+        short patch = patchFrom > 0 ? Short.parseShort(version.substring(patchFrom, patchUntil + 1)) : -1;
+
+        if (extensionFrom > 0 && patchFrom == -1) {
+            throw new IllegalArgumentException("Invalid version: " + version);
+        }
+        if (extensionFrom > 0 && extensionFrom >= inputLength) {
+            throw new IllegalArgumentException("Invalid version: " + version);
+        }
+
+        String extension = extensionFrom == -1 ? null : version.substring(extensionFrom);
+
+        return new VersionReference(
+            patchFrom > 0
+                ? Version.createFromComponents(major, minor, patch, extension)
+                : Version.createFromComponents(major, minor),
+            scope
+        );
     }
 
     /**
@@ -77,7 +130,7 @@ public final class VersionReference extends AbstractVersionReference {
      * @param version version to be referenced
      */
     public static VersionReference createFromVersion(Version version) {
-        return new VersionReference(version, WildcardScope.NONE);
+        return new VersionReference(version, NONE);
     }
 
     /**
@@ -182,5 +235,9 @@ public final class VersionReference extends AbstractVersionReference {
                     throw new IllegalArgumentException("Invalid scope: " + scope);
             }
         }
+    }
+
+    private enum Position {
+        MAJOR, MINOR, PATCH, EXTENSION
     }
 }
