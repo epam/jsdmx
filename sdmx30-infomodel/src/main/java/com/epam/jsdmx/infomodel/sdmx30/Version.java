@@ -21,23 +21,53 @@ public class Version {
     public static final Pattern PATTERN = Pattern.compile("\\d+\\.\\d+(\\.\\d+(-\\w+)?)?");
 
     private final String value;
-    private final short[] components;
+    private final short[] componentsArray;
     private final String extension;
 
     public Version(Version other) {
         this.value = other.value;
-        this.components = Arrays.copyOf(other.components, other.components.length);
+        this.componentsArray = Arrays.copyOf(other.componentsArray, other.componentsArray.length);
         this.extension = other.extension;
     }
 
     private Version(String version) {
         this.value = version;
         this.extension = StringUtils.trimToNull(StringUtils.substringAfter(version, "-"));
-        this.components = splitIntoComponents(version);
+        this.componentsArray = splitIntoComponents(version);
+    }
+
+    private Version(short major, short minor, short patch, String extension) {
+        validateComponents(major, minor, patch);
+        this.value = major + "." + minor + "." + patch + (StringUtils.isNotEmpty(extension) ? "-" + extension : "");
+        this.componentsArray = new short[]{major, minor, patch};
+        this.extension = extension;
+    }
+
+    private Version(short major, short minor) {
+        validateComponents(major, minor);
+        this.value = major + "." + minor;
+        this.componentsArray = new short[]{major, minor};
+        this.extension = null;
+    }
+
+    private void validateComponents(short... components) {
+        for (var component : components) {
+            if (component < 0) {
+                throw new IllegalArgumentException("Version components must be non-negative");
+            }
+        }
     }
 
     public static Version createFromString(String version) {
         return new Version(version);
+    }
+
+    public static Version createFromComponents(short major, short minor, short patch, String extension) {
+        return new Version(major, minor, patch, extension);
+    }
+
+    public static Version createFromComponents(short major, short minor) {
+        return new Version(major, minor);
     }
 
     private short[] splitIntoComponents(String version) {
@@ -55,15 +85,15 @@ public class Version {
     }
 
     public short getMajor() {
-        return components[0];
+        return componentsArray[0];
     }
 
     public short getMinor() {
-        return components[1];
+        return componentsArray[1];
     }
 
     public Optional<Short> getPatch() {
-        return components.length > 2 ? Optional.of(components[2]) : Optional.empty();
+        return componentsArray.length > 2 ? Optional.of(componentsArray[2]) : Optional.empty();
     }
 
     public Optional<String> getExtension() {
@@ -74,7 +104,7 @@ public class Version {
      * @return true if version is a legacy version (i.e. does not have patch component, e.g. 1.0)
      */
     public boolean isLegacy() {
-        return components.length == 2;
+        return componentsArray.length == 2;
     }
 
     /**
