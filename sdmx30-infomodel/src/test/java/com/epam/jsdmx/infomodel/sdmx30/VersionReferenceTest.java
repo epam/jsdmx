@@ -28,10 +28,17 @@ class VersionReferenceTest {
             Arguments.of("1"),
             Arguments.of("1."),
             Arguments.of("1.0."),
+            Arguments.of("1.0-"),
+            Arguments.of("1.0.-"),
             Arguments.of("1.0-draft"),
             Arguments.of("1.0.0."),
             Arguments.of("1.0.0-"),
-            Arguments.of("1.aba.0")
+            Arguments.of("1.0.0.-"),
+            Arguments.of("1.aba.0"),
+            Arguments.of("abc"),
+            Arguments.of("-199.-44.-0"),
+            Arguments.of("199.-44.0"),
+            Arguments.of("199.44.-0")
         );
     }
 

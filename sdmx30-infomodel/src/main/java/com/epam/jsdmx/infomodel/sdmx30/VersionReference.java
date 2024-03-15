@@ -93,13 +93,13 @@ public final class VersionReference extends AbstractVersionReference {
         }
         short major = Short.parseShort(version.substring(0, majorUntil + 1));
 
-        if (minorFrom == -1 || minorFrom >= inputLength) {
+        if (minorFrom == -1 || minorFrom >= inputLength || minorFrom > minorUntil || minorUntil < 0) {
             throw new IllegalArgumentException("Invalid version: " + version);
         }
 
         short minor = Short.parseShort(version.substring(minorFrom, minorUntil + 1));
 
-        if (patchFrom > 0 && patchFrom >= inputLength) {
+        if (patchFrom > 0 && patchFrom >= inputLength || patchFrom > patchUntil) {
             throw new IllegalArgumentException("Invalid version: " + version);
         }
 
