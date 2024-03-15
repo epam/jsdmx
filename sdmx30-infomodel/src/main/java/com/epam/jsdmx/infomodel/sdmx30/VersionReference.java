@@ -4,7 +4,6 @@ import static com.epam.jsdmx.infomodel.sdmx30.WildcardScope.MAJOR;
 import static com.epam.jsdmx.infomodel.sdmx30.WildcardScope.MINOR;
 import static com.epam.jsdmx.infomodel.sdmx30.WildcardScope.NONE;
 
-import java.nio.channels.IllegalChannelGroupException;
 import java.util.Comparator;
 import java.util.Objects;
 
@@ -26,7 +25,7 @@ public final class VersionReference extends AbstractVersionReference {
     public static VersionReference createFromString(String version) {
         try {
             return parse(version);
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
             throw new IllegalArgumentException("Invalid version: " + version);
         }
     }
@@ -82,34 +81,34 @@ public final class VersionReference extends AbstractVersionReference {
                         patchFrom = i + 1;
                         break;
                     default:
-                        throw new IllegalChannelGroupException();
+                        throw new IllegalArgumentException();
                 }
             } else if (c == '-') {
                 extensionFrom = i + 1;
                 break;
             } else {
-                throw new IllegalArgumentException("Invalid version: " + version);
+                throw new IllegalArgumentException();
             }
         }
         short major = Short.parseShort(version.substring(0, majorUntil + 1));
 
         if (minorFrom == -1 || minorFrom >= inputLength || minorFrom > minorUntil || minorUntil < 0) {
-            throw new IllegalArgumentException("Invalid version: " + version);
+            throw new IllegalArgumentException();
         }
 
         short minor = Short.parseShort(version.substring(minorFrom, minorUntil + 1));
 
         if (patchFrom > 0 && patchFrom >= inputLength || patchFrom > patchUntil) {
-            throw new IllegalArgumentException("Invalid version: " + version);
+            throw new IllegalArgumentException();
         }
 
         short patch = patchFrom > 0 ? Short.parseShort(version.substring(patchFrom, patchUntil + 1)) : -1;
 
         if (extensionFrom > 0 && patchFrom == -1) {
-            throw new IllegalArgumentException("Invalid version: " + version);
+            throw new IllegalArgumentException();
         }
         if (extensionFrom > 0 && extensionFrom >= inputLength) {
-            throw new IllegalArgumentException("Invalid version: " + version);
+            throw new IllegalArgumentException();
         }
 
         String extension = extensionFrom == -1 ? null : version.substring(extensionFrom);
