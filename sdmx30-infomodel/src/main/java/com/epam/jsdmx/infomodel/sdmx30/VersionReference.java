@@ -1,7 +1,5 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
-import static com.epam.jsdmx.infomodel.sdmx30.WildcardScope.MAJOR;
-import static com.epam.jsdmx.infomodel.sdmx30.WildcardScope.MINOR;
 import static com.epam.jsdmx.infomodel.sdmx30.WildcardScope.NONE;
 
 import java.util.Comparator;
@@ -38,46 +36,46 @@ public final class VersionReference extends AbstractVersionReference {
         int patchFrom = -1;
         int patchUntil = -1;
         int extensionFrom = -1;
-        Position p = Position.MAJOR;
+        Position position = Position.IN_MAJOR;
         final int inputLength = version.length();
         for (int i = 0; i < inputLength; i++) {
             char c = version.charAt(i);
-            if (c > 47 & c < 58) {
-                switch (p) {
-                    case MAJOR:
+            if (c >= '0' & c <= '9') {
+                switch (position) {
+                    case IN_MAJOR:
                         majorUntil = i;
                         break;
-                    case MINOR:
+                    case IN_MINOR:
                         minorUntil = i;
                         break;
-                    case PATCH:
+                    case IN_PATCH:
                         patchUntil = i;
                         break;
                     default:
                         throw new IllegalArgumentException();
                 }
             } else if (c == '+') {
-                switch (p) {
-                    case MAJOR:
-                        scope = MAJOR;
+                switch (position) {
+                    case IN_MAJOR:
+                        scope = WildcardScope.MAJOR;
                         break;
-                    case MINOR:
-                        scope = MINOR;
+                    case IN_MINOR:
+                        scope = WildcardScope.MINOR;
                         break;
-                    case PATCH:
+                    case IN_PATCH:
                         scope = WildcardScope.PATCH;
                         break;
                     default:
                         throw new IllegalArgumentException();
                 }
             } else if (c == '.') {
-                switch (p) {
-                    case MAJOR:
-                        p = Position.MINOR;
+                switch (position) {
+                    case IN_MAJOR:
+                        position = Position.IN_MINOR;
                         minorFrom = i + 1;
                         break;
-                    case MINOR:
-                        p = Position.PATCH;
+                    case IN_MINOR:
+                        position = Position.IN_PATCH;
                         patchFrom = i + 1;
                         break;
                     default:
@@ -235,6 +233,6 @@ public final class VersionReference extends AbstractVersionReference {
     }
 
     private enum Position {
-        MAJOR, MINOR, PATCH, EXTENSION
+        IN_MAJOR, IN_MINOR, IN_PATCH, IN_EXTENSION
     }
 }
