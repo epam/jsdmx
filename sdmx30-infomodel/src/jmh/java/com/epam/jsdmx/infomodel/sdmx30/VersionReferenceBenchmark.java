@@ -12,15 +12,6 @@ import org.openjdk.jmh.infra.Blackhole;
 
 public class VersionReferenceBenchmark {
 
-    @State(Scope.Thread)
-    public static class Versions {
-        public String fixedStable = "1.0.0";
-        public String fixedDraft = "1.0.0-draft";
-        public String wildcardPatch = "1.0.0+";
-        public String wildcardMinor = "1.0+.0";
-        public String wildcardMajor = "1+.0.0";
-    }
-
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
@@ -30,5 +21,14 @@ public class VersionReferenceBenchmark {
         bh.consume(VersionReference.createFromString(versions.wildcardPatch));
         bh.consume(VersionReference.createFromString(versions.wildcardMinor));
         bh.consume(VersionReference.createFromString(versions.wildcardMajor));
+    }
+
+    @State(Scope.Thread)
+    public static class Versions {
+        public String fixedStable = "1.0.0";
+        public String fixedDraft = "1.0.0-draft";
+        public String wildcardPatch = "1.0.0+";
+        public String wildcardMinor = "1.0+.0";
+        public String wildcardMajor = "1+.0.0";
     }
 }
