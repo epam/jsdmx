@@ -24,7 +24,7 @@ public final class VersionReference extends AbstractVersionReference {
         try {
             return parse(version);
         } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
-            throw new IllegalArgumentException("Invalid version: " + version);
+            throw new IllegalArgumentException("Invalid version: " + version, e);
         }
     }
 
