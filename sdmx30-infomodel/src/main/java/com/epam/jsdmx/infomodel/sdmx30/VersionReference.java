@@ -1,12 +1,9 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
-import java.util.function.Function;
-import java.util.regex.Pattern;
+import static com.epam.jsdmx.infomodel.sdmx30.WildcardScope.NONE;
 
-import org.apache.commons.lang3.tuple.Pair;
+import java.util.Comparator;
+import java.util.Objects;
 
 /**
  * Represents a wildcarded reference to a specific version of an artefact which is resolved according to the SDMX version management rules,
@@ -14,45 +11,128 @@ import org.apache.commons.lang3.tuple.Pair;
  */
 public final class VersionReference extends AbstractVersionReference {
 
-    private static final Pattern MAJOR_WILDCARD_PATTERN = Pattern.compile("(0|[1-9]\\d*)\\+\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(-\\w+)?");
-    private static final Pattern MINOR_WILDCARD_PATTERN = Pattern.compile("(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\+\\.(0|[1-9]\\d*)(-\\w+)?");
-    private static final Pattern PATCH_WILDCARD_PATTERN = Pattern.compile("(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\+(-\\w+)?");
-
-    private static final List<Pair<Pattern, Function<String, VersionReference>>> CREATORS_BY_PATTERN = List.of(
-        Pair.of(Version.PATTERN, (String s) -> new VersionReference(Version.createFromString(s), WildcardScope.NONE)),
-        Pair.of(MINOR_WILDCARD_PATTERN, (String s) -> new VersionReference(Version.createFromString(removeWildcard(s)), WildcardScope.MINOR)),
-        Pair.of(MAJOR_WILDCARD_PATTERN, (String s) -> new VersionReference(Version.createFromString(removeWildcard(s)), WildcardScope.MAJOR)),
-        Pair.of(PATCH_WILDCARD_PATTERN, (String s) -> new VersionReference(Version.createFromString(removeWildcard(s)), WildcardScope.PATCH))
-    );
-
     private VersionReference(Version version, WildcardScope scope) {
         super(version, scope);
     }
 
-    private static String removeWildcard(String s) {
-        return s.replaceAll("\\+", "");
-    }
-
     /**
      * Creates a {@link VersionReference} from a string representation.
+     *
      * @param version valid string representation of a referenced version
      */
     public static VersionReference createFromString(String version) {
-        return createFromString(CREATORS_BY_PATTERN, version);
+        try {
+            return parse(version);
+        } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
+            throw new IllegalArgumentException("Invalid version: " + version, e);
+        }
+    }
+
+    private static VersionReference parse(String version) {
+        WildcardScope scope = NONE;
+        int majorUntil = -1;
+        int minorFrom = -1;
+        int minorUntil = -1;
+        int patchFrom = -1;
+        int patchUntil = -1;
+        int extensionFrom = -1;
+        Position position = Position.IN_MAJOR;
+        final int inputLength = version.length();
+        for (int i = 0; i < inputLength; i++) {
+            char c = version.charAt(i);
+            if (c >= '0' & c <= '9') {
+                switch (position) {
+                    case IN_MAJOR:
+                        majorUntil = i;
+                        break;
+                    case IN_MINOR:
+                        minorUntil = i;
+                        break;
+                    case IN_PATCH:
+                        patchUntil = i;
+                        break;
+                    default:
+                        throw new IllegalArgumentException();
+                }
+            } else if (c == '+') {
+                switch (position) {
+                    case IN_MAJOR:
+                        scope = WildcardScope.MAJOR;
+                        break;
+                    case IN_MINOR:
+                        scope = WildcardScope.MINOR;
+                        break;
+                    case IN_PATCH:
+                        scope = WildcardScope.PATCH;
+                        break;
+                    default:
+                        throw new IllegalArgumentException();
+                }
+            } else if (c == '.') {
+                switch (position) {
+                    case IN_MAJOR:
+                        position = Position.IN_MINOR;
+                        minorFrom = i + 1;
+                        break;
+                    case IN_MINOR:
+                        position = Position.IN_PATCH;
+                        patchFrom = i + 1;
+                        break;
+                    default:
+                        throw new IllegalArgumentException();
+                }
+            } else if (c == '-') {
+                extensionFrom = i + 1;
+                break;
+            } else {
+                throw new IllegalArgumentException();
+            }
+        }
+        short major = Short.parseShort(version.substring(0, majorUntil + 1));
+
+        if (minorFrom == -1 || minorFrom >= inputLength || minorFrom > minorUntil || minorUntil < 0) {
+            throw new IllegalArgumentException();
+        }
+
+        short minor = Short.parseShort(version.substring(minorFrom, minorUntil + 1));
+
+        if (patchFrom > 0 && patchFrom >= inputLength || patchFrom > patchUntil) {
+            throw new IllegalArgumentException();
+        }
+
+        short patch = patchFrom > 0 ? Short.parseShort(version.substring(patchFrom, patchUntil + 1)) : -1;
+
+        if (extensionFrom > 0 && patchFrom == -1) {
+            throw new IllegalArgumentException();
+        }
+        if (extensionFrom > 0 && extensionFrom >= inputLength) {
+            throw new IllegalArgumentException();
+        }
+
+        String extension = extensionFrom == -1 ? null : version.substring(extensionFrom);
+
+        return new VersionReference(
+            patchFrom > 0
+                ? Version.createFromComponents(major, minor, patch, extension)
+                : Version.createFromComponents(major, minor),
+            scope
+        );
     }
 
     /**
      * Creates a {@link VersionReference} from a specific {@link Version}.
+     *
      * @param version version to be referenced
      */
     public static VersionReference createFromVersion(Version version) {
-        return new VersionReference(version, WildcardScope.NONE);
+        return new VersionReference(version, NONE);
     }
 
     /**
      * Creates a {@link VersionReference} from a specific {@link Version} and {@link WildcardScope}.
+     *
      * @param version version to be referenced
-     * @param scope version component to wildcard
+     * @param scope   version component to wildcard
      */
     public static VersionReference createFromVersionAndWildcardScope(Version version, WildcardScope scope) {
         return new VersionReference(version, scope);
@@ -150,5 +230,9 @@ public final class VersionReference extends AbstractVersionReference {
                     throw new IllegalArgumentException("Invalid scope: " + scope);
             }
         }
+    }
+
+    private enum Position {
+        IN_MAJOR, IN_MINOR, IN_PATCH, IN_EXTENSION
     }
 }
