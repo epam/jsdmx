@@ -21,7 +21,7 @@ public class MetadataAttributeImpl
 
     private boolean isPresentational;
     private int minOccurs = 1;
-    private int maxOccurs = Integer.MAX_VALUE;
+    private int maxOccurs = 1;
     private List<MetadataAttribute> hierarchy = new ArrayList<>();
 
     public MetadataAttributeImpl(MetadataAttribute from) {
