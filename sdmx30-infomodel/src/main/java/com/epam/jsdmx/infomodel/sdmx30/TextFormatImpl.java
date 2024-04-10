@@ -27,11 +27,17 @@ public class TextFormatImpl implements TextFormat {
                 sentinelValues = f.getSentinelValues();
             }
 
+            final FacetValueType newValueType = f.getValueType();
+
+            if (newValueType == null) {
+                continue;
+            }
+
             if (valueType == null) {
-                valueType = f.getValueType();
+                valueType = newValueType;
             } else {
-                if (valueType != f.getValueType()) {
-                    throw new IllegalStateException("Inconsistent text format, multiple value types present: " + valueType + " and " + f.getValueType());
+                if (valueType != newValueType) {
+                    throw new IllegalStateException("Inconsistent text format, multiple value types present: " + valueType + " and " + newValueType);
                 }
             }
         }
