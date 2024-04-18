@@ -89,10 +89,14 @@ public class WildcardReferenceMatcher {
     }
 
     private VersionReference from() {
-        return VersionReference.createFromString(majorFrom + "." + minorFrom + "." + patchFrom + (isStable ? "" : "-draft"));
+        return VersionReference.createFromVersion(
+            Version.createFromComponents(majorFrom, minorFrom, patchFrom, isStable ? null : "draft")
+        );
     }
 
     private VersionReference to() {
-        return VersionReference.createFromString(majorTo + "." + minorTo + "." + patchTo);
+        return VersionReference.createFromVersion(
+            Version.createFromComponents(majorTo, minorTo, patchTo, null)
+        );
     }
 }
