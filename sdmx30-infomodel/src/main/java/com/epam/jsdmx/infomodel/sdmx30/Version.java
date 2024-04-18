@@ -62,6 +62,10 @@ public class Version {
         return new Version(version);
     }
 
+    public static Version createFromComponents(int major, int minor, int patch, String extension) {
+        return createFromComponents((short) major, (short) minor, (short) patch, extension);
+    }
+
     public static Version createFromComponents(short major, short minor, short patch, String extension) {
         return new Version(major, minor, patch, extension);
     }

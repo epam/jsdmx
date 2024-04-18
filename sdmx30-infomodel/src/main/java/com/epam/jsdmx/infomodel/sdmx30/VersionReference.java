@@ -201,7 +201,9 @@ public final class VersionReference extends AbstractVersionReference {
 
     @Override
     public int hashCode() {
-        return this.toString().hashCode();
+        int result = base.hashCode();
+        result = 31 * result + scope.hashCode();
+        return result;
     }
 
     @Override
@@ -209,7 +211,8 @@ public final class VersionReference extends AbstractVersionReference {
         if (!(obj instanceof VersionReference)) {
             return false;
         }
-        return Objects.equals(this.toString(), obj.toString());
+        VersionReference other = (VersionReference) obj;
+        return Objects.equals(this.base, other.base) && Objects.equals(this.scope, other.scope);
     }
 
     private static final class Formatter {
