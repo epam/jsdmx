@@ -15,7 +15,7 @@ class WildcardReferenceMatcherTest {
     void testMajorWildcard(VersionReference candidate, boolean expected) {
         final VersionReference ref = VersionReference.createFromVersionAndWildcardScope(
             Version.createFromComponents(1, 0, 0, null),
-            WildcardScope.MINOR
+            WildcardScope.MAJOR
         );
 
         final var subject = new WildcardReferenceMatcher(ref);

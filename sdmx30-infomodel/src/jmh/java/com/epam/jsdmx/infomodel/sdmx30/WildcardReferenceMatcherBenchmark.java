@@ -10,7 +10,7 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.infra.Blackhole;
 
-public class VersionReferenceMatcherBenchmark {
+public class WildcardReferenceMatcherBenchmark {
 
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
