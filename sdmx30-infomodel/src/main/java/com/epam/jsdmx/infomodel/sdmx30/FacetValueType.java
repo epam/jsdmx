@@ -70,7 +70,7 @@ public enum FacetValueType {
     public static FacetValueType fromValue(String value) {
         FacetValueType constant = CONSTANTS.get(value);
         if (constant == null) {
-            throw new IllegalArgumentException(value);
+            throw new IllegalArgumentException("Unknown facet value type: '" + value + "'");
         } else {
             return constant;
         }
