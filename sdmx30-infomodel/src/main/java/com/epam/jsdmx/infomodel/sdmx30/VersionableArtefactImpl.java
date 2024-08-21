@@ -18,13 +18,33 @@ public abstract class VersionableArtefactImpl
 
     @EqualsAndHashCode.Include
     private Version version;
-    private Instant validFrom;
-    private Instant validTo;
+    private String validFrom;
+    private String validTo;
 
     protected VersionableArtefactImpl(VersionableArtefact artefact) {
         super(Objects.requireNonNull(artefact));
         this.version = artefact.getVersion();
-        this.validFrom = artefact.getValidFrom();
-        this.validTo = artefact.getValidTo();
+        this.validFrom = artefact.getValidFromString();
+        this.validTo = artefact.getValidToString();
+    }
+
+    @Override
+    public String getValidFromString() {
+        return validFrom;
+    }
+
+    @Override
+    public String getValidToString() {
+        return validTo;
+    }
+
+    @Override
+    public Instant getValidFrom() {
+        return Instant.parse(validFrom);
+    }
+
+    @Override
+    public Instant getValidTo() {
+        return Instant.parse(validTo);
     }
 }

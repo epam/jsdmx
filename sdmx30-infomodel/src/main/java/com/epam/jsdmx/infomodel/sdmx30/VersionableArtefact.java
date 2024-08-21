@@ -14,12 +14,28 @@ public interface VersionableArtefact extends NameableArtefact {
     Version getVersion();
 
     /**
-     * Date from which the version is valid.
+     * Date from which the version is valid parsed as {@link Instant}.
+     *
+     * @deprecated migrate to sting version of this accessor to ensure support of all variations of ISO 8601 syntax
      */
+    @Deprecated(forRemoval = true)
     Instant getValidFrom();
+
+    /**
+     * Date from which version is superseded parsed as {@link Instant}.
+     *
+     * @deprecated migrate to sting version of this accessor to ensure support of all variations of ISO 8601 syntax
+     */
+    @Deprecated(forRemoval = true)
+    Instant getValidTo();
+
+    /**
+     * Date from which the version is valid as string.
+     */
+    String getValidFromString();
 
     /**
      * Date from which version is superseded.
      */
-    Instant getValidTo();
+    String getValidToString();
 }
