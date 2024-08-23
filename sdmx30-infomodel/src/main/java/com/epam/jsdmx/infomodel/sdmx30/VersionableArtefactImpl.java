@@ -40,11 +40,11 @@ public abstract class VersionableArtefactImpl
 
     @Override
     public Instant getValidFrom() {
-        return Instant.parse(validFrom);
+        return validFrom == null ? null : Instant.parse(validFrom);
     }
 
     @Override
     public Instant getValidTo() {
-        return Instant.parse(validTo);
+        return validTo == null ? null : Instant.parse(validTo);
     }
 }
