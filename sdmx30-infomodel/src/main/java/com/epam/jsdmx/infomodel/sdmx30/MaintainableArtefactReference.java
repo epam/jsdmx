@@ -7,6 +7,7 @@ import java.util.function.Function;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 
 @Data
 @NoArgsConstructor
@@ -34,11 +35,12 @@ public class MaintainableArtefactReference implements ArtefactReference {
     }
 
     public MaintainableArtefactReference(String urn) {
-        final UrnComponents urnComponents = SdmxUrn.getUrnComponents(urn);
+        final String trimmedUrn = StringUtils.trim(urn);
+        final UrnComponents urnComponents = SdmxUrn.getUrnComponents(trimmedUrn);
         this.organisationId = urnComponents.getAgency();
         this.id = urnComponents.getId();
         this.version = VersionReference.createFromString(urnComponents.getVersion());
-        this.structureClass = getType(urn);
+        this.structureClass = getType(trimmedUrn);
     }
 
     public MaintainableArtefactReference(ArtefactReference from) {
