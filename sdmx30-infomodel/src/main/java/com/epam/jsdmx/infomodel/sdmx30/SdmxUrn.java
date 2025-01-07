@@ -44,12 +44,13 @@ public class SdmxUrn {
     }
 
     public static UrnComponents getUrnComponents(String urn) {
-        final Matcher fullUrnMatcher = FULL_URN_PATTERN.matcher(urn);
+        final String trimmedUrn = StringUtils.trim(urn);
+        final Matcher fullUrnMatcher = FULL_URN_PATTERN.matcher(trimmedUrn);
         if (fullUrnMatcher.matches()) {
             return buildFromFullUrn(fullUrnMatcher);
         }
 
-        final Matcher shortUrnMatcher = SHORT_URN_PATTERN.matcher(urn);
+        final Matcher shortUrnMatcher = SHORT_URN_PATTERN.matcher(trimmedUrn);
         if (shortUrnMatcher.matches()) {
             return buildFromShortUrn(shortUrnMatcher);
         }
