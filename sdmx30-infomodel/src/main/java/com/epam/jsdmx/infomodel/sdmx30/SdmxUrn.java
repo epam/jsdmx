@@ -20,10 +20,10 @@ public class SdmxUrn {
     private static final Pattern FULL_URN_PATTERN = Pattern.compile(
         "^"
             + URN_SDMX
-            + "(?<class>\\w+(\\.\\w+)*)="
+            + "(?<class>[\\w.]+)="
             + "(?<agency>[\\w.-]+):(?<id>[\\w@$-]+)"
-            + "\\((?<version>(\\d+\\.\\d+)|(\\d+\\.\\d+\\.\\d+(-[\\w-]+)?)|(\\d+\\+\\.\\d+\\.\\d+)|(\\d+\\.\\d+\\+\\.\\d+)|(\\d+\\.\\d+\\.\\d+\\+))\\)"
-            + "(\\.(?<itemId>([\\w@$-]+)+(\\.[\\w@$-]+)*))?$"
+            + "\\((?<version>(\\d+\\+?)(\\.\\d+\\+?){1,2}(-[\\w-]+)?)\\)"
+            + "(\\.(?<itemId>[\\w@$-]+(\\.[\\w@$-]+)*))?$"
     );
 
     private static final Pattern SHORT_URN_PATTERN = Pattern.compile(
