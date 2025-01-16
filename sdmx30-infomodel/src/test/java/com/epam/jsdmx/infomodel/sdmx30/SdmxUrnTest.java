@@ -133,6 +133,16 @@ class SdmxUrnTest {
         );
     }
 
+    @Test
+    void testGetUrnComponents_notValidUrn_throwsError() {
+        var t = assertThrows(IllegalArgumentException.class,
+            () -> SdmxUrn.getUrnComponents(
+                "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF_RES:CS_CSD_CPA(3.0+.0).CPA_RA_330_OTHER_RISKS_(PLEASE_SPECIFY)"));
+
+        assertThat(t)
+            .hasMessage("Invalid urn: urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF_RES:CS_CSD_CPA(3.0+.0).CPA_RA_330_OTHER_RISKS_(PLEASE_SPECIFY)");
+    }
+
     @ParameterizedTest
     @MethodSource
     void testGetUrnComponents(String urn, UrnComponents expected) {
