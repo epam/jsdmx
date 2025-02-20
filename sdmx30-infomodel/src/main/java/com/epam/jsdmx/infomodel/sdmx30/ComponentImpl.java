@@ -20,7 +20,11 @@ public abstract class ComponentImpl
 
     public ComponentImpl(Component from) {
         super(Objects.requireNonNull(from));
-        this.conceptIdentity = new IdentifiableArtefactReferenceImpl(from.getConceptIdentity());
+
+        if (from.getConceptIdentity() != null) {
+            this.conceptIdentity = new IdentifiableArtefactReferenceImpl(from.getConceptIdentity());
+        }
+
         if (from.getLocalRepresentation() != null) {
             this.localRepresentation = (Representation) from.getLocalRepresentation().clone();
         }
