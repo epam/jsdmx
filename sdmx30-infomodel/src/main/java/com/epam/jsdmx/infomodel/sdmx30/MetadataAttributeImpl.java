@@ -29,7 +29,7 @@ public class MetadataAttributeImpl
         this.isPresentational = from.isPresentational();
         this.minOccurs = from.getMinOccurs();
         this.maxOccurs = from.getMaxOccurs();
-        this.hierarchy = StreamUtils.streamOfNullable(hierarchy)
+        this.hierarchy = StreamUtils.streamOfNullable(from.getHierarchy())
             .map(MetadataAttributeImpl::new)
             .collect(toList());
     }
