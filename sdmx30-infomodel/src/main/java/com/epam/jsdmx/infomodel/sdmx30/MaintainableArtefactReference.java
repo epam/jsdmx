@@ -14,10 +14,10 @@ import org.apache.commons.lang3.StringUtils;
 @EqualsAndHashCode(callSuper = false)
 public class MaintainableArtefactReference implements ArtefactReference {
 
-    private String id;
-    private String organisationId;
-    private StructureClass structureClass;
-    private VersionReference version;
+    protected String id;
+    protected String organisationId;
+    protected StructureClass structureClass;
+    protected VersionReference version;
 
     public MaintainableArtefactReference(String id, String organisationId, VersionReference version, StructureClass structureClass) {
         this.id = id;
