@@ -17,6 +17,14 @@ public class GroupDimensionDescriptorImpl
 
     private List<String> dimensions = new ArrayList<>();
 
+    public GroupDimensionDescriptorImpl() {
+    }
+
+    public GroupDimensionDescriptorImpl(GroupDimensionDescriptor from) {
+        super(from);
+        this.dimensions.addAll(from.getDimensions());
+    }
+
     @Override
     public StructureClassImpl getStructureClass() {
         return StructureClassImpl.GROUP_DIMENSION_DESCRIPTOR;
