@@ -38,6 +38,12 @@ public class DataStructureDefinitionImpl
 
     public DataStructureDefinitionImpl(DataStructureDefinition from) {
         super(from);
+
+        this.setMeasureDescriptor(new MeasureDescriptorImpl(from.getMeasureDescriptor()));
+        this.setDimensionDescriptor(new DimensionDescriptorImpl(from.getDimensionDescriptor()));
+        this.setAttributeDescriptor(new AttributeDescriptorImpl(from.getAttributeDescriptor()));
+        this.setGroupDimensionDescriptor(from.getGroupDimensionDescriptors().stream().map(GroupDimensionDescriptorImpl::new).collect(toList()));
+        this.setMetadataStructure(from.getMetadataStructure());
     }
 
     @Override

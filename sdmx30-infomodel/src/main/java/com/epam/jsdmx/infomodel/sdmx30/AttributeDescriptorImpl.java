@@ -16,6 +16,14 @@ public class AttributeDescriptorImpl
 
     private List<MetadataAttributeRef> metadataAttributes = new ArrayList<>();
 
+    public AttributeDescriptorImpl() {
+    }
+
+    public AttributeDescriptorImpl(AttributeDescriptor from) {
+        super(from);
+        this.metadataAttributes.addAll(from.getMetadataAttributes());
+    }
+
     @Override
     public StructureClass getStructureClass() {
         return StructureClassImpl.ATTRIBUTE_DESCRIPTOR;
