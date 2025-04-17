@@ -11,6 +11,13 @@ public class MeasureDescriptorImpl
     extends ComponentListImpl<Measure>
     implements MeasureDescriptor {
 
+    public MeasureDescriptorImpl() {
+    }
+
+    public MeasureDescriptorImpl(MeasureDescriptor from) {
+        super(from);
+    }
+
     @Override
     public StructureClassImpl getStructureClass() {
         return StructureClassImpl.MEASURE_DESCRIPTOR;

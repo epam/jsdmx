@@ -7,6 +7,13 @@ public class DimensionDescriptorImpl
     extends ComponentListImpl<DimensionComponent>
     implements DimensionDescriptor {
 
+    public DimensionDescriptorImpl() {
+    }
+
+    public DimensionDescriptorImpl(DimensionDescriptor from) {
+        super(from);
+    }
+
     @Override
     public StructureClass getStructureClass() {
         return StructureClassImpl.DIMENSION_DESCRIPTOR;
