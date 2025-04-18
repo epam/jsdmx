@@ -38,10 +38,21 @@ public class DataStructureDefinitionImpl
 
     public DataStructureDefinitionImpl(DataStructureDefinition from) {
         super(from);
+        var measureDescriptorFrom = from.getMeasureDescriptor();
+        if (measureDescriptorFrom != null) {
+            this.setMeasureDescriptor(new MeasureDescriptorImpl(measureDescriptorFrom));
+        }
 
-        this.setMeasureDescriptor(new MeasureDescriptorImpl(from.getMeasureDescriptor()));
-        this.setDimensionDescriptor(new DimensionDescriptorImpl(from.getDimensionDescriptor()));
-        this.setAttributeDescriptor(new AttributeDescriptorImpl(from.getAttributeDescriptor()));
+        var attributeDescriptorFrom = from.getAttributeDescriptor();
+        if (attributeDescriptorFrom != null) {
+            this.setAttributeDescriptor(new AttributeDescriptorImpl(attributeDescriptorFrom));
+        }
+
+        var dimensionDescriptorFrom = from.getDimensionDescriptor();
+        if (dimensionDescriptorFrom != null) {
+            this.setDimensionDescriptor(new DimensionDescriptorImpl(dimensionDescriptorFrom));
+        }
+
         this.setGroupDimensionDescriptor(from.getGroupDimensionDescriptors().stream().map(GroupDimensionDescriptorImpl::new).collect(toList()));
         this.setMetadataStructure(from.getMetadataStructure());
     }
