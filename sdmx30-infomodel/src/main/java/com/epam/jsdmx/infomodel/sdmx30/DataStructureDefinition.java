@@ -64,6 +64,11 @@ public interface DataStructureDefinition extends Structure, ConstrainableArtefac
     List<DataAttribute> getDimensionGroupAttributes();
 
     /**
+     * @return Collection of dimension meta attributes
+     */
+    List<MetadataAttributeRef> getDimensionGroupMetaAttributeReferences();
+
+    /**
      * @return Collection of dataset attributes
      */
     List<DataAttribute> getDataSetAttributes();
