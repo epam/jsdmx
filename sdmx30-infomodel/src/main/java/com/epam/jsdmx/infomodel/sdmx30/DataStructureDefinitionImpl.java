@@ -179,6 +179,16 @@ public class DataStructureDefinitionImpl
     }
 
     @Override
+    public List<MetadataAttributeRef> getDimensionGroupMetaAttributeReferences() {
+        return getAttributeDescriptor()
+            .getMetadataAttributes().stream()
+            .filter(component -> component.getMetadataRelationship() instanceof DimensionRelationship
+                && !isSeriesRelationship((DimensionRelationship) component.getMetadataRelationship())
+            )
+            .collect(toList());
+    }
+
+    @Override
     public List<DataAttribute> getDataSetAttributes() {
         return getAttributeDescriptor()
             .getComponents().stream()
