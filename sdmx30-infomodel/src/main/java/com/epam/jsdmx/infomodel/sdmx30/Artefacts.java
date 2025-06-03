@@ -312,4 +312,5 @@ public interface Artefacts {
      */
     boolean hasDataConstraints();
 
+    int size();
 }

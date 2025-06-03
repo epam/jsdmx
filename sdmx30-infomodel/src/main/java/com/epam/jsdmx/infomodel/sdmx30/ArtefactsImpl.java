@@ -379,4 +379,37 @@ public class ArtefactsImpl implements Artefacts {
         }
         return result;
     }
+
+    public int size() {
+        return metadataStructureDefinitions.size()
+            + metadataflows.size()
+            + categorySchemes.size()
+            + categorisations.size()
+            + dataflows.size()
+            + codelists.size()
+            + conceptSchemes.size()
+            + dataStructures.size()
+            + hierarchies.size()
+            + structureMaps.size()
+            + representationMaps.size()
+            + dataConstraints.size()
+            + geographicCodelists.size()
+            + geoGridCodelists.size()
+            + valueLists.size()
+            + hierarchyAssociations.size()
+            + agencySchemes.size()
+            + dataProviderSchemes.size()
+            + dataConsumerSchemes.size()
+            + metadataProviderSchemes.size()
+            + organisationUnitSchemes.size()
+            + reportingTaxonomies.size()
+            + processes.size()
+            + provisionAgreements.size()
+            + metadataProvisionAgreements.size()
+            + metadataConstraints.size()
+            + conceptSchemeMaps.size()
+            + categorySchemeMaps.size()
+            + organisationSchemeMaps.size()
+            + reportingTaxonomyMaps.size();
+    }
 }
