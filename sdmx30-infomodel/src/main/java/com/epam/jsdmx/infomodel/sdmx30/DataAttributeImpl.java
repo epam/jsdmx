@@ -20,8 +20,8 @@ public class DataAttributeImpl
     extends AttributeComponentImpl
     implements DataAttribute {
 
-    private int minOccurs;
-    private int maxOccurs = Integer.MAX_VALUE;
+    private int minOccurs = 1;
+    private int maxOccurs = 1;
     private AttributeRelationship attributeRelationship;
     private MeasureRelationship measureRelationship;
     private List<ArtefactReference> conceptRoles = new ArrayList<>();
