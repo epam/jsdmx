@@ -121,6 +121,7 @@ public class IdentifiableArtefactReferenceImpl
 
     @Override
     public String toString() {
-        return super.toString();
+        String superString = super.toString();
+        return superString + "." + itemId;
     }
 }
