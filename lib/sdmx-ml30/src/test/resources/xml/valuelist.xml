@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message"
+        xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/common"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message ../../schemas/SDMXMessage.xsd">
+    <message:Header>
+        <message:ID>HED1</message:ID>
+        <message:Test>true</message:Test>
+        <message:Prepared>2023-04-17T10:11:16Z</message:Prepared>
+        <message:Sender id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Sender>
+        <message:Receiver id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Receiver>
+    </message:Header>
+    <message:Structures>
+        <structure:ValueLists>
+            <structure:ValueList urn="urn:sdmx:org.sdmx.infomodel.codelist.ValueList=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2"
+                    isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:ValueItem id="VAL-1">
+                    <common:Annotations>
+                        <common:Annotation id="Annot"></common:Annotation>
+                    </common:Annotations>
+                    <common:Name xml:lang="en">value</common:Name>
+                    <common:Name xml:lang="fr">val</common:Name>
+                    <common:Description xml:lang="en">it is value</common:Description>
+                    <common:Description xml:lang="fr">c'est val</common:Description>
+                </structure:ValueItem>
+                <structure:ValueItem id="VAL-2">
+                    <common:Annotations>
+                        <common:Annotation id="Annot"></common:Annotation>
+                    </common:Annotations>
+                    <common:Name xml:lang="en">smth</common:Name>
+                    <common:Description xml:lang="en">smth description</common:Description>
+                </structure:ValueItem>
+            </structure:ValueList>
+        </structure:ValueLists>
+    </message:Structures>
+</message:Structure>

@@ -1,3 +1,8 @@
 rootProject.name = 'jsdmx'
 
-include ':sdmx30-infomodel'
+include ':lib:sdmx30-infomodel'
+include ':lib:sdmx-ml30'
+include ':lib:sdmx-json20'
+include ':lib:sdmx30-serializer'
+include ':lib:sdmx-json10'
+include ':lib:sdmx-ml21'

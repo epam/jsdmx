@@ -1,0 +1,14 @@
+{
+  "measureList": {
+    "id": "MeasureDescriptor",
+    "primaryMeasure": {
+      "id": "MES1",
+      "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:MEASURE(1.5.2).DATE_VALUE",
+      "localRepresentation": {
+        "textFormat": {
+          "textType": "BasicTimePeriod"
+        }
+      }
+    }
+  }
+}

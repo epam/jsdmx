@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message"
+        xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/common"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message ../../schemas/SDMXMessage.xsd">
+    <message:Header>
+        <message:ID>HED1</message:ID>
+        <message:Test>true</message:Test>
+        <message:Prepared>2023-04-17T10:11:16Z</message:Prepared>
+        <message:Sender id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Sender>
+        <message:Receiver id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Receiver>
+    </message:Header>
+    <message:Structures>
+        <structure:StructureMaps>
+            <structure:StructureMap urn="urn:sdmx:org.sdmx.infomodel.structuremapping.StructureMap=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2"
+                    isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:Source>urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFSource(3.0)</structure:Source>
+                <structure:Target>urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFTarget(3.0)</structure:Target>
+                <structure:EpochMap id="EPOCH1" resolvePeriod="midPeriod" basePeriod="2022-07-17T10:11:16Z" epochPeriod="microsecond">
+                    <structure:Source>CompMapEpochS</structure:Source>
+                    <structure:Target>CompMapEpochT</structure:Target>
+                    <structure:FrequencyDimension>Frequency_dim</structure:FrequencyDimension>
+                    <structure:MappedFrequencies>FR3</structure:MappedFrequencies>
+                </structure:EpochMap>
+                <structure:DatePatternMap id="DP1" resolvePeriod="midPeriod" sourcePattern="SOURCE" locale="EN">
+                    <structure:Source>CompMapDPS</structure:Source>
+                    <structure:Target>CompMapDPT</structure:Target>
+                    <structure:FrequencyDimension>Frequency_dim</structure:FrequencyDimension>
+                    <structure:MappedFrequencies>FR1</structure:MappedFrequencies>
+                    <structure:MappedFrequencies>FR2</structure:MappedFrequencies>
+                </structure:DatePatternMap>
+                <structure:FrequencyFormatMapping id="FR3">
+                    <structure:FrequencyId>CODE_3</structure:FrequencyId>
+                    <structure:DatePattern>2022-11</structure:DatePattern>
+                </structure:FrequencyFormatMapping>
+                <structure:FrequencyFormatMapping id="FR1">
+                    <structure:FrequencyId>CODE_1</structure:FrequencyId>
+                    <structure:DatePattern>2022-11</structure:DatePattern>
+                </structure:FrequencyFormatMapping>
+                <structure:FrequencyFormatMapping id="FR2">
+                    <structure:FrequencyId>CODE_2</structure:FrequencyId>
+                    <structure:DatePattern>2022-11</structure:DatePattern>
+                </structure:FrequencyFormatMapping>
+                <structure:ComponentMap>
+                    <structure:Source>CompMapRepS</structure:Source>
+                    <structure:Target>CompMapRepT</structure:Target>
+                    <structure:RepresentationMap>urn:sdmx:org.sdmx.infomodel.structuremapping.RepresentationMap=IMF:ARTEFACT(1.2)</structure:RepresentationMap>
+                </structure:ComponentMap>
+                <structure:FixedValueMap>
+                    <structure:Target>STRUC_ID</structure:Target>
+                    <structure:Value>value</structure:Value>
+                </structure:FixedValueMap>
+            </structure:StructureMap>
+        </structure:StructureMaps>
+    </message:Structures>
+</message:Structure>

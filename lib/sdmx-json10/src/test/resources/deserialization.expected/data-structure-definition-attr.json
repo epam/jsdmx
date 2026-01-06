@@ -1,0 +1,94 @@
+{
+  "agencyID": "IMF",
+  "id": "ARTEFACT",
+  "version": "1.2",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "validTo": "2022-07-17T10:11:16.000000",
+  "validFrom": "2022-07-17T10:11:16.000000",
+  "annotations": [
+    {
+      "id": "1",
+      "title": null,
+      "type": "type1",
+      "value": null,
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "links": [
+    {
+      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ARTEFACT(1.2)",
+      "type": "datastructure",
+      "rel": "self"
+    }
+  ],
+  "metadata": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=QUANTHUB:ECOFIN_DSD(1.2)",
+  "dataStructureComponents": {
+    "attributeList": {
+      "annotations": [],
+      "id": "AttributeDescriptor",
+      "metadataAttributeUsages": [
+        {
+          "annotations": [],
+          "metadataAttributeReference": "REFERENCE-1",
+          "attributeRelationship": {
+            "observation": {}
+          }
+        },
+        {
+          "annotations": [],
+          "metadataAttributeReference": "REFERENCE-2",
+          "attributeRelationship": {
+            "dimensions": [
+              "dim1",
+              "dim2"
+            ]
+          }
+        },
+        {
+          "annotations": [],
+          "metadataAttributeReference": "REFERENCE-3",
+          "attributeRelationship": {
+            "none": {}
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER_DIAGNOSTICS_COLLECTION_SCHEME(1.5.1).DATE_VALUE",
+          "annotations": [],
+          "id": "DA1",
+          "isMandatory": false,
+          "conceptRoles": [
+            "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER(1.5.1).DATE_VALUE",
+            "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER_DIAGNOSTICS(1.5.2).DATE_VALUE"
+          ],
+          "attributeRelationship": {
+            "group": "GroupKey"
+          },
+          "measureRelationship": [
+            "MO"
+          ],
+          "localRepresentation": {
+            "format": {
+              "dataType": "AlphaNumeric",
+              "isMultiLingual": false
+            }
+          }
+        }
+      ]
+    },
+    "dimensionList": {},
+    "measureList": {}
+  }
+}

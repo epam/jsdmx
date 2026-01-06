@@ -1,0 +1,92 @@
+{
+  "annotations": [
+    {
+      "id": "origin",
+      "value": "WORKSPACE"
+    },
+    {
+      "id": "parentUrn",
+      "text": "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=OSB:A_CS_DATA(1.0.0-draft)",
+      "texts": {
+        "en": "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=OSB:A_CS_DATA(1.0.0-draft)"
+      }
+    },
+    {
+      "id": "lastUpdatedAt",
+      "value": "2023-11-20T21:42:24.123992Z"
+    }
+  ],
+  "id": "A_CS_DATA",
+  "name": "A CS Data",
+  "names": {
+    "en": "A CS Data"
+  },
+  "descriptions": {},
+  "version": "1.0.0",
+  "agencyID": "OSB",
+  "concepts": [
+    {
+      "annotations": [],
+      "id": "INDICATOR",
+      "name": "Indicator",
+      "names": {
+        "en": "Indicator"
+      },
+      "coreRepresentation": {
+        "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OSB:A_CL_INDICATOR(1.0+.0)"
+      }
+    },
+    {
+      "annotations": [],
+      "id": "FREQ",
+      "name": "Frequency",
+      "names": {
+        "en": "Frequency"
+      },
+      "coreRepresentation": {
+        "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=OSB:A_CL_FREQ_EXTENDED(1.0+.0)"
+      }
+    },
+    {
+      "annotations": [],
+      "id": "OBS_VALUE",
+      "name": "Observation Value",
+      "names": {
+        "en": "Observation Value"
+      },
+      "coreRepresentation": {
+        "format": {
+          "dataType": "Decimal"
+        }
+      }
+    },
+    {
+      "annotations": [],
+      "id": "COMMENT",
+      "name": "Comment",
+      "names": {
+        "en": "Comment"
+      },
+      "coreRepresentation": {
+        "format": {
+          "dataType": "String",
+          "isMultiLingual": true
+        }
+      }
+    },
+    {
+      "annotations": [],
+      "id": "TIME_PERIOD",
+      "name": "Time Period",
+      "names": {
+        "en": "Time Period"
+      },
+      "coreRepresentation": {
+        "format": {
+          "dataType": "ObservationalTimePeriod"
+        }
+      }
+    }
+  ],
+  "isPartial": false
+}

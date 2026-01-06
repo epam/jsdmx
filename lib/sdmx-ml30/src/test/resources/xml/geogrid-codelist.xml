@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message"
+        xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/common"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message ../../schemas/SDMXMessage.xsd">
+    <message:Header>
+        <message:ID>HED1</message:ID>
+        <message:Test>true</message:Test>
+        <message:Prepared>2023-04-17T10:11:16Z</message:Prepared>
+        <message:Sender id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Sender>
+        <message:Receiver id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Receiver>
+    </message:Header>
+    <message:Structures>
+        <structure:GeoGridCodelists>
+            <structure:GeoGridCodelist urn="urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2"
+                    isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" isPartial="true" geoType="GeoGridCodelist">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:GeoGridCode id="CODE1">
+                    <common:Name xml:lang="en">code 1</common:Name>
+                    <common:Description xml:lang="en">code 1 desc</common:Description>
+                    <structure:Parent>CODE2</structure:Parent>
+                    <structure:GeoCell>Value1</structure:GeoCell>
+                </structure:GeoGridCode>
+                <structure:GeoGridCode id="CODE2">
+                    <common:Name xml:lang="en">code 2</common:Name>
+                    <common:Description xml:lang="en">code 2 desc</common:Description>
+                    <structure:GeoCell>Value2</structure:GeoCell>
+                </structure:GeoGridCode>
+                <structure:CodelistExtension prefix="PREF2">
+                    <structure:Codelist>urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_AGE(2.1.1)</structure:Codelist>
+                    <structure:InclusiveCodeSelection>
+                        <structure:MemberValue cascadeValues="true">mem1</structure:MemberValue>
+                    </structure:InclusiveCodeSelection>
+                </structure:CodelistExtension>
+                <structure:CodelistExtension prefix="PREF2">
+                    <structure:Codelist>urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_AGE(2.1.1)</structure:Codelist>
+                    <structure:ExclusiveCodeSelection>
+                        <structure:MemberValue cascadeValues="false">mem2</structure:MemberValue>
+                    </structure:ExclusiveCodeSelection>
+                </structure:CodelistExtension>
+                <structure:GridDefinition>DEFINITION</structure:GridDefinition>
+            </structure:GeoGridCodelist>
+        </structure:GeoGridCodelists>
+    </message:Structures>
+</message:Structure>

@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message"
+        xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/common"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message ../../schemas/SDMXMessage.xsd">
+    <message:Header>
+        <message:ID>HED1</message:ID>
+        <message:Test>true</message:Test>
+        <message:Prepared>2023-04-17T10:11:16Z</message:Prepared>
+        <message:Sender id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Sender>
+        <message:Receiver id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Receiver>
+    </message:Header>
+    <message:Structures>
+        <structure:DataConstraints>
+            <structure:DataConstraint urn="urn:sdmx:org.sdmx.infomodel.registry.DataConstraint=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2"
+                    isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" role="Allowed">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:ConstraintAttachment>
+                    <structure:DataProvider>urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).DP</structure:DataProvider>
+                </structure:ConstraintAttachment>
+                <structure:ReleaseCalendar>
+                    <structure:Periodicity>Periodicity</structure:Periodicity>
+                    <structure:Offset>Offset</structure:Offset>
+                    <structure:Tolerance>Tolerance</structure:Tolerance>
+                </structure:ReleaseCalendar>
+                <structure:DataKeySet isIncluded="true">
+                    <structure:Key include="true" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                        <structure:KeyValue id="C1" include="true" removePrefix="true">
+                            <structure:Value>Value</structure:Value>
+                        </structure:KeyValue>
+                        <structure:Component include="false" id="MS" removePrefix="true">
+                            <structure:Value>MEM</structure:Value>
+                            <structure:Value xml:lang="en">local</structure:Value>
+                        </structure:Component>
+                        <structure:Component include="false" id="MS2" removePrefix="true">
+                            <structure:TimeRange validTo="2022-09-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                                <structure:AfterPeriod isInclusive="false">2028</structure:AfterPeriod>
+                            </structure:TimeRange>
+                        </structure:Component>
+                    </structure:Key>
+                </structure:DataKeySet>
+                <structure:CubeRegion include="true">
+                    <common:Annotations>
+                        <common:Annotation id="Annot"></common:Annotation>
+                    </common:Annotations>
+                    <structure:KeyValue id="CubeReg" validTo="2022-04-12T12:00:00Z" validFrom="2020-04-12T12:00:00Z" include="true" removePrefix="true">
+                        <structure:Value validTo="2022-09-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" cascadeValues="excluderoot">MEM</structure:Value>
+                    </structure:KeyValue>
+                    <structure:Component include="false" id="MS" removePrefix="true">
+                        <structure:Value>MEM</structure:Value>
+                        <structure:Value xml:lang="en">local</structure:Value>
+                    </structure:Component>
+                    <structure:Component include="false" id="MS2" removePrefix="true">
+                        <structure:TimeRange validTo="2022-09-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                            <structure:StartPeriod isInclusive="false">2022</structure:StartPeriod>
+                            <structure:EndPeriod isInclusive="false">2022</structure:EndPeriod>
+                        </structure:TimeRange>
+                    </structure:Component>
+                </structure:CubeRegion>
+            </structure:DataConstraint>
+        </structure:DataConstraints>
+    </message:Structures>
+</message:Structure>

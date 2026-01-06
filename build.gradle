@@ -9,8 +9,8 @@ subprojects {
         showViolations = true
     }
 
-    sourceCompatibility = 11
-    targetCompatibility = 11
+    sourceCompatibility = 17
+    targetCompatibility = 17
 
     ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 

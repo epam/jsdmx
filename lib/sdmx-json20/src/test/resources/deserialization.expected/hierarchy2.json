@@ -1,0 +1,58 @@
+{
+  "annotations": [
+    {
+      "id": "origin",
+      "title": null,
+      "type": null,
+      "value": "WORKSPACE",
+      "text": null
+    },
+    {
+      "id": "parentUrn",
+      "title": null,
+      "type": null,
+      "value": null,
+      "text": "urn:sdmx:org.sdmx.infomodel.codelist.Hierarchy=OSB:A_HIERARCHY(1.0.0-draft)",
+      "texts": {
+        "en": "urn:sdmx:org.sdmx.infomodel.codelist.Hierarchy=OSB:A_HIERARCHY(1.0.0-draft)"
+      }
+    },
+    {
+      "id": "lastUpdatedAt",
+      "title": null,
+      "type": null,
+      "value": "2023-11-27T17:25:04.733538Z",
+      "text": null
+    }
+  ],
+  "id": "A_HIERARCHY",
+  "name": "A Hierarchy",
+  "names": {
+    "en": "A Hierarchy"
+  },
+  "description": null,
+  "descriptions": {},
+  "version": "1.0.0",
+  "agencyID": "OSB",
+  "hasFormalLevels": false,
+  "hierarchicalCodes": [
+    {
+      "annotations": [],
+      "id": "___KK",
+      "validFrom": null,
+      "validTo": null,
+      "code": "urn:sdmx:org.sdmx.infomodel.codelist.Code=OSB:A_CL_UNIT(1.0+.0).KK",
+      "level": "0",
+      "hierarchicalCodes": [
+        {
+          "annotations": [],
+          "id": "___K",
+          "validFrom": null,
+          "validTo": null,
+          "code": "urn:sdmx:org.sdmx.infomodel.codelist.Code=OSB:A_CL_UNIT(1.0+.0).K",
+          "level": "0"
+        }
+      ]
+    }
+  ]
+}

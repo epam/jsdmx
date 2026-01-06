@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<mes:Structure xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+               xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+               xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message ../../schemas/SDMXMessage.xsd">
+    <mes:Header>
+        <mes:ID>HED1</mes:ID>
+        <mes:Test>true</mes:Test>
+        <mes:Prepared>2023-04-17T10:11:16Z</mes:Prepared>
+        <mes:Sender id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Sender>
+        <mes:Receiver id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Receiver>
+    </mes:Header>
+    <mes:Structures>
+        <str:DataStructures>
+            <str:DataStructure urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ARTEFACT(1.2)"
+                               agencyID="IMF" id="ARTEFACT" version="1.2" isFinal="true" isExternalReference="false"
+                               validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:DataStructureComponents>
+                    <str:DimensionList id="DimensionDescriptor">
+                        <str:Dimension id="DIM1" position="1">
+                            <str:ConceptIdentity>
+                                <Ref maintainableParentID="DIMENSION" maintainableParentVersion="1.6.1" agencyID="IMF"
+                                     id="DATE_VALUE" package="conceptscheme" class="Concept"/>
+                            </str:ConceptIdentity>
+                            <str:LocalRepresentation>
+                                <str:Enumeration>
+                                    <Ref agencyID="IMF" id="CODELIST" version="1.0" package="codelist"
+                                         class="Codelist"/>
+                                </str:Enumeration>
+                            </str:LocalRepresentation>
+                            <str:ConceptRole>
+                                <Ref maintainableParentID="ADVANCED_RELEASE_CALANDER" maintainableParentVersion="1.5.1"
+                                     agencyID="IMF" id="DATE_VALUE" package="conceptscheme" class="Concept"/>
+                            </str:ConceptRole>
+                        </str:Dimension>
+                        <str:TimeDimension id="TIME_PERIOD">
+                            <str:ConceptIdentity>
+                                <Ref maintainableParentID="TIME_DIMENSION" maintainableParentVersion="1.6.1"
+                                     agencyID="IMF" id="DATE_VALUE" package="conceptscheme" class="Concept"/>
+                            </str:ConceptIdentity>
+                            <str:LocalRepresentation>
+                                <str:TextFormat textType="BasicTimePeriod"></str:TextFormat>
+                            </str:LocalRepresentation>
+                        </str:TimeDimension>
+                    </str:DimensionList>
+                    <str:Group id="GroupDimensionDescriptor1">
+                        <com:Annotations>
+                            <com:Annotation id="id1"></com:Annotation>
+                            <com:Annotation id="id2"></com:Annotation>
+                        </com:Annotations>
+                        <str:GroupDimension>
+                            <str:DimensionReference>
+                                <Ref id="DIM1"/>
+                            </str:DimensionReference>
+                        </str:GroupDimension>
+                        <str:GroupDimension>
+                            <str:DimensionReference>
+                                <Ref id="TIME_PERIOD"/>
+                            </str:DimensionReference>
+                        </str:GroupDimension>
+                    </str:Group>
+                    <str:Group id="GroupDimensionDescriptor2">
+                        <str:GroupDimension>
+                            <str:DimensionReference>
+                                <Ref id="DIM1"/>
+                            </str:DimensionReference>
+                        </str:GroupDimension>
+                    </str:Group>
+                    <str:AttributeList id="AttributeDescriptor">
+                        <str:Attribute id="DA1" assignmentStatus="Conditional">
+                            <str:ConceptIdentity>
+                                <Ref maintainableParentID="ADVANCED_RELEASE_CALANDER_DIAGNOSTICS_COLLECTION_SCHEME"
+                                     maintainableParentVersion="1.5.1" agencyID="IMF" id="DATE_VALUE"
+                                     package="conceptscheme" class="Concept"/>
+                            </str:ConceptIdentity>
+                            <str:LocalRepresentation>
+                                <str:TextFormat textType="AlphaNumeric"></str:TextFormat>
+                            </str:LocalRepresentation>
+                            <str:ConceptRole>
+                                <Ref maintainableParentID="ADVANCED_RELEASE_CALANDER" maintainableParentVersion="1.5.1"
+                                     agencyID="IMF" id="DATE_VALUE" package="conceptscheme" class="Concept"/>
+                            </str:ConceptRole>
+                            <str:ConceptRole>
+                                <Ref maintainableParentID="ADVANCED_RELEASE_CALANDER_DIAGNOSTICS"
+                                     maintainableParentVersion="1.5.2" agencyID="IMF" id="DATE_VALUE"
+                                     package="conceptscheme" class="Concept"/>
+                            </str:ConceptRole>
+                            <str:AttributeRelationship>
+                                <str:Dimension>
+                                    <Ref id="DIM1"/>
+                                </str:Dimension>
+                                <str:AttachmentGroup>
+                                    <Ref id="GroupDimensionDescriptor2"/>
+                                </str:AttachmentGroup>
+                            </str:AttributeRelationship>
+                        </str:Attribute>
+                    </str:AttributeList>
+                    <str:MeasureList id="MeasureDescriptor">
+                        <str:PrimaryMeasure id="OBS_VALUE">
+                            <str:ConceptIdentity>
+                                <Ref maintainableParentID="MEASURE" maintainableParentVersion="1.5.2" agencyID="IMF"
+                                     id="DATE_VALUE" package="conceptscheme" class="Concept"/>
+                            </str:ConceptIdentity>
+                            <str:LocalRepresentation>
+                                <str:TextFormat textType="BasicTimePeriod"></str:TextFormat>
+                            </str:LocalRepresentation>
+                        </str:PrimaryMeasure>
+                    </str:MeasureList>
+                </str:DataStructureComponents>
+            </str:DataStructure>
+        </str:DataStructures>
+    </mes:Structures>
+</mes:Structure>

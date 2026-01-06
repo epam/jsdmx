@@ -1,0 +1,57 @@
+package com.epam.jsdmx.xml21.structure.writer;
+
+
+import static com.epam.jsdmx.xml21.structure.TestUtils.CONCEPT_SCHEME_XML;
+import static org.custommonkey.xmlunit.XMLAssert.assertXMLEqual;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
+
+import com.epam.jsdmx.infomodel.sdmx30.Artefacts;
+import com.epam.jsdmx.infomodel.sdmx30.ArtefactsImpl;
+import com.epam.jsdmx.infomodel.sdmx30.ConceptSchemeImpl;
+import com.epam.jsdmx.xml21.structure.MaintainableArtifactsTestUtils;
+
+import org.apache.commons.io.IOUtils;
+import org.custommonkey.xmlunit.XMLUnit;
+import org.junit.jupiter.api.Test;
+import org.sdmxsource.sdmx.api.model.beans.SdmxBeans;
+import org.xml.sax.SAXException;
+
+class ConceptSchemeWriterTest extends BaseXmlWriterTest {
+
+    @Test
+    void writeConceptScheme() throws IOException, SAXException {
+        //given
+        XMLUnit.setIgnoreWhitespace(true);
+
+        ConceptSchemeWriter conceptSchemeWriter = createConceptSchemeWriter();
+
+        ByteArrayOutputStream actual = new ByteArrayOutputStream();
+        Xml21StructureWriter xmlStructureWriter = new Xml21StructureWriter(
+            actual,
+            List.of(conceptSchemeWriter),
+            headerWriter,
+            false
+        );
+
+        //when
+        Artefacts artefacts = new ArtefactsImpl();
+        ConceptSchemeImpl conceptScheme = MaintainableArtifactsTestUtils.buildConceptScheme();
+        artefacts.getConceptSchemes().add(conceptScheme);
+        xmlStructureWriter.write(artefacts);
+
+        InputStream resourceAsStream = this.getClass().getResourceAsStream(CONCEPT_SCHEME_XML);
+        assert resourceAsStream != null;
+
+        //then
+        String expected = IOUtils.toString(resourceAsStream, StandardCharsets.UTF_8);
+        final String actualString = actual.toString();
+        assertXMLEqual(expected, actualString);
+
+        sdmxSourceCompatibilityTester.test(actualString, SdmxBeans::getConceptSchemes);
+    }
+}

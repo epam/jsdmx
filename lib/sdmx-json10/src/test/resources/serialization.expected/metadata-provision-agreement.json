@@ -1,0 +1,37 @@
+{
+  "links": [
+    {
+      "urn": "urn:sdmx:org.sdmx.infomodel.registry.MetadataProvisionAgreement=IMF:ARTEFACT(1.2)",
+      "type": "metadataprovisionagreement",
+      "rel": "self"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "1",
+      "title": null,
+      "type": "type1",
+      "value": null,
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "metadataProvider": "urn:sdmx:org.sdmx.infomodel.base.MetadataProvider=IMF:METADATA_PROVIDERS(1.0).PR",
+  "metadataflow": "urn:sdmx:org.sdmx.infomodel.metadatastructure.Metadataflow=IMF:ARTEFACT(1.2)"
+}

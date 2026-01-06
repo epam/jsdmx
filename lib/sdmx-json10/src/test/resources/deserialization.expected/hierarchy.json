@@ -1,0 +1,88 @@
+{
+  "links": [
+    {
+      "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Hierarchy=IMF:ARTEFACT(1.2)",
+      "type": "hierarchy",
+      "rel": "self"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "1",
+      "title": null,
+      "type": "type1",
+      "value": null,
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "hasFormalLevels": true,
+  "hierarchicalCodes": [
+    {
+      "annotations": [
+        {
+          "id": "id",
+          "title": null,
+          "type": null,
+          "value": null,
+          "text": null
+        }
+      ],
+      "id": "id",
+      "validFrom": "2022-07-17T10:11:16.345Z",
+      "validTo": "2022-07-17T10:11:16.345Z",
+      "code": "urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX:CL_AGE(2.1.1).CL1",
+      "level": "Lev1",
+      "hierarchicalCodes": [
+        {
+          "annotations": [],
+          "id": "1",
+          "validFrom": "2022-07-17T10:11:16.345Z",
+          "validTo": "2022-07-17T10:11:16.345Z",
+          "code": "urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX:CL_AGE(2.1.1).CL1",
+          "level": null
+        }
+      ]
+    }
+  ],
+  "level": {
+    "annotations": [],
+    "id": "levId",
+    "name": "hierarchy name",
+    "names": {
+      "en": "hierarchy name"
+    },
+    "description": "hierarchy desc",
+    "descriptions": {
+      "en": "hierarchy desc"
+    },
+    "codingFormat": {
+      "interval": 1
+    },
+    "level": {
+      "annotations": [],
+      "id": "levUn",
+      "name": "underLevel",
+      "names": {
+        "en": "underLevel"
+      },
+      "codingFormat": {}
+    }
+  }
+}
