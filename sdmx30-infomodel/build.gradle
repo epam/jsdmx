@@ -3,6 +3,4 @@ plugins {
 }
 
 dependencies {
-    implementation("org.apache.commons:commons-collections4:${org_apache_commons_commons_collections4_version}")
-    implementation("org.apache.commons:commons-lang3:${org_apache_commons_commons_lang3_version}")
 }
