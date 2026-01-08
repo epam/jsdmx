@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mes:Structure xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+               xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+               xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+               xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message ../../schemas/SDMXMessage.xsd">
+    <mes:Header>
+        <mes:ID>HED1</mes:ID>
+        <mes:Test>true</mes:Test>
+        <mes:Prepared>2023-04-17T10:11:16Z</mes:Prepared>
+        <mes:Sender id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Sender>
+        <mes:Receiver id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Receiver>
+    </mes:Header>
+    <mes:Structures>
+        <str:Concepts>
+            <str:ConceptScheme urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=IMF:ARTEFACT(1.2)"
+                               agencyID="IMF" id="ARTEFACT" version="1.2" isFinal="true"
+                               isExternalReference="false" validTo="2022-07-17T10:11:16Z"
+                               validFrom="2022-07-17T10:11:16Z" isPartial="true">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:Concept id="COUNTRY">
+                    <com:Name xml:lang="en">Country</com:Name>
+                    <str:CoreRepresentation>
+                        <str:TextFormat textType="Alpha"/>
+                    </str:CoreRepresentation>
+                    <str:ISOConceptReference>
+                        <str:ConceptAgency>QHB</str:ConceptAgency>
+                        <str:ConceptSchemeID>Schema</str:ConceptSchemeID>
+                        <str:ConceptID>Conn</str:ConceptID>
+                    </str:ISOConceptReference>
+                </str:Concept>
+            </str:ConceptScheme>
+        </str:Concepts>
+    </mes:Structures>
+</mes:Structure>

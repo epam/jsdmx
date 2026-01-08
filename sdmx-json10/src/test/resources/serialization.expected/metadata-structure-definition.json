@@ -1,0 +1,68 @@
+{
+  "metadataStructureComponents": {
+    "metadataAttributeList": {
+      "annotations": [
+        {
+          "id": "Annot-1"
+        }
+      ],
+      "metadataAttributes": [
+        {
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:DIMENSION(1.6.1).DIM",
+          "minOccurs": 10,
+          "localRepresentation": {
+            "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST(1.0)"
+          },
+          "maxOccurs": 20,
+          "metadataAttributes": [
+            {
+              "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:DIMENSION(1.6.1).DIM",
+              "minOccurs": 10,
+              "localRepresentation": {
+                "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST(1.0)"
+              },
+              "maxOccurs": 20,
+              "id": "meta-2",
+              "isPresentational": true
+            }
+          ],
+          "id": "meta-1",
+          "isPresentational": true
+        }
+      ],
+      "id": "MetadataAttributeDescriptor"
+    }
+  },
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "name": "Maintanable artefact",
+  "annotations": [
+    {
+      "texts": {
+        "en": "text"
+      },
+      "id": "1",
+      "text": "text",
+      "type": "type1"
+    }
+  ],
+  "description": "Some artefact",
+  "links": [
+    {
+      "urn": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=IMF:ARTEFACT(1.2)",
+      "rel": "self",
+      "type": "metadatastructure"
+    }
+  ],
+  "agencyID": "IMF",
+  "id": "ARTEFACT",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "isFinal": true
+}

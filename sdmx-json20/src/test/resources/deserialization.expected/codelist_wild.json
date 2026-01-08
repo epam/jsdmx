@@ -1,0 +1,82 @@
+{
+  "agencyID": "IMF",
+  "id": "ARTEFACT",
+  "version": "1.2",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "validTo": "2022-07-17T10:11:16.000000",
+  "validFrom": "2022-07-17T10:11:16.000000",
+  "annotations": [
+    {
+      "id": "1",
+      "title": null,
+      "type": "type1",
+      "value": null,
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "isPartial": true,
+  "codes": [
+    {
+      "annotations": [],
+      "id": "CODE1",
+      "name": "code 1",
+      "names": {
+        "en": "code 1"
+      },
+      "description": "code 1 desc",
+      "descriptions": {
+        "en": "code 1 desc"
+      },
+      "parent": "CODE2"
+    },
+    {
+      "annotations": [],
+      "id": "CODE2",
+      "name": "code 2",
+      "names": {
+        "en": "code 2"
+      },
+      "description": "code 2 desc",
+      "descriptions": {
+        "en": "code 2 desc"
+      }
+    }
+  ],
+  "codelistExtensions": [
+    {
+      "prefix": "PREF2",
+      "codelist": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_AGE(2.1.1)",
+      "inclusiveCodeSelection": {
+        "memberValues": [
+          {
+            "value": "mem1",
+            "cascadeSelection": "true"
+          }
+        ]
+      }
+    },
+    {
+      "prefix": "PREF2",
+      "codelist": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_AGE(2.1.1)",
+      "exclusiveCodeSelection": {
+        "memberValues": [
+          {
+            "value": "mem2",
+            "cascadeSelection": "false"
+          }
+        ]
+      }
+    }
+  ]
+}

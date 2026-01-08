@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<mes:Structure xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+        xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message ../../schemas/SDMXMessage.xsd">
+    <mes:Header>
+        <mes:ID>HED1</mes:ID>
+        <mes:Test>true</mes:Test>
+        <mes:Prepared>2023-04-17T10:11:16Z</mes:Prepared>
+        <mes:Sender id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Sender>
+        <mes:Receiver id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Receiver>
+    </mes:Header>
+    <mes:Structures>
+        <str:StructureMaps>
+            <str:StructureMap urn="urn:sdmx:org.sdmx.infomodel.structuremapping.StructureMap=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2"
+                    isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Link url="urn:sdmx:org.sdmx.infomodel.structuremapping.StructureMap=IMF:ARTEFACT(1.2)" type="structuremap" rel="self"></com:Link>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:Source>urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFSource(3.0)</str:Source>
+                <str:Target>urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFTarget(3.0)</str:Target>
+                <str:EpochMap id="EPOCH1" resolvePeriod="midPeriod" basePeriod="2022-07-17T10:11:16Z" epochPeriod="microsecond">
+                    <str:Source>CompMapEpochS</str:Source>
+                    <str:Target>CompMapEpochT</str:Target>
+                    <str:FrequencyDimension>Frequency_dim</str:FrequencyDimension>
+                    <str:MappedFrequencies>FR3</str:MappedFrequencies>
+                </str:EpochMap>
+                <str:DatePatternMap id="DP1" resolvePeriod="midPeriod" sourcePattern="SOURCE" locale="EN">
+                    <str:Source>CompMapDPS</str:Source>
+                    <str:Target>CompMapDPT</str:Target>
+                    <str:FrequencyDimension>Frequency_dim</str:FrequencyDimension>
+                    <str:MappedFrequencies>FR1</str:MappedFrequencies>
+                    <str:MappedFrequencies>FR2</str:MappedFrequencies>
+                </str:DatePatternMap>
+                <str:FrequencyFormatMapping id="FR3">
+                    <str:FrequencyId>CODE_3</str:FrequencyId>
+                    <str:DatePattern>2022-11</str:DatePattern>
+                </str:FrequencyFormatMapping>
+                <str:FrequencyFormatMapping id="FR1">
+                    <str:FrequencyId>CODE_1</str:FrequencyId>
+                    <str:DatePattern>2022-11</str:DatePattern>
+                </str:FrequencyFormatMapping>
+                <str:FrequencyFormatMapping id="FR2">
+                    <str:FrequencyId>CODE_2</str:FrequencyId>
+                    <str:DatePattern>2022-11</str:DatePattern>
+                </str:FrequencyFormatMapping>
+                <str:ComponentMap>
+                    <str:Source>CompMapRepS</str:Source>
+                    <str:Target>CompMapRepT</str:Target>
+                    <str:RepresentationMap>urn:sdmx:org.sdmx.infomodel.structuremapping.RepresentationMap=IMF:ARTEFACT(1.2)</str:RepresentationMap>
+                </str:ComponentMap>
+                <str:FixedValueMap>
+                    <str:Target>STRUC_ID</str:Target>
+                    <str:Value>value</str:Value>
+                </str:FixedValueMap>
+            </str:StructureMap>
+        </str:StructureMaps>
+    </mes:Structures>
+</mes:Structure>

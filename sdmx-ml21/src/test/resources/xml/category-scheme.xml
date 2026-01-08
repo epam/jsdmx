@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<mes:Structure xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+               xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+               xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message ../../schemas/SDMXMessage.xsd">
+    <mes:Header>
+        <mes:ID>HED1</mes:ID>
+        <mes:Test>true</mes:Test>
+        <mes:Prepared>2023-04-17T10:11:16Z</mes:Prepared>
+        <mes:Sender id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Sender>
+        <mes:Receiver id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Receiver>
+    </mes:Header>
+    <mes:Structures>
+        <str:CategorySchemes>
+            <str:CategoryScheme urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.CategoryScheme=IMF:ARTEFACT(1.2)"
+                                agencyID="IMF" id="ARTEFACT" version="1.2" isFinal="true" isExternalReference="false"
+                                validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" isPartial="true">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:Category id="Category-1">
+                    <com:Annotations>
+                        <com:Annotation id="Annot"></com:Annotation>
+                    </com:Annotations>
+                    <com:Name xml:lang="en">Category1</com:Name>
+                    <com:Description xml:lang="en">description category 1</com:Description>
+                    <str:Category id="Category-2">
+                        <com:Annotations>
+                            <com:Annotation id="Annot"></com:Annotation>
+                            <com:Annotation id="Annot2"></com:Annotation>
+                        </com:Annotations>
+                        <com:Name xml:lang="en">Category2</com:Name>
+                        <com:Description xml:lang="en">description category2</com:Description>
+                    </str:Category>
+                    <str:Category id="Category-3">
+                        <com:Name xml:lang="en">Category3</com:Name>
+                        <com:Description xml:lang="en">description category3</com:Description>
+                    </str:Category>
+                </str:Category>
+                <str:Category id="Category-4">
+                    <com:Name xml:lang="en">Category4</com:Name>
+                </str:Category>
+            </str:CategoryScheme>
+        </str:CategorySchemes>
+    </mes:Structures>
+</mes:Structure>

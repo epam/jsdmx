@@ -1,0 +1,24 @@
+{
+  "measureList": {
+    "annotations": [],
+    "id": "MeasureDescriptor",
+    "measures": [
+      {
+        "annotations": [],
+        "id": "MES1",
+        "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:MEASURE(1.5.2).DATE_VALUE",
+        "localRepresentation": {
+          "format": {
+            "dataType": "BasicTimePeriod",
+            "isMultiLingual": false
+          }
+        },
+        "isMandatory": false,
+        "conceptRoles": [
+          "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER(1.5.1).DATE_VALUE",
+          "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER_DIAGNOSTICS(1.5.2).DATE_VALUE"
+        ]
+      }
+    ]
+  }
+}

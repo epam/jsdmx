@@ -1,0 +1,58 @@
+{
+  "annotations": [
+    {
+      "id": "origin",
+      "value": "WORKSPACE"
+    },
+    {
+      "id": "parentUrn",
+      "text": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=OSB:A_METADATA_STRUCTURE_DEFINITION(1.0.0-draft)",
+      "texts": {
+        "en": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=OSB:A_METADATA_STRUCTURE_DEFINITION(1.0.0-draft)"
+      }
+    },
+    {
+      "id": "lastUpdatedAt",
+      "value": "2023-11-22T09:06:37.267016Z"
+    }
+  ],
+  "id": "A_METADATA_STRUCTURE_DEFINITION",
+  "name": "A Metadata Structure Definition",
+  "names": {
+    "en": "A Metadata Structure Definition"
+  },
+  "descriptions": {},
+  "version": "1.0.0",
+  "agencyID": "OSB",
+  "metadataStructureComponents": {
+    "metadataAttributeList": {
+      "annotations": [],
+      "metadataAttributes": [
+        {
+          "annotations": [],
+          "id": "META_UNIT",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OSB:A_CS_META(1.0+.0).META_UNIT",
+          "maxOccurs": 1,
+          "minOccurs": 1,
+          "isPresentational": false
+        },
+        {
+          "annotations": [],
+          "id": "META_COMMENT",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OSB:A_CS_META(1.0+.0).META_COMMENT",
+          "maxOccurs": 1,
+          "minOccurs": 0,
+          "isPresentational": false
+        },
+        {
+          "annotations": [],
+          "id": "META_AUTHORS",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=OSB:A_CS_META(1.0+.0).META_AUTHORS",
+          "maxOccurs": 10,
+          "minOccurs": 0,
+          "isPresentational": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "links": [
+    {
+      "urn": "urn:sdmx:org.sdmx.infomodel.base.OrganisationUnitScheme=IMF:ARTEFACT(1.0)",
+      "type": "organisationunitscheme",
+      "rel": "self"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "1",
+      "type": "type1",
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.0",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "isPartial": true,
+  "isFinal": true,
+  "organisationUnits": [
+    {
+      "annotations": [
+        {
+          "id": "Annot"
+        }
+      ],
+      "id": "OrgUnit",
+      "name": "OrganisationUnit",
+      "names": {
+        "en": "OrganisationUnit"
+      },
+      "description": "OrganisationUnit description",
+      "descriptions": {
+        "en": "OrganisationUnit description"
+      },
+      "contacts": [
+        {
+          "name": "AG_1",
+          "department": "IT",
+          "role": {
+            "en": "writing",
+            "fr": "ecrire"
+          },
+          "telephones": [
+            "9458673082"
+          ],
+          "faxes": [
+            "somedatafax"
+          ],
+          "x400s": [
+            "X400"
+          ],
+          "emails": [
+            "test@email.com"
+          ]
+        },
+        {
+          "name": "AG_2",
+          "department": "IT",
+          "role": {
+            "en": "writing",
+            "fr": "ecrire"
+          },
+          "telephones": [
+            "9458673082"
+          ],
+          "faxes": [
+            "somedatafax2"
+          ],
+          "x400s": [
+            "X400"
+          ],
+          "emails": [
+            "test@email.com"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "OrgUnit2",
+      "parent": "OrgUnit",
+      "name": "OrganisationUnit",
+      "names": {
+        "en": "OrganisationUnit"
+      }
+    }
+  ]
+}

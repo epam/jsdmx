@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<mes:Structure xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+               xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+               xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message ../../schemas/SDMXMessage.xsd">
+    <mes:Header>
+        <mes:ID>HED1</mes:ID>
+        <mes:Test>true</mes:Test>
+        <mes:Prepared>2023-04-17T10:11:16Z</mes:Prepared>
+        <mes:Sender id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Sender>
+        <mes:Receiver id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Receiver>
+    </mes:Header>
+    <mes:Structures>
+        <str:OrganisationSchemes>
+            <str:DataConsumerScheme urn="urn:sdmx:org.sdmx.infomodel.base.DataConsumerScheme=IMF:DATA_CONSUMERS(1.0)"
+                                    agencyID="SDMX" id="DATA_CONSUMERS" isExternalReference="false"
+                                    validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:DataConsumer id="DC">
+                    <com:Name xml:lang="en">Data Consumer</com:Name>
+                    <com:Description xml:lang="en">Data Consumer description</com:Description>
+                    <str:Contact>
+                        <com:Name xml:lang="en">AG_1</com:Name>
+                        <str:Department xml:lang="en">IT</str:Department>
+                        <str:Role xml:lang="en">writing</str:Role>
+                        <str:Role xml:lang="fr">ecrire</str:Role>
+                        <str:Telephone>9458673082</str:Telephone>
+                        <str:Fax>somedatafax</str:Fax>
+                        <str:X400>X400</str:X400>
+                        <str:Email>test@email.com</str:Email>
+                    </str:Contact>
+                    <str:Contact>
+                        <com:Name xml:lang="en">AG_2</com:Name>
+                        <str:Department xml:lang="en">IT</str:Department>
+                        <str:Role xml:lang="en">writing</str:Role>
+                        <str:Role xml:lang="fr">ecrire</str:Role>
+                        <str:Telephone>9458673082</str:Telephone>
+                        <str:Fax>somedatafax2</str:Fax>
+                        <str:X400>X400</str:X400>
+                        <str:Email>test@email.com</str:Email>
+                    </str:Contact>
+                </str:DataConsumer>
+            </str:DataConsumerScheme>
+        </str:OrganisationSchemes>
+    </mes:Structures>
+</mes:Structure>

@@ -1,0 +1,67 @@
+{
+  "data": {
+    "metadataSets": [
+      {
+        "metadataflow": "urn:sdmx:org.sdmx.infomodel.metadatastructure.Metadataflow=EPM:MetadataSet(1.8)",
+        "annotations": [
+          {
+            "texts": {
+              "en": "text"
+            },
+            "id": "1",
+            "text": "text",
+            "title": null,
+            "type": "type1",
+            "value": null
+          }
+        ],
+        "description": "Some artefact",
+        "agencyID": "IMF",
+        "reportingEnd": "2022",
+        "validFrom": "2022-07-17T10:11:16Z",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "version": "1.2",
+        "targets": [
+          "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataSet=EPM:MetadataSetTar(1.8)"
+        ],
+        "reportingBegin": "2022",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "name": "Maintanable artefact",
+        "publicationPeriod": "2022-03",
+        "publicationYear": "2022",
+        "action": "Append",
+        "attributes": [
+          {
+            "id": "attr1",
+            "value": "someVal",
+            "attributes": [
+              {
+                "id": "attr2",
+                "value": "someVal2"
+              }
+            ]
+          }
+        ],
+        "id": "1",
+        "validTo": "2022-07-17T10:11:16Z"
+      }
+    ]
+  },
+  "meta": {
+    "schema": "https://raw.githubusercontent.com/sdmx-twg/sdmx-json/master/metadata-message/tools/schemas/2.0.0/sdmx-json-metadata-schema.json",
+    "id": "IDREF8124",
+    "test": false,
+    "prepared": "2021-11-02T09:47:41.000000",
+    "contentLanguages": [
+      "en"
+    ],
+    "sender": {
+      "id": "unknown"
+    }
+  }
+}

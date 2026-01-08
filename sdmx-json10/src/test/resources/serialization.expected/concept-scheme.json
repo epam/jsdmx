@@ -1,0 +1,49 @@
+{
+  "links": [
+    {
+      "urn": "urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=IMF:ARTEFACT(1.2)",
+      "type": "conceptscheme",
+      "rel": "self"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "1",
+      "type": "type1",
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "concepts": [
+    {
+      "id": "COUNTRY",
+      "name": "Country",
+      "names": {
+        "en": "Country"
+      },
+      "coreRepresentation": {
+        "textFormat": {
+          "textType": "Alpha"
+        }
+      }
+    }
+  ],
+  "isPartial": true,
+  "isFinal": true
+}

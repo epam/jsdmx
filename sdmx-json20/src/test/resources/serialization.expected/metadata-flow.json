@@ -1,0 +1,31 @@
+{
+  "annotations": [
+    {
+      "id": "1",
+      "type": "type1",
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "structure": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=IMF:METADATA(1.0.0)",
+  "targets": [
+    "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=QUANTHUB:ECOFIN_DSD(1.2)",
+    "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=QUANTHUB:ECOFIN_DSD(1.3)"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "annotations": [
+    {
+      "texts": {
+        "en": "text"
+      },
+      "id": "1",
+      "text": "text",
+      "type": "type1"
+    }
+  ],
+  "description": "Some artefact",
+  "agencyID": "IMF",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "source": [
+    {
+      "codelist": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST_SOURCE(1.0)"
+    },
+    {
+      "dataType": "DateTime"
+    }
+  ],
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "target": [
+    {
+      "codelist": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST_TARGET(1.0)"
+    }
+  ],
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "representationMappings": [
+    {
+      "targetValues": [
+        "targetValue1",
+        "targetValue2"
+      ],
+      "sourceValues": [
+        {
+          "startIndex": 0,
+          "isRegEx": true,
+          "endIndex": 10,
+          "value": "mappedValue"
+        }
+      ],
+      "annotations": [],
+      "validFrom": "2022-07-17T00:00:00Z",
+      "validTo": "2022-07-17T00:00:00Z"
+    }
+  ],
+  "name": "Maintanable artefact",
+  "id": "ARTEFACT",
+  "validTo": "2022-07-17T10:11:16Z"
+}

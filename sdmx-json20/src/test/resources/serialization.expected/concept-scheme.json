@@ -1,0 +1,60 @@
+{
+  "annotations": [
+    {
+      "id": "1",
+      "type": "type1",
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "concepts": [
+    {
+      "annotations": [],
+      "id": "COUNTRY",
+      "name": "Country",
+      "names": {
+        "en": "Country"
+      },
+      "coreRepresentation": {
+        "format": {
+          "dataType": "Alpha",
+          "sentinelValues": [
+            {
+              "value": "val",
+              "name": "sent",
+              "names": {
+                "en": "sent"
+              },
+              "description": "sentinel descr",
+              "descriptions": {
+                "en": "sentinel descr"
+              }
+            }
+          ]
+        }
+      },
+      "isoConceptReference": {
+        "conceptSchemeID": "Schema",
+        "conceptID": "Conn",
+        "conceptAgency": "QHB"
+      }
+    }
+  ],
+  "isPartial": true
+}

@@ -1,0 +1,110 @@
+{
+  "meta": {},
+  "data": {
+    "dataSets": [
+      {
+        "structure": 0,
+        "action": "Information",
+        "observations": {
+          "0:0": [
+            "obsValue2"
+          ],
+          "0:1": [
+            "obsValue5"
+          ],
+          "1:1": [
+            "obsValue6"
+          ]
+        }
+      }
+    ],
+    "structures": [
+      {
+        "dataSets": [
+          0
+        ],
+        "links": [
+          {
+            "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=QH:DF(4.20)",
+            "title": "Dataflow"
+          },
+          {
+            "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=QH:DSD(4.20)",
+            "title": "DataStructureDefinition"
+          }
+        ],
+        "dimensions": {
+          "series": [
+            {
+              "id": "dim1",
+              "keyPosition": 0,
+              "roles": [],
+              "values": [
+                {
+                  "value": "dim1-val1"
+                },
+                {
+                  "value": "dim1-val2"
+                }
+              ]
+            },
+            {
+              "id": "dim2",
+              "keyPosition": 1,
+              "roles": [
+                "role"
+              ],
+              "values": [
+                {
+                  "value": "dim2-val1"
+                },
+                {
+                  "value": "dim2-val2"
+                }
+              ]
+            }
+          ]
+        },
+        "measures": {
+          "observation": [
+            {
+              "id": "OBS_VALUE",
+              "roles": []
+            }
+          ]
+        },
+        "attributes": {
+          "dataSet": [
+            {
+              "id": "dataset",
+              "roles": [],
+              "isMandatory": false,
+              "relationship": {
+                "dataflow": {}
+              }
+            }
+          ],
+          "observation": [
+            {
+              "id": "observation1",
+              "roles": [],
+              "isMandatory": false,
+              "relationship": {
+                "observation": {}
+              }
+            },
+            {
+              "id": "observation2",
+              "roles": [],
+              "isMandatory": false,
+              "relationship": {
+                "observation": {}
+              }
+            }
+          ]
+        },
+        "annotations": []
+      }
+    ]
+  }
+}
