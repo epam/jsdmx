@@ -1,0 +1,110 @@
+{
+  "data": {
+    "categorisations": [
+      {
+        "annotations": [],
+        "description": "categ",
+        "agencyID": "EPM",
+        "id": "catid",
+        "source": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=IMF:ARTEFACT(1.2).CAT_SOURCE",
+        "descriptions": {
+          "en": "categ"
+        },
+        "version": "1.0",
+        "target": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=IMF:ARTEFACT(1.2).CAT_TARGET"
+      }
+    ],
+    "dataStructures": [
+      {
+        "annotations": [],
+        "id": "DSD1",
+        "version": "1.0"
+      }
+    ],
+    "hierarchies": [
+      {
+        "annotations": [],
+        "hierarchicalCodes": [],
+        "id": "Hi1",
+        "version": "1.0",
+        "hasFormalLevels": false
+      }
+    ],
+    "representationMaps": [
+      {
+        "representationMappings": [],
+        "annotations": [],
+        "id": "RM1",
+        "version": "1.0"
+      }
+    ],
+    "metadataStructures": [
+      {
+        "metadataStructureComponents": {},
+        "annotations": [],
+        "id": "MDSD1",
+        "version": "1.0"
+      }
+    ],
+    "categorySchemes": [
+      {
+        "annotations": [],
+        "isPartial": false,
+        "id": "CS1",
+        "categories": [],
+        "version": "1.0"
+      }
+    ],
+    "codelists": [
+      {
+        "annotations": [],
+        "isPartial": false,
+        "id": "CL1",
+        "version": "1.0",
+        "codelistExtensions": []
+      }
+    ],
+    "conceptSchemes": [
+      {
+        "concepts": [],
+        "isPartial": false,
+        "annotations": [],
+        "id": "CS1",
+        "version": "1.0"
+      },
+      {
+        "concepts": [],
+        "isPartial": false,
+        "annotations": [],
+        "id": "CS2",
+        "version": "1.0"
+      }
+    ],
+    "dataflows": [
+      {
+        "annotations": [],
+        "id": "DF1",
+        "version": "1.0"
+      }
+    ],
+    "metadataflows": [
+      {
+        "annotations": [],
+        "id": "MF1",
+        "version": "1.0"
+      }
+    ]
+  },
+  "meta": {
+    "schema": "https://raw.githubusercontent.com/sdmx-twg/sdmx-json/master/metadata-message/tools/schemas/2.0.0/sdmx-json-metadata-schema.json",
+    "test": false,
+    "sender": {
+      "id": "unknown"
+    },
+    "prepared": "2022-04-03T15:35:01Z",
+    "contentLanguages": [
+      "en"
+    ],
+    "id": "IDREF7553"
+  }
+}

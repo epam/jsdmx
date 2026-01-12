@@ -1,0 +1,65 @@
+{
+  "links": [
+    {
+      "urn": "urn:sdmx:org.sdmx.infomodel.structuremapping.StructureMap=IMF:ARTEFACT(1.2)",
+      "type": "structuremap",
+      "rel": "self"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "1",
+      "title": null,
+      "type": "type1",
+      "value": null,
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "source": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFSource(3.0)",
+  "target": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFTarget(3.0)",
+  "epochMaps": [],
+  "datePatternMaps": [],
+  "frequencyFormatMappings": [
+    {
+      "frequencyId": "CODE_3",
+      "datePattern": "2022-11",
+      "annotations": [],
+      "id": "FR3"
+    },
+    {
+      "frequencyId": "CODE_1",
+      "datePattern": "2022-11",
+      "annotations": [],
+      "id": "FR1"
+    },
+    {
+      "frequencyId": "CODE_2",
+      "datePattern": "2022-11",
+      "annotations": [],
+      "id": "FR2"
+    }
+  ],
+  "fixedValueMaps": [
+    {
+      "annotations": [],
+      "value": "value"
+    }
+  ]
+}

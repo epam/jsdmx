@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(":sdmx30-serializer")
+    implementation project(":sdmx30-infomodel")
+
+    compileOnly("org.projectlombok:lombok:${lombok_version}")
+    annotationProcessor("org.projectlombok:lombok:${lombok_version}")
+
+    implementation("org.apache.logging.log4j:log4j-slf4j2-impl:${log4j_version}")
+    implementation("org.apache.logging.log4j:log4j-core:${log4j_version}")
+    implementation("com.epam.deltix:SdmxDataParser:${sdmx_version}")
+
+    implementation("com.fasterxml.jackson.core:jackson-core:${fasterxml_version}")
+    implementation("com.fasterxml.jackson.core:jackson-databind:${fasterxml_databind_version}")
+    implementation("com.google.guava:guava:${guava_version}")
+
+    testImplementation("org.projectlombok:lombok:${lombok_version}")
+    testAnnotationProcessor("org.projectlombok:lombok:${lombok_version}")
+
+    testImplementation("org.jsonschema2pojo:jsonschema2pojo-core:${jsonschema2pojo_version}")
+    testImplementation("org.assertj:assertj-core:${assertj_version}")
+    testImplementation("net.javacrumbs.json-unit:json-unit:${json_unit_version}")
+    testImplementation("net.javacrumbs.json-unit:json-unit-assertj:${json_unit_version}")
+    testImplementation("org.mockito:mockito-core:${mockito_version}")
+
+    testImplementation("com.epam.deltix:SdmxApi:${sdmx_version}")
+    testImplementation("com.epam.deltix:SdmxBeans:${sdmx_version}")
+    testImplementation("com.epam.deltix:SdmxDataParser:${sdmx_version}")
+    testImplementation("com.epam.deltix:SdmxFileQueryProcessor:${sdmx_version}")
+    testImplementation("com.epam.deltix:SdmxQueryBuilder:${sdmx_version}")
+    testImplementation("com.epam.deltix:SdmxSourceUtil:${sdmx_version}")
+    testImplementation("com.epam.deltix:SdmxStructureParser:${sdmx_version}")
+    testImplementation("com.epam.deltix:SdmxStructureRetrieval:${sdmx_version}")
+    testImplementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.3'
+}
+
+test {
+    useJUnitPlatform()
+}

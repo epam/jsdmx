@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message"
+        xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/common"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message ../../schemas/SDMXMessage.xsd">
+    <message:Header>
+        <message:ID>HED1</message:ID>
+        <message:Test>true</message:Test>
+        <message:Prepared>2023-04-17T10:11:16Z</message:Prepared>
+        <message:Sender id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Sender>
+        <message:Receiver id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Receiver>
+    </message:Header>
+    <message:Structures>
+        <structure:DataStructures>
+            <structure:DataStructure urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2"
+                    isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:DataStructureComponents>
+                    <structure:DimensionList id="DimensionDescriptor">
+                        <structure:Dimension id="DIM1" position="1">
+                            <structure:ConceptIdentity>urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:DIMENSION(1.6.1).DATE_VALUE</structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST(1.0)</structure:Enumeration>
+                            </structure:LocalRepresentation>
+                            <structure:ConceptRole>urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER(1.5.1).DATE_VALUE</structure:ConceptRole>
+                        </structure:Dimension>
+                        <structure:TimeDimension id="TIME_PERIOD">
+                            <structure:ConceptIdentity>urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:TIME_DIMENSION(1.6.1).DATE_VALUE</structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:TextFormat textType="BasicTimePeriod"></structure:TextFormat>
+                            </structure:LocalRepresentation>
+                        </structure:TimeDimension>
+                    </structure:DimensionList>
+                    <structure:Group id="GroupDimensionDescriptor1">
+                        <common:Annotations>
+                            <common:Annotation id="id1">
+                                <common:AnnotationValue>val</common:AnnotationValue>
+                            </common:Annotation>
+                            <common:Annotation id="id2">
+                                <common:AnnotationValue>val</common:AnnotationValue>
+                            </common:Annotation>
+                        </common:Annotations>
+                        <structure:GroupDimension>
+                            <structure:DimensionReference>DIM1</structure:DimensionReference>
+                        </structure:GroupDimension>
+                        <structure:GroupDimension>
+                            <structure:DimensionReference>TIME_PERIOD</structure:DimensionReference>
+                        </structure:GroupDimension>
+                    </structure:Group>
+                    <structure:Group id="GroupDimensionDescriptor2">
+                        <structure:GroupDimension>
+                            <structure:DimensionReference>DIM1</structure:DimensionReference>
+                        </structure:GroupDimension>
+                    </structure:Group>
+                    <structure:AttributeList id="AttributeDescriptor">
+                        <structure:MetadataAttributeUsage>
+                            <structure:MetadataAttributeReference>REFERENCE-1</structure:MetadataAttributeReference>
+                            <structure:AttributeRelationship>
+                                <structure:Observation></structure:Observation>
+                            </structure:AttributeRelationship>
+                        </structure:MetadataAttributeUsage>
+                        <structure:MetadataAttributeUsage>
+                            <structure:MetadataAttributeReference>REFERENCE-2</structure:MetadataAttributeReference>
+                            <structure:AttributeRelationship>
+                                <structure:Dimension>dim1</structure:Dimension>
+                                <structure:Dimension>dim2</structure:Dimension>
+                            </structure:AttributeRelationship>
+                        </structure:MetadataAttributeUsage>
+                        <structure:Attribute id="DA1" usage="optional">
+                            <structure:ConceptIdentity>urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER_DIAGNOSTICS_COLLECTION_SCHEME(1.5.1).DATE_VALUE</structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:TextFormat textType="AlphaNumeric"></structure:TextFormat>
+                            </structure:LocalRepresentation>
+                            <structure:ConceptRole>urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER(1.5.1).DATE_VALUE</structure:ConceptRole>
+                            <structure:ConceptRole>urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER_DIAGNOSTICS(1.5.2).DATE_VALUE</structure:ConceptRole>
+                            <structure:AttributeRelationship>
+                                <structure:Group>GroupKey</structure:Group>
+                            </structure:AttributeRelationship>
+                            <structure:MeasureRelationship>
+                                <structure:Measure>MO</structure:Measure>
+                            </structure:MeasureRelationship>
+                        </structure:Attribute>
+                    </structure:AttributeList>
+                    <structure:MeasureList id="MeasureDescriptor">
+                        <structure:Measure id="MES1">
+                            <structure:ConceptIdentity>urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:MEASURE(1.5.2).DATE_VALUE</structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:TextFormat textType="BasicTimePeriod"></structure:TextFormat>
+                            </structure:LocalRepresentation>
+                            <structure:ConceptRole>urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER(1.5.1).DATE_VALUE</structure:ConceptRole>
+                            <structure:ConceptRole>urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER_DIAGNOSTICS(1.5.2).DATE_VALUE</structure:ConceptRole>
+                        </structure:Measure>
+                    </structure:MeasureList>
+                </structure:DataStructureComponents>
+                <structure:Metadata>urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=QUANTHUB:ECOFIN_DSD(1.2)</structure:Metadata>
+            </structure:DataStructure>
+        </structure:DataStructures>
+    </message:Structures>
+</message:Structure>

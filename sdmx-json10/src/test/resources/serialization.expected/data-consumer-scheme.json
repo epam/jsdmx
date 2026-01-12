@@ -1,0 +1,90 @@
+{
+  "links": [
+    {
+      "urn": "urn:sdmx:org.sdmx.infomodel.base.DataConsumerScheme=IMF:DATA_CONSUMERS(1.0)",
+      "type": "dataconsumerscheme",
+      "rel": "self"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "1",
+      "type": "type1",
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "DATA_CONSUMERS",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.0",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "isPartial": false,
+  "isFinal": true,
+  "dataConsumers": [
+    {
+      "id": "DC",
+      "name": "Data Consumer",
+      "names": {
+        "en": "Data Consumer"
+      },
+      "description": "Data Consumer description",
+      "descriptions": {
+        "en": "Data Consumer description"
+      },
+      "contacts": [
+        {
+          "name": "AG_1",
+          "department": "IT",
+          "role": {
+            "en": "writing",
+            "fr": "ecrire"
+          },
+          "telephones": [
+            "9458673082"
+          ],
+          "faxes": [
+            "somedatafax"
+          ],
+          "x400s": [
+            "X400"
+          ],
+          "emails": [
+            "test@email.com"
+          ]
+        },
+        {
+          "name": "AG_2",
+          "department": "IT",
+          "role": {
+            "en": "writing",
+            "fr": "ecrire"
+          },
+          "telephones": [
+            "9458673082"
+          ],
+          "faxes": [
+            "somedatafax2"
+          ],
+          "x400s": [
+            "X400"
+          ],
+          "emails": [
+            "test@email.com"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "agencyID": "IMF",
+  "id": "ARTEFACT",
+  "version": "1.2",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "annotations": [
+    {
+      "id": "1",
+      "type": "type1",
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "source": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=IMF:ARTEFACT(1.2).CAT_SOURCE",
+  "target": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=IMF:ARTEFACT(1.2).CAT_TARGET"
+}

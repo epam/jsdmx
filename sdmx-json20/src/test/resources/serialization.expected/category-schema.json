@@ -1,0 +1,86 @@
+{
+  "annotations": [
+    {
+      "texts": {
+        "en": "text"
+      },
+      "id": "1",
+      "text": "text",
+      "type": "type1"
+    }
+  ],
+  "description": "Some artefact",
+  "agencyID": "IMF",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "name": "Maintanable artefact",
+  "isPartial": true,
+  "id": "ARTEFACT",
+  "categories": [
+    {
+      "names": {
+        "en": "Category1"
+      },
+      "name": "Category1",
+      "annotations": [
+        {
+          "id": "Annot"
+        }
+      ],
+      "description": "description category 1",
+      "id": "Category-1",
+      "categories": [
+        {
+          "names": {
+            "en": "Category2"
+          },
+          "name": "Category2",
+          "annotations": [
+            {
+              "id": "Annot"
+            },
+            {
+              "id": "Annot2"
+            }
+          ],
+          "description": "description category2",
+          "id": "Category-2",
+          "descriptions": {
+            "en": "description category2"
+          }
+        },
+        {
+          "names": {
+            "en": "Category3"
+          },
+          "name": "Category3",
+          "annotations": [],
+          "description": "description category3",
+          "id": "Category-3",
+          "descriptions": {
+            "en": "description category3"
+          }
+        }
+      ],
+      "descriptions": {
+        "en": "description category 1"
+      }
+    },
+    {
+      "names": {
+        "en": "Category4"
+      },
+      "name": "Category4",
+      "annotations": [],
+      "id": "Category-4"
+    }
+  ],
+  "validTo": "2022-07-17T10:11:16Z"
+}

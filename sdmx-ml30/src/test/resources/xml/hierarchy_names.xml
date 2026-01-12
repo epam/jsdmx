@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message"
+        xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/common"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message ../../schemas/SDMXMessage.xsd">
+    <message:Header>
+        <message:ID>HED1</message:ID>
+        <message:Test>true</message:Test>
+        <message:Prepared>2023-04-17T10:11:16Z</message:Prepared>
+        <message:Sender id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Sender>
+        <message:Receiver id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Receiver>
+    </message:Header>
+    <message:Structures>
+        <structure:Hierarchies>
+            <structure:Hierarchy urn="urn:sdmx:org.sdmx.infomodel.codelist.Hierarchy=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2"
+                    isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" hasFormalLevels="true">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="it"></common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:Level id="levId">
+                    <common:Name xml:lang="en">hierarchy name</common:Name>
+                    <common:Description xml:lang="en">hierarchy desc</common:Description>
+                    <structure:CodingFormat interval="1"></structure:CodingFormat>
+                </structure:Level>
+                <structure:HierarchicalCode validTo="2022-07-17T10:11:16.345Z" validFrom="2022-07-17T10:11:16.345Z" id="id">
+                    <common:Annotations>
+                        <common:Annotation id="id"></common:Annotation>
+                    </common:Annotations>
+                    <structure:Code>urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX:CL_AGE(2.1.1).CL1</structure:Code>
+                    <structure:Level>Lev1</structure:Level>
+                </structure:HierarchicalCode>
+                <structure:HierarchicalCode validTo="2022-07-17T10:11:16.345Z" validFrom="2022-07-17T10:11:16.345Z" id="hi-2">
+                    <structure:Code>urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX:CL_AGE(2.1.1).CL2</structure:Code>
+                    <structure:Level>Lev2</structure:Level>
+                </structure:HierarchicalCode>
+            </structure:Hierarchy>
+        </structure:Hierarchies>
+    </message:Structures>
+</message:Structure>

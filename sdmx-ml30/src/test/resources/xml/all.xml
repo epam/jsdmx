@@ -1,0 +1,360 @@
+<?xml version="1.0" ?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message ../../schemas/SDMXMessage.xsd">
+    <message:Header>
+        <message:ID>HED1</message:ID>
+        <message:Test>true</message:Test>
+        <message:Prepared>2023-04-17T10:11:16Z</message:Prepared>
+        <message:Sender id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Sender>
+        <message:Receiver id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Receiver>
+    </message:Header>
+    <message:Structures>
+        <structure:Categorisations>
+            <structure:Categorisation urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:Source>urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=IMF:ARTEFACT(1.2).CAT_SOURCE</structure:Source>
+                <structure:Target>urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=IMF:ARTEFACT(1.2).CAT_TARGET</structure:Target>
+            </structure:Categorisation>
+        </structure:Categorisations>
+        <structure:ConceptSchemes>
+            <structure:ConceptScheme urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" isPartial="true">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:Concept id="COUNTRY">
+                    <common:Name xml:lang="en">Country</common:Name>
+                    <structure:CoreRepresentation>
+                        <structure:TextFormat textType="Alpha" isMultiLingual="true">
+                            <structure:SentinelValue value="val">
+                                <common:Name xml:lang="en">sent</common:Name>
+                                <common:Description xml:lang="en">sentinel descr</common:Description>
+                            </structure:SentinelValue>
+                        </structure:TextFormat>
+                    </structure:CoreRepresentation>
+                    <structure:ISOConceptReference>
+                        <structure:ConceptAgency>QHB</structure:ConceptAgency>
+                        <structure:ConceptSchemeID>Schema</structure:ConceptSchemeID>
+                        <structure:ConceptID>Conn</structure:ConceptID>
+                    </structure:ISOConceptReference>
+                </structure:Concept>
+            </structure:ConceptScheme>
+        </structure:ConceptSchemes>
+        <structure:Codelists>
+            <structure:Codelist urn="urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" isPartial="true">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:Code id="CODE1">
+                    <common:Name xml:lang="en">code 1</common:Name>
+                    <common:Description xml:lang="en">code 1 desc</common:Description>
+                    <structure:Parent>CODE2</structure:Parent>
+                </structure:Code>
+                <structure:Code id="CODE2">
+                    <common:Name xml:lang="en">code 2</common:Name>
+                    <common:Description xml:lang="en">code 2 desc</common:Description>
+                </structure:Code>
+                <structure:CodelistExtension prefix="PREF2">
+                    <structure:Codelist>urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_AGE(2.1.1)</structure:Codelist>
+                    <structure:InclusiveCodeSelection>
+                        <structure:MemberValue cascadeValues="true">mem1</structure:MemberValue>
+                    </structure:InclusiveCodeSelection>
+                </structure:CodelistExtension>
+                <structure:CodelistExtension prefix="PREF2">
+                    <structure:Codelist>urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_AGE(2.1.1)</structure:Codelist>
+                    <structure:ExclusiveCodeSelection>
+                        <structure:MemberValue cascadeValues="false">mem2</structure:MemberValue>
+                    </structure:ExclusiveCodeSelection>
+                </structure:CodelistExtension>
+            </structure:Codelist>
+        </structure:Codelists>
+        <structure:CategorySchemes>
+            <structure:CategoryScheme urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.CategoryScheme=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" isPartial="true">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:Category id="Category-1">
+                    <common:Annotations>
+                        <common:Annotation id="Annot"></common:Annotation>
+                    </common:Annotations>
+                    <common:Name xml:lang="en">Category1</common:Name>
+                    <common:Description xml:lang="en">description category 1</common:Description>
+                    <structure:Category id="Category-2">
+                        <common:Annotations>
+                            <common:Annotation id="Annot"></common:Annotation>
+                            <common:Annotation id="Annot2"></common:Annotation>
+                        </common:Annotations>
+                        <common:Name xml:lang="en">Category2</common:Name>
+                        <common:Description xml:lang="en">description category2</common:Description>
+                    </structure:Category>
+                    <structure:Category id="Category-3">
+                        <common:Name xml:lang="en">Category3</common:Name>
+                        <common:Description xml:lang="en">description category3</common:Description>
+                    </structure:Category>
+                </structure:Category>
+                <structure:Category id="Category-4">
+                    <common:Name xml:lang="en">Category4</common:Name>
+                </structure:Category>
+            </structure:CategoryScheme>
+        </structure:CategorySchemes>
+        <structure:Dataflows>
+            <structure:Dataflow urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:Structure>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=QUANTHUB:ECOFIN_DSD(1.2)</structure:Structure>
+            </structure:Dataflow>
+        </structure:Dataflows>
+        <structure:DataStructures>
+            <structure:DataStructure urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:Metadata>urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=QUANTHUB:ECOFIN_DSD(1.2)</structure:Metadata>
+            </structure:DataStructure>
+        </structure:DataStructures>
+        <structure:Metadataflows>
+            <structure:Metadataflow urn="urn:sdmx:org.sdmx.infomodel.metadatastructure.Metadataflow=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:Structure>urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=IMF:METADATA(1.0.0)</structure:Structure>
+                <structure:Target>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=QUANTHUB:ECOFIN_DSD(1.2)</structure:Target>
+                <structure:Target>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=QUANTHUB:ECOFIN_DSD(1.3)</structure:Target>
+            </structure:Metadataflow>
+        </structure:Metadataflows>
+        <structure:MetadataStructures>
+            <structure:MetadataStructure urn="urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:MetadataStructureComponents>
+                    <structure:MetadataAttributeList>
+                        <common:Annotations>
+                            <common:Annotation id="Annot-1"></common:Annotation>
+                        </common:Annotations>
+                        <structure:MetadataAttribute id="meta-1" minOccurs="10" maxOccurs="20" isPresentational="true">
+                            <structure:ConceptIdentity>urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:DIMENSION(1.6.1).DIM</structure:ConceptIdentity>
+                            <structure:LocalRepresentation>
+                                <structure:Enumeration>urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST(1.0)</structure:Enumeration>
+                            </structure:LocalRepresentation>
+                            <structure:MetadataAttribute id="meta-2" minOccurs="10" maxOccurs="20" isPresentational="true">
+                                <structure:ConceptIdentity>urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:DIMENSION(1.6.1).DIM</structure:ConceptIdentity>
+                                <structure:LocalRepresentation>
+                                    <structure:Enumeration>urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST(1.0)</structure:Enumeration>
+                                </structure:LocalRepresentation>
+                            </structure:MetadataAttribute>
+                        </structure:MetadataAttribute>
+                    </structure:MetadataAttributeList>
+                </structure:MetadataStructureComponents>
+            </structure:MetadataStructure>
+        </structure:MetadataStructures>
+        <structure:Hierarchies>
+            <structure:Hierarchy urn="urn:sdmx:org.sdmx.infomodel.codelist.Hierarchy=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" hasFormalLevels="true">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:Level id="levId">
+                    <common:Name xml:lang="en">hierarchy name</common:Name>
+                    <common:Description xml:lang="en">hierarchy desc</common:Description>
+                    <structure:CodingFormat interval="1"></structure:CodingFormat>
+                </structure:Level>
+                <structure:HierarchicalCode validTo="2022-07-17T10:11:16.345Z" validFrom="2022-07-17T10:11:16.345Z" id="id">
+                    <common:Annotations>
+                        <common:Annotation id="id"></common:Annotation>
+                    </common:Annotations>
+                    <structure:Code>urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX:CL_AGE(2.1.1).CL1</structure:Code>
+                    <structure:Level>Lev1</structure:Level>
+                </structure:HierarchicalCode>
+                <structure:HierarchicalCode validTo="2022-07-17T10:11:16.345Z" validFrom="2022-07-17T10:11:16.345Z" id="hi-2">
+                    <structure:Code>urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX:CL_AGE(2.1.1).CL2</structure:Code>
+                    <structure:Level>Lev2</structure:Level>
+                </structure:HierarchicalCode>
+            </structure:Hierarchy>
+        </structure:Hierarchies>
+        <structure:RepresentationMaps>
+            <structure:RepresentationMap urn="urn:sdmx:org.sdmx.infomodel.structuremapping.RepresentationMap=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:SourceCodelist>urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST_SOURCE(1.0)</structure:SourceCodelist>
+                <structure:SourceDataType>DateTime</structure:SourceDataType>
+                <structure:TargetCodelist>urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST_TARGET(1.0)</structure:TargetCodelist>
+                <structure:RepresentationMapping validFrom="2022-07-17" validTo="2022-07-17">
+                    <structure:SourceValue isRegEx="true" startIndex="0" endIndex="10">mappedValue</structure:SourceValue>
+                    <structure:TargetValue>targetValue1</structure:TargetValue>
+                    <structure:TargetValue>targetValue2</structure:TargetValue>
+                </structure:RepresentationMapping>
+            </structure:RepresentationMap>
+        </structure:RepresentationMaps>
+        <structure:StructureMaps>
+            <structure:StructureMap urn="urn:sdmx:org.sdmx.infomodel.structuremapping.StructureMap=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:Source>urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFSource(3.0)</structure:Source>
+                <structure:Target>urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFTarget(3.0)</structure:Target>
+                <structure:EpochMap id="EPOCH1" resolvePeriod="midPeriod" basePeriod="2022-07-17T10:11:16Z" epochPeriod="microsecond">
+                    <structure:Source>CompMapEpochS</structure:Source>
+                    <structure:Target>CompMapEpochT</structure:Target>
+                    <structure:FrequencyDimension>Frequency_dim</structure:FrequencyDimension>
+                    <structure:MappedFrequencies>FR3</structure:MappedFrequencies>
+                </structure:EpochMap>
+                <structure:DatePatternMap id="DP1" resolvePeriod="midPeriod" sourcePattern="SOURCE" locale="EN">
+                    <structure:Source>CompMapDPS</structure:Source>
+                    <structure:Target>CompMapDPT</structure:Target>
+                    <structure:FrequencyDimension>Frequency_dim</structure:FrequencyDimension>
+                    <structure:MappedFrequencies>FR1</structure:MappedFrequencies>
+                    <structure:MappedFrequencies>FR2</structure:MappedFrequencies>
+                </structure:DatePatternMap>
+                <structure:FrequencyFormatMapping id="FR3">
+                    <structure:FrequencyId>CODE_3</structure:FrequencyId>
+                    <structure:DatePattern>2022-11</structure:DatePattern>
+                </structure:FrequencyFormatMapping>
+                <structure:FrequencyFormatMapping id="FR1">
+                    <structure:FrequencyId>CODE_1</structure:FrequencyId>
+                    <structure:DatePattern>2022-11</structure:DatePattern>
+                </structure:FrequencyFormatMapping>
+                <structure:FrequencyFormatMapping id="FR2">
+                    <structure:FrequencyId>CODE_2</structure:FrequencyId>
+                    <structure:DatePattern>2022-11</structure:DatePattern>
+                </structure:FrequencyFormatMapping>
+                <structure:ComponentMap>
+                    <structure:Source>CompMapRepS</structure:Source>
+                    <structure:Target>CompMapRepT</structure:Target>
+                    <structure:RepresentationMap>urn:sdmx:org.sdmx.infomodel.structuremapping.RepresentationMap=IMF:ARTEFACT(1.2)</structure:RepresentationMap>
+                </structure:ComponentMap>
+                <structure:FixedValueMap>
+                    <structure:Target>STRUC_ID</structure:Target>
+                    <structure:Value>value</structure:Value>
+                </structure:FixedValueMap>
+            </structure:StructureMap>
+        </structure:StructureMaps>
+        <structure:DataConstraints>
+            <structure:DataConstraint urn="urn:sdmx:org.sdmx.infomodel.registry.DataConstraint=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2"
+                    isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" role="Allowed">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:ConstraintAttachment>
+                    <structure:DataProvider>urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).DP</structure:DataProvider>
+                </structure:ConstraintAttachment>
+                <structure:ReleaseCalendar>
+                    <structure:Periodicity>Periodicity</structure:Periodicity>
+                    <structure:Offset>Offset</structure:Offset>
+                    <structure:Tolerance>Tolerance</structure:Tolerance>
+                </structure:ReleaseCalendar>
+                <structure:DataKeySet isIncluded="true">
+                    <structure:Key include="true" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                        <structure:KeyValue id="C1" include="true" removePrefix="true">
+                            <structure:Value>Value</structure:Value>
+                        </structure:KeyValue>
+                        <structure:Component include="false" id="MS" removePrefix="true">
+                            <structure:Value>MEM</structure:Value>
+                            <structure:Value xml:lang="en">local</structure:Value>
+                        </structure:Component>
+                        <structure:Component include="false" id="MS2" removePrefix="true">
+                            <structure:TimeRange validTo="2022-09-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                                <structure:AfterPeriod isInclusive="false">2028</structure:AfterPeriod>
+                            </structure:TimeRange>
+                        </structure:Component>
+                    </structure:Key>
+                </structure:DataKeySet>
+                <structure:CubeRegion include="true">
+                    <common:Annotations>
+                        <common:Annotation id="Annot"></common:Annotation>
+                    </common:Annotations>
+                    <structure:KeyValue id="CubeReg" validTo="2022-04-12T12:00:00Z" validFrom="2020-04-12T12:00:00Z" include="true" removePrefix="true">
+                        <structure:Value validTo="2022-09-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" cascadeValues="excluderoot">MEM</structure:Value>
+                    </structure:KeyValue>
+                    <structure:Component include="false" id="MS" removePrefix="true">
+                        <structure:Value>MEM</structure:Value>
+                        <structure:Value xml:lang="en">local</structure:Value>
+                    </structure:Component>
+                    <structure:Component include="false" id="MS2" removePrefix="true">
+                        <structure:TimeRange validTo="2022-09-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                            <structure:StartPeriod isInclusive="false">2022</structure:StartPeriod>
+                            <structure:EndPeriod isInclusive="false">2022</structure:EndPeriod>
+                        </structure:TimeRange>
+                    </structure:Component>
+                </structure:CubeRegion>
+            </structure:DataConstraint>
+        </structure:DataConstraints>
+    </message:Structures>
+</message:Structure>

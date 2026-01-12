@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message"
+        xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/common"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message ../../schemas/SDMXMessage.xsd">
+    <message:Header>
+        <message:ID>HED1</message:ID>
+        <message:Test>true</message:Test>
+        <message:Prepared>2023-04-17T10:11:16Z</message:Prepared>
+        <message:Sender id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Sender>
+        <message:Receiver id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Receiver>
+    </message:Header>
+    <message:Structures>
+        <structure:ReportingTaxonomies>
+            <structure:ReportingTaxonomy urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.ReportingTaxonomy=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT"
+                    version="1.2" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" isPartial="false">
+                <common:Annotations>
+                    <common:Annotation id="1">
+                        <common:AnnotationType>type1</common:AnnotationType>
+                        <common:AnnotationText xml:lang="en">text</common:AnnotationText>
+                    </common:Annotation>
+                </common:Annotations>
+                <common:Name xml:lang="en">Maintanable artefact</common:Name>
+                <common:Name xml:lang="fr-CA">artefact</common:Name>
+                <common:Description xml:lang="en">Some artefact</common:Description>
+                <structure:ReportingCategory id="RC-1">
+                    <common:Annotations>
+                        <common:Annotation id="Annot"></common:Annotation>
+                    </common:Annotations>
+                    <common:Name xml:lang="en">ReportingCat</common:Name>
+                    <common:Description xml:lang="en">ReportingCat description</common:Description>
+                    <structure:ReportingCategory id="RC-2">
+                        <common:Annotations>
+                            <common:Annotation id="Annot"></common:Annotation>
+                        </common:Annotations>
+                        <common:Name xml:lang="en">ReportingCat2</common:Name>
+                        <common:Description xml:lang="en">ReportingCat2 description</common:Description>
+                        <structure:StructuralMetadata>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=EPM:DataS2(3.0)</structure:StructuralMetadata>
+                        <structure:StructuralMetadata>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=EPM:DataS1(3.0)</structure:StructuralMetadata>
+                    </structure:ReportingCategory>
+                    <structure:ProvisioningMetadata>urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataS2(3.0)</structure:ProvisioningMetadata>
+                    <structure:ProvisioningMetadata>urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataS1(3.0)</structure:ProvisioningMetadata>
+                </structure:ReportingCategory>
+            </structure:ReportingTaxonomy>
+        </structure:ReportingTaxonomies>
+    </message:Structures>
+</message:Structure>

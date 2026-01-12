@@ -1,0 +1,55 @@
+{
+  "attributeList": {
+    "annotations": [],
+    "id": "AttributeDescriptor",
+    "metadataAttributeUsages": [
+      {
+        "annotations": [],
+        "metadataAttributeReference": "REFERENCE-1",
+        "attributeRelationship": {
+          "observation": {}
+        }
+      },
+      {
+        "annotations": [],
+        "metadataAttributeReference": "REFERENCE-2",
+        "attributeRelationship": {
+          "dimensions": [
+            "dim1",
+            "dim2"
+          ]
+        }
+      },
+      {
+        "annotations": [],
+        "metadataAttributeReference": "REFERENCE-3",
+        "attributeRelationship": {
+          "none": {}
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "annotations": [],
+        "id": "DA1",
+        "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER_DIAGNOSTICS_COLLECTION_SCHEME(1.5.1).DATE_VALUE",
+        "localRepresentation": {
+          "format": {
+            "dataType": "AlphaNumeric"
+          }
+        },
+        "isMandatory": false,
+        "conceptRoles": [
+          "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER(1.5.1).DATE_VALUE",
+          "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER_DIAGNOSTICS(1.5.2).DATE_VALUE"
+        ],
+        "attributeRelationship": {
+          "group": "GroupKey"
+        },
+        "measureRelationship": [
+          "MO"
+        ]
+      }
+    ]
+  }
+}

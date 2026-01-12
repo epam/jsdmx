@@ -1,0 +1,212 @@
+<?xml version="1.0" ?>
+<mes:Structure xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+               xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+               xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message ../../schemas/SDMXMessage.xsd">
+    <mes:Header>
+        <mes:ID>HED1</mes:ID>
+        <mes:Test>true</mes:Test>
+        <mes:Prepared>2023-04-17T10:11:16Z</mes:Prepared>
+        <mes:Sender id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Sender>
+        <mes:Receiver id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Receiver>
+    </mes:Header>
+    <mes:Structures>
+        <str:Dataflows>
+            <str:Dataflow urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:ARTEFACT(1.2)" agencyID="IMF"
+                          id="ARTEFACT" version="1.2" isFinal="true" isExternalReference="false" validTo="2022-07-17T10:11:16Z"
+                          validFrom="2022-07-17T10:11:16Z">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:Structure>
+                    <Ref agencyID="QUANTHUB" id="ECOFIN_DSD" version="1.2" package="datastructure"
+                         class="DataStructure"/>
+                </str:Structure>
+            </str:Dataflow>
+        </str:Dataflows>
+        <str:CategorySchemes>
+            <str:CategoryScheme urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.CategoryScheme=IMF:ARTEFACT(1.2)"
+                                agencyID="IMF" id="ARTEFACT" version="1.2" isFinal="true" isExternalReference="false"
+                                validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" isPartial="true">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:Category id="Category-1">
+                    <com:Annotations>
+                        <com:Annotation id="Annot"></com:Annotation>
+                    </com:Annotations>
+                    <com:Name xml:lang="en">Category1</com:Name>
+                    <com:Description xml:lang="en">description category 1</com:Description>
+                    <str:Category id="Category-2">
+                        <com:Annotations>
+                            <com:Annotation id="Annot"></com:Annotation>
+                            <com:Annotation id="Annot2"></com:Annotation>
+                        </com:Annotations>
+                        <com:Name xml:lang="en">Category2</com:Name>
+                        <com:Description xml:lang="en">description category2</com:Description>
+                    </str:Category>
+                    <str:Category id="Category-3">
+                        <com:Name xml:lang="en">Category3</com:Name>
+                        <com:Description xml:lang="en">description category3</com:Description>
+                    </str:Category>
+                </str:Category>
+                <str:Category id="Category-4">
+                    <com:Name xml:lang="en">Category4</com:Name>
+                </str:Category>
+            </str:CategoryScheme>
+        </str:CategorySchemes>
+        <str:Categorisations>
+            <str:Categorisation urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=IMF:ARTEFACT(1.2)"
+                                agencyID="IMF" id="ARTEFACT" version="1.2" isFinal="true" isExternalReference="false"
+                                validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:Source>
+                    <Ref id="ARTEFACT" agencyID="IMF" package="codelist" class="Codelist" version="1.2"/>
+                </str:Source>
+                <str:Target>
+                    <Ref maintainableParentID="ARTEFACT" maintainableParentVersion="1.2" agencyID="IMF" id="CAT_TARGET"
+                         package="categoryscheme" class="Category"/>
+                </str:Target>
+            </str:Categorisation>
+        </str:Categorisations>
+        <str:Codelists>
+            <str:Codelist urn="urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:ARTEFACT(1.2)" agencyID="IMF"
+                          id="ARTEFACT" version="1.2" isFinal="true" isExternalReference="false" validTo="2022-07-17T10:11:16Z"
+                          validFrom="2022-07-17T10:11:16Z" isPartial="true">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:Code id="CODE1">
+                    <com:Name xml:lang="en">code 1</com:Name>
+                    <com:Description xml:lang="en">code 1 desc</com:Description>
+                    <str:Parent>
+                        <Ref id="CODE2"/>
+                    </str:Parent>
+                </str:Code>
+                <str:Code id="CODE2">
+                    <com:Name xml:lang="en">code 2</com:Name>
+                    <com:Description xml:lang="en">code 2 desc</com:Description>
+                </str:Code>
+            </str:Codelist>
+        </str:Codelists>
+        <str:HierarchicalCodelists>
+            <str:HierarchicalCodelist urn="urn:sdmx:org.sdmx.infomodel.codelist.HierarchicalCodelist=IMF:ARTEFACT(1.2)"
+                                      agencyID="IMF" id="ARTEFACT" version="1.2" isFinal="true" isExternalReference="false"
+                                      validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:Hierarchy id="Hierarchy">
+                    <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                    <com:Name xml:lang="fr-CA">artefact</com:Name>
+                    <str:HierarchicalCode validTo="2022-07-17T10:11:16.345Z" validFrom="2022-07-17T10:11:16.345Z"
+                                          id="id">
+                        <com:Annotations>
+                            <com:Annotation id="id"></com:Annotation>
+                        </com:Annotations>
+                        <str:Code>
+                            <Ref maintainableParentID="CL_AGE" maintainableParentVersion="2.1.1" agencyID="SDMX"
+                                 id="CL1" package="codelist" class="Code"/>
+                        </str:Code>
+                        <str:Level>
+                            <Ref id="levId"/>
+                        </str:Level>
+                    </str:HierarchicalCode>
+                    <str:HierarchicalCode validTo="2022-07-17T10:11:16.345Z" validFrom="2022-07-17T10:11:16.345Z"
+                                          id="hi-2">
+                        <str:Code>
+                            <Ref maintainableParentID="CL_AGE" maintainableParentVersion="2.1.1" agencyID="SDMX"
+                                 id="CL2" package="codelist" class="Code"/>
+                        </str:Code>
+                        <str:Level>
+                            <Ref id="levId"/>
+                        </str:Level>
+                    </str:HierarchicalCode>
+                    <str:Level id="levId">
+                        <com:Name xml:lang="en">hierarchy name</com:Name>
+                        <com:Description xml:lang="en">hierarchy desc</com:Description>
+                        <str:CodingFormat interval="1" isSequence="true" startValue="1"></str:CodingFormat>
+                    </str:Level>
+                </str:Hierarchy>
+            </str:HierarchicalCodelist>
+        </str:HierarchicalCodelists>
+        <str:Concepts>
+            <str:ConceptScheme urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=IMF:ARTEFACT(1.2)"
+                               agencyID="IMF" id="ARTEFACT" version="1.2" isFinal="true" isExternalReference="false"
+                               validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" isPartial="true">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:Concept id="COUNTRY">
+                    <com:Name xml:lang="en">Country</com:Name>
+                    <str:CoreRepresentation>
+                        <str:TextFormat textType="Alpha"></str:TextFormat>
+                    </str:CoreRepresentation>
+                    <str:ISOConceptReference>
+                        <str:ConceptAgency>QHB</str:ConceptAgency>
+                        <str:ConceptSchemeID>Schema</str:ConceptSchemeID>
+                        <str:ConceptID>Conn</str:ConceptID>
+                    </str:ISOConceptReference>
+                </str:Concept>
+            </str:ConceptScheme>
+        </str:Concepts>
+        <str:DataStructures>
+            <str:DataStructure urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ARTEFACT(1.2)"
+                               agencyID="IMF" id="ARTEFACT" version="1.2" isFinal="true" isExternalReference="false"
+                               validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+            </str:DataStructure>
+        </str:DataStructures>
+    </mes:Structures>
+</mes:Structure>

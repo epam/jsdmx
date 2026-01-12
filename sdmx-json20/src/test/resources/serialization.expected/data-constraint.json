@@ -1,0 +1,137 @@
+{
+  "annotations": [
+    {
+      "id": "1",
+      "type": "type1",
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "role": "Allowed",
+  "constraintAttachment": {
+    "dataProvider": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).DP"
+  },
+  "releaseCalendar": {
+    "tolerance": "Tolerance",
+    "offset": "Offset",
+    "periodicity": "Periodicity"
+  },
+  "dataKeySets": [
+    {
+      "isIncluded": true,
+      "keys": [
+        {
+          "annotations": [],
+          "keyValues": [
+            {
+              "id": "C1",
+              "include": true,
+              "removePrefix": true,
+              "value": "Value"
+            }
+          ],
+          "components": [
+            {
+              "id": "MS",
+              "include": false,
+              "removePrefix": true,
+              "values": [
+                {
+                  "value": "MEM"
+                }
+              ]
+            },
+            {
+              "id": "MS2",
+              "include": false,
+              "removePrefix": true,
+              "timeRange": {
+                "beforePeriod": {
+                  "period": "2023",
+                  "isInclusive": true
+                }
+              }
+            }
+          ],
+          "include": true,
+          "validFrom": "2022-07-17T10:11:16Z",
+          "validTo": "2022-07-17T10:11:16Z"
+        }
+      ]
+    }
+  ],
+  "cubeRegions": [
+    {
+      "include": true,
+      "components": [
+        {
+          "id": "some component id 1",
+          "include": true,
+          "removePrefix": true,
+          "values": [
+            {
+              "value": "selectionValue1",
+              "lang": "en"
+            }
+          ]
+        },
+        {
+          "id": "some component id 2",
+          "include": true,
+          "removePrefix": true,
+          "values": [
+            {
+              "value": "selectionValue2",
+              "cascadeValues": "true",
+              "validFrom": "2020-04-12T12:00:00Z",
+              "validTo": "2020-05-12T12:00:00Z"
+            },
+            {
+              "value": "selectionValue5"
+            }
+          ]
+        }
+      ],
+      "keyValues": [
+        {
+          "id": "123",
+          "include": true,
+          "removePrefix": true,
+          "validFrom": "2020-04-12T12:00:00Z",
+          "validTo": "2022-04-12T12:00:00Z",
+          "timeRange": {
+            "beforePeriod": {
+              "period": "2020",
+              "isInclusive": false
+            },
+            "afterPeriod": {
+              "period": "2021",
+              "isInclusive": false
+            }
+          }
+        }
+      ],
+      "annotations": [
+        {
+          "id": "Annot"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "annotations": [
+    {
+      "texts": {
+        "en": "text"
+      },
+      "id": "1",
+      "text": "text",
+      "title": null,
+      "type": "type1",
+      "value": null
+    }
+  ],
+  "description": "Some artefact",
+  "agencyID": "IMF",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "geoGridCodes": [
+    {
+      "parent": "CODE2",
+      "names": {
+        "en": "code 1"
+      },
+      "geoCell": "Value1",
+      "name": "code 1",
+      "annotations": [],
+      "description": "code 1 desc",
+      "id": "CODE1",
+      "descriptions": {
+        "en": "code 1 desc"
+      }
+    },
+    {
+      "names": {
+        "en": "code 2"
+      },
+      "geoCell": "Value2",
+      "name": "code 2",
+      "annotations": [],
+      "description": "code 2 desc",
+      "id": "CODE2",
+      "descriptions": {
+        "en": "code 2 desc"
+      }
+    }
+  ],
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "codelistExtensions": [
+    {
+      "codelist": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_AGE(2.1.1)",
+      "prefix": "PREF2",
+      "inclusiveCodeSelection": {
+        "memberValues": [
+          {
+            "cascadeValues": "true",
+            "value": "mem1"
+          }
+        ]
+      }
+    },
+    {
+      "codelist": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_AGE(2.1.1)",
+      "prefix": "PREF2",
+      "exclusiveCodeSelection": {
+        "memberValues": [
+          {
+            "cascadeValues": "false",
+            "value": "mem2"
+          }
+        ]
+      }
+    }
+  ],
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "geoType": "GeoGridCodelist",
+  "name": "Maintanable artefact",
+  "isPartial": true,
+  "links": [
+    {
+      "urn": "urn:sdmx:org.sdmx.infomodel.codelist.GeoGridCodelist=IMF:ARTEFACT(1.2)",
+      "rel": "self",
+      "type": "geogridcodelist"
+    }
+  ],
+  "id": "ARTEFACT",
+  "gridDefinition": "DEFINITION",
+  "validTo": "2022-07-17T10:11:16Z"
+}

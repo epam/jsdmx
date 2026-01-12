@@ -1,0 +1,69 @@
+{
+  "links": [
+    {
+      "urn": "urn:sdmx:org.sdmx.infomodel.registry.MetadataConstraint=IMF:ARTEFACT(1.2)",
+      "type": "metadataconstraint",
+      "rel": "self"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "1",
+      "type": "type1",
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "isFinal": true,
+  "agencyID": "IMF",
+  "constraintAttachment": {
+    "dataProvider": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).DP",
+    "metadataStructures": [
+      "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=QUANTHUB:ECOFIN_DSD(1.2)"
+    ]
+  },
+  "role": "Allowed",
+  "releaseCalendar": {
+    "tolerance": "Tolerance",
+    "offset": "Offset",
+    "periodicity": "Periodicity"
+  },
+  "metadataTargetRegions": [
+    {
+      "include": true,
+      "attributes": [
+        {
+          "id": "MS",
+          "values": [
+            "MEM",
+            "local"
+          ]
+        },
+        {
+          "id": "MS2",
+          "timeRange": {
+            "beforePeriod": {
+              "period": "2023",
+              "isInclusive": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

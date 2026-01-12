@@ -1,0 +1,62 @@
+{
+  "annotations": [
+    {
+      "id": "1",
+      "type": "type1",
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "valueItems": [
+    {
+      "annotations": [
+        {
+          "id": "Annot"
+        }
+      ],
+      "id": "VAL-1",
+      "name": "Maintanable artefact",
+      "names": {
+        "en": "value",
+        "fr": "val"
+      },
+      "description": "it is value",
+      "descriptions": {
+        "en": "it is value",
+        "fr": "c'est val"
+      }
+    },
+    {
+      "annotations": [
+        {
+          "id": "Annot"
+        }
+      ],
+      "id": "VAL-2",
+      "name": "Maintanable artefact",
+      "names": {
+        "en": "smth"
+      },
+      "description": "smth description",
+      "descriptions": {
+        "en": "smth description"
+      }
+    }
+  ]
+}

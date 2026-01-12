@@ -1,0 +1,68 @@
+{
+  "annotations": [
+    {
+      "id": "1",
+      "type": "type1",
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "role": "Allowed",
+  "metadataTargetRegions": [
+    {
+      "include": true,
+      "validFrom": "2022-07-17T10:11:16Z",
+      "validTo": "2022-07-17T10:11:16Z",
+      "components": [
+        {
+          "include": false,
+          "id": "MS",
+          "removePrefix": true,
+          "values": [
+            {
+              "value": "MEM",
+              "cascadeValues": "excluderoot",
+              "validFrom": "2022-07-17T10:11:16Z",
+              "validTo": "2022-09-17T10:11:16Z"
+            }
+          ]
+        },
+        {
+          "include": false,
+          "id": "MS2",
+          "removePrefix": true,
+          "timeRange": {
+            "beforePeriod": {
+              "period": "2023",
+              "isInclusive": true
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "releaseCalendar": {
+    "tolerance": "Tolerance",
+    "offset": "Offset",
+    "periodicity": "Periodicity"
+  },
+  "constraintAttachment": {
+    "metadataProvider": "urn:sdmx:org.sdmx.infomodel.base.MetadataProvider=IMF:METADATA_PROVIDERS(1.0).PR"
+  }
+}

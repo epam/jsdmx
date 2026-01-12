@@ -1,0 +1,119 @@
+{
+  "data": {
+    "structureMaps": [
+      {
+        "frequencyFormatMappings": [
+          {
+            "frequencyId": "CODE_1",
+            "datePattern": "2022-11",
+            "id": "FR1",
+            "annotations": []
+          },
+          {
+            "frequencyId": "CODE_2",
+            "datePattern": "2022-11",
+            "id": "FR2",
+            "annotations": []
+          },
+          {
+            "frequencyId": "CODE_3",
+            "datePattern": "2022-11",
+            "id": "FR3",
+            "annotations": []
+          }
+        ],
+        "datePatternMaps": [
+          {
+            "mappedComponents": [
+              {
+                "source": "CompMapDPS",
+                "target": "CompMapDPT"
+              }
+            ],
+            "mappedFrequencies": [
+              "FR1",
+              "FR2"
+            ],
+            "resolvePeriod": "MID_PERIOD",
+            "annotations": [],
+            "id": "DP1",
+            "locale": "EN",
+            "yearStart": {},
+            "sourcePattern": "SOURCE"
+          }
+        ],
+        "fixedValueMaps": [
+          {
+            "annotations": [],
+            "value": "value"
+          }
+        ],
+        "epochMaps": [
+          {
+            "basePeriod": "2022-07-17T10:11:16.000000",
+            "mappedComponents": [
+              {
+                "source": "CompMapEpochS",
+                "target": "CompMapEpochT"
+              }
+            ],
+            "mappedFrequencies": [
+              "FR3"
+            ],
+            "epochPeriod": "Microsecond",
+            "resolvePeriod": "MID_PERIOD",
+            "annotations": [],
+            "id": "EPOCH1",
+            "yearStart": {}
+          }
+        ],
+        "componentMaps": [
+          {
+            "source": [
+              "CompMapRepS"
+            ],
+            "target": [
+              "CompMapRepT"
+            ],
+            "representationMap": "urn:sdmx:org.sdmx.infomodel.structuremapping.RepresentationMap=IMF:ARTEFACT(1.2)"
+          }
+        ],
+        "annotations": [
+          {
+            "texts": {
+              "en": "text"
+            },
+            "id": "1",
+            "text": "text",
+            "title": null,
+            "type": "type1",
+            "value": null
+          }
+        ],
+        "description": "Some artefact",
+        "agencyID": "IMF",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "source": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFSource(3.0)",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "version": "1.2",
+        "target": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFTarget(3.0)",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "name": "Maintanable artefact",
+        "links": [
+          {
+            "urn": "urn:sdmx:org.sdmx.infomodel.structuremapping.StructureMap=IMF:ARTEFACT(1.2)",
+            "rel": "self",
+            "type": "structuremap"
+          }
+        ],
+        "id": "ARTEFACT",
+        "validTo": "2022-07-17T10:11:16.000000"
+      }
+    ]
+  }
+}

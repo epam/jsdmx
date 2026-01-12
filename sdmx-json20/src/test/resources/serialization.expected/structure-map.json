@@ -1,0 +1,107 @@
+{
+  "frequencyFormatMappings": [
+    {
+      "frequencyId": "CODE_3",
+      "datePattern": "2022-11",
+      "annotations": [],
+      "id": "FR3"
+    },
+    {
+      "frequencyId": "CODE_1",
+      "datePattern": "2022-11",
+      "annotations": [],
+      "id": "FR1"
+    },
+    {
+      "frequencyId": "CODE_2",
+      "datePattern": "2022-11",
+      "annotations": [],
+      "id": "FR2"
+    }
+  ],
+  "datePatternMaps": [
+    {
+      "mappedFrequencies": [
+        "FR1",
+        "FR2"
+      ],
+      "mappedComponents": [
+        {
+          "source": "CompMapDPS",
+          "target": "CompMapDPT"
+        }
+      ],
+      "resolvePeriod": "MID_PERIOD",
+      "annotations": [],
+      "id": "DP1",
+      "locale": "EN",
+      "frequencyDimension": "Frequency_dim",
+      "yearStart": {},
+      "sourcePattern": "SOURCE"
+    }
+  ],
+  "fixedValueMaps": [
+    {
+      "annotations": [],
+      "value": "value"
+    }
+  ],
+  "epochMaps": [
+    {
+      "mappedFrequencies": [
+        "FR3"
+      ],
+      "basePeriod": "2022-07-17T10:11:16Z",
+      "mappedComponents": [
+        {
+          "source": "CompMapEpochS",
+          "target": "CompMapEpochT"
+        }
+      ],
+      "epochPeriod": "MICROSECOND",
+      "resolvePeriod": "MID_PERIOD",
+      "annotations": [],
+      "id": "EPOCH1",
+      "frequencyDimension": "Frequency_dim",
+      "yearStart": {}
+    }
+  ],
+  "componentMaps": [
+    {
+      "representationMap": "urn:sdmx:org.sdmx.infomodel.structuremapping.RepresentationMap=IMF:ARTEFACT(1.2)",
+      "annotations": [],
+      "source": [
+        "CompMapRepS"
+      ],
+      "target": [
+        "CompMapRepT"
+      ]
+    }
+  ],
+  "annotations": [
+    {
+      "texts": {
+        "en": "text"
+      },
+      "id": "1",
+      "text": "text",
+      "type": "type1"
+    }
+  ],
+  "description": "Some artefact",
+  "agencyID": "IMF",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "source": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFSource(3.0)",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "target": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFTarget(3.0)",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "name": "Maintanable artefact",
+  "id": "ARTEFACT",
+  "validTo": "2022-07-17T10:11:16Z"
+}

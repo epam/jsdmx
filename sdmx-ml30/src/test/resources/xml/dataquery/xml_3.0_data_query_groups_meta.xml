@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<message:StructureSpecificData
+        xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/common"
+        xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ss="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/data/structurespecific"
+        xmlns:ns1="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=QH:DSD1(1.0.0):ObsLevelDim:dd"
+        xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v3_0/message ../../schemas/SDMXMessage.xsd">
+    <message:Header>
+        <message:ID>HED1</message:ID>
+        <message:Test>true</message:Test>
+        <message:Prepared>2023-04-17T10:11:16Z</message:Prepared>
+        <message:Sender id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Sender>
+        <message:Receiver id="id">
+            <common:Name xml:lang="en">HeaderTest</common:Name>
+        </message:Receiver>
+        <message:Structure structureID="agnc1.id1.1.0" namespace="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=agnc1:id1(1.0)" dimensionAtObservation="dd">
+            <common:Structure>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=agnc1:id1(1.0)</common:Structure>
+        </message:Structure>
+    </message:Header>
+    <message:DataSet ss:structureRef="agnc1.id1.1.0" action="Information" validFromDate="2022-05-17T10:11:16Z" validToDate="2023-06-17T11:10:16Z">
+        <Group DIM="dimension" ns1:type="GROUP_DIM">
+            <Metadata>
+                <Attribute id="METAATTR">
+                    <Value>attr</Value>
+                </Attribute>
+            </Metadata>
+        </Group>
+        <Group DIM2="dimension2" ATTR="attribute2" ns1:type="GROUP_DIM2"></Group>
+        <Series DIM="dimension" ATTR2="attribute2">
+            <Obs MM="measure" TIME_PERIOD="2020"></Obs>
+        </Series>
+    </message:DataSet>
+</message:StructureSpecificData>

@@ -9,8 +9,8 @@ subprojects {
         showViolations = true
     }
 
-    sourceCompatibility = 11
-    targetCompatibility = 11
+    sourceCompatibility = 17
+    targetCompatibility = 17
 
     ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
@@ -121,6 +121,9 @@ subprojects {
     dependencies {
         compileOnly("org.projectlombok:lombok:${lombok_version}")
         annotationProcessor("org.projectlombok:lombok:${lombok_version}")
+
+        implementation("org.apache.commons:commons-collections4:${org_apache_commons_commons_collections4_version}")
+        implementation("org.apache.commons:commons-lang3:${org_apache_commons_commons_lang3_version}")
 
         testImplementation("org.junit.jupiter:junit-jupiter-api:${jupiter_version}")
         testImplementation("org.junit.jupiter:junit-jupiter-params:${jupiter_version}")

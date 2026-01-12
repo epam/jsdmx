@@ -1,0 +1,107 @@
+{
+  "annotations": [
+    {
+      "id": "1",
+      "type": "type1",
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "processSteps": [
+    {
+      "annotations": [
+        {
+          "id": "Annot"
+        }
+      ],
+      "id": "ProcStep",
+      "name": "ProcessStep",
+      "names": {
+        "en": "ProcessStep"
+      },
+      "description": "ProcessStep description",
+      "descriptions": {
+        "en": "ProcessStep description"
+      },
+      "computation": {
+        "localID": "LocId",
+        "softwareLanguage": "SoftwareLanguage",
+        "softwarePackage": "SoftwarePackage",
+        "softwareVersion": "SoftwareVersion",
+        "annotations": [
+          {
+            "id": "Annot"
+          }
+        ],
+        "description": "Computation Description",
+        "descriptions": {
+          "en": "Computation Description"
+        }
+      },
+      "transitions": [
+        {
+          "annotations": [],
+          "id": "Trans",
+          "localID": "Loc",
+          "condition": "Doo",
+          "conditions": {
+            "en": "Doo"
+          },
+          "targetStep": "ST"
+        }
+      ],
+      "outputs": [
+        {
+          "localID": "Loc",
+          "annotations": [
+            {
+              "id": "Annot"
+            }
+          ],
+          "objectReference": "urn:sdmx:org.sdmx.infomodel.process.ProcessStep=IMF:Artefact(1.0)"
+        }
+      ],
+      "inputs": [
+        {
+          "localID": "Loc",
+          "annotations": [
+            {
+              "id": "Annot"
+            }
+          ],
+          "objectReference": "urn:sdmx:org.sdmx.infomodel.process.ProcessStep=IMF:Artefact(1.0)"
+        }
+      ],
+      "processSteps": [
+        {
+          "annotations": [
+            {
+              "id": "Annot"
+            }
+          ],
+          "id": "ProcessChild",
+          "name": "ProcessStepChild",
+          "names": {
+            "en": "ProcessStepChild"
+          }
+        }
+      ]
+    }
+  ]
+}

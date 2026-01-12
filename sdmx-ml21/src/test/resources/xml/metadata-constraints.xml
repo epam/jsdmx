@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<mes:Structure xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+        xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message ../../schemas/SDMXMessage.xsd">
+    <mes:Header>
+        <mes:ID>HED1</mes:ID>
+        <mes:Test>true</mes:Test>
+        <mes:Prepared>2023-04-17T10:11:16Z</mes:Prepared>
+        <mes:Sender id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Sender>
+        <mes:Receiver id="id">
+            <com:Name xml:lang="en">HeaderTest</com:Name>
+        </mes:Receiver>
+    </mes:Header>
+    <mes:Structures>
+        <str:Constraints>
+            <str:ContentConstraint urn="urn:sdmx:org.sdmx.infomodel.registry.MetadataConstraint=IMF:ARTEFACT(1.2)" agencyID="IMF" id="ARTEFACT" version="1.2"
+                    isFinal="true" isExternalReference="false" validTo="2022-07-17T10:11:16Z" validFrom="2022-07-17T10:11:16Z" role="Allowed">
+                <com:Annotations>
+                    <com:Annotation id="1">
+                        <com:AnnotationType>type1</com:AnnotationType>
+                        <com:AnnotationText xml:lang="en">text</com:AnnotationText>
+                    </com:Annotation>
+                </com:Annotations>
+                <com:Name xml:lang="en">Maintanable artefact</com:Name>
+                <com:Name xml:lang="fr-CA">artefact</com:Name>
+                <com:Description xml:lang="en">Some artefact</com:Description>
+                <str:ConstraintAttachment>
+                    <str:Metadataflow>
+                        <Ref agencyID="IMF" id="ARTEFACT" version="1.2" package="metadatastructure" class="Metadataflow"/>
+                    </str:Metadataflow>
+                </str:ConstraintAttachment>
+                <str:ReleaseCalendar>
+                    <str:Periodicity>Periodicity</str:Periodicity>
+                    <str:Offset>Offset</str:Offset>
+                    <str:Tolerance>Tolerance</str:Tolerance>
+                </str:ReleaseCalendar>
+                <str:MetadataTargetRegion include="true" report="skipped" metadataTarget="skipped">
+                    <com:Attribute include="false" id="MS">
+                        <com:Value>MEM</com:Value>
+                        <com:Value>local</com:Value>
+                    </com:Attribute>
+                    <com:Attribute include="false" id="MS2">
+                        <com:TimeRange>
+                            <com:BeforePeriod isInclusive="true">2023</com:BeforePeriod>
+                        </com:TimeRange>
+                    </com:Attribute>
+                </str:MetadataTargetRegion>
+            </str:ContentConstraint>
+        </str:Constraints>
+    </mes:Structures>
+</mes:Structure>

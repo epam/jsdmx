@@ -1,0 +1,886 @@
+{
+  "data": {
+    "categorisations": [
+      {
+        "agencyID": "IMF",
+        "id": "ARTEFACT",
+        "version": "1.2",
+        "name": "Maintanable artefact",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "description": "Some artefact",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "validTo": "2022-07-17T10:11:16.000000",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "annotations": [
+          {
+            "id": "1",
+            "title": null,
+            "type": "type1",
+            "value": null,
+            "text": "text",
+            "texts": {
+              "en": "text"
+            }
+          }
+        ],
+        "source": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=IMF:ARTEFACT(1.2).CAT_SOURCE",
+        "target": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=IMF:ARTEFACT(1.2).CAT_TARGET"
+      }
+    ],
+    "structureMaps": [
+      {
+        "frequencyFormatMappings": [
+          {
+            "frequencyId": "CODE_1",
+            "datePattern": "2022-11",
+            "id": "FR1",
+            "annotations": []
+          },
+          {
+            "frequencyId": "CODE_2",
+            "datePattern": "2022-11",
+            "id": "FR2",
+            "annotations": []
+          },
+          {
+            "frequencyId": "CODE_3",
+            "datePattern": "2022-11",
+            "id": "FR3",
+            "annotations": []
+          }
+        ],
+        "datePatternMaps": [
+          {
+            "mappedComponents": [
+              {
+                "source": "CompMapDPS",
+                "target": "CompMapDPT"
+              }
+            ],
+            "mappedFrequencies": [
+              "FR1",
+              "FR2"
+            ],
+            "resolvePeriod": "MID_PERIOD",
+            "annotations": [],
+            "id": "DP1",
+            "locale": "EN",
+            "yearStart": {},
+            "sourcePattern": "SOURCE"
+          }
+        ],
+        "fixedValueMaps": [
+          {
+            "annotations": [],
+            "value": "value"
+          }
+        ],
+        "epochMaps": [
+          {
+            "basePeriod": "2022-07-17T10:11:16.000000",
+            "mappedComponents": [
+              {
+                "source": "CompMapEpochS",
+                "target": "CompMapEpochT"
+              }
+            ],
+            "mappedFrequencies": [
+              "FR3"
+            ],
+            "epochPeriod": "Microsecond",
+            "resolvePeriod": "MID_PERIOD",
+            "annotations": [],
+            "id": "EPOCH1",
+            "yearStart": {}
+          }
+        ],
+        "componentMaps": [
+          {
+            "source": [
+              "CompMapRepS"
+            ],
+            "target": [
+              "CompMapRepT"
+            ],
+            "representationMap": "urn:sdmx:org.sdmx.infomodel.structuremapping.RepresentationMap=IMF:ARTEFACT(1.2)"
+          }
+        ],
+        "annotations": [
+          {
+            "texts": {
+              "en": "text"
+            },
+            "id": "1",
+            "text": "text",
+            "title": null,
+            "type": "type1",
+            "value": null
+          }
+        ],
+        "description": "Some artefact",
+        "agencyID": "IMF",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "source": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFSource(3.0)",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "version": "1.2",
+        "target": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataFTarget(3.0)",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "name": "Maintanable artefact",
+        "id": "ARTEFACT",
+        "validTo": "2022-07-17T10:11:16.000000"
+      }
+    ],
+    "categorySchemes": [
+      {
+        "agencyID": "IMF",
+        "id": "ARTEFACT",
+        "version": "1.2",
+        "name": "Maintanable artefact",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "description": "Some artefact",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "validTo": "2022-07-17T10:11:16.000000",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "annotations": [
+          {
+            "id": "1",
+            "title": null,
+            "type": "type1",
+            "value": null,
+            "text": "text",
+            "texts": {
+              "en": "text"
+            }
+          }
+        ],
+        "isPartial": true,
+        "categories": [
+          {
+            "annotations": [],
+            "id": "23423",
+            "name": "Category1",
+            "names": {
+              "en": "Category1"
+            },
+            "description": "description",
+            "descriptions": {
+              "en": "description"
+            },
+            "categories": [
+              {
+                "annotations": [],
+                "id": "23422",
+                "name": "Category2",
+                "names": {
+                  "en": "Category2"
+                },
+                "description": "description category1",
+                "descriptions": {
+                  "en": "description category1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "codelists": [
+      {
+        "agencyID": "IMF",
+        "id": "ARTEFACT",
+        "version": "1.2",
+        "name": "Maintanable artefact",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "description": "Some artefact",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "validTo": "2022-07-17T10:11:16.000000",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "annotations": [
+          {
+            "id": "1",
+            "title": null,
+            "type": "type1",
+            "value": null,
+            "text": "text",
+            "texts": {
+              "en": "text"
+            }
+          }
+        ],
+        "isPartial": true,
+        "codes": [
+          {
+            "annotations": [],
+            "id": "CODE1",
+            "name": "code 1",
+            "names": {
+              "en": "code 1"
+            },
+            "description": "code 1 desc",
+            "descriptions": {
+              "en": "code 1 desc"
+            },
+            "parent": "CODE2"
+          },
+          {
+            "annotations": [],
+            "id": "CODE2",
+            "name": "code 2",
+            "names": {
+              "en": "code 2"
+            },
+            "description": "code 2 desc",
+            "descriptions": {
+              "en": "code 2 desc"
+            }
+          }
+        ],
+        "codelistExtensions": [
+          {
+            "prefix": "PREF2",
+            "codelist": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_AGE(2.1.1)",
+            "inclusiveCodeSelection": {
+              "memberValues": [
+                {
+                  "value": "mem1",
+                  "cascadeSelection": "true"
+                }
+              ]
+            }
+          },
+          {
+            "prefix": "PREF2",
+            "codelist": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_AGE(2.1.1)",
+            "exclusiveCodeSelection": {
+              "memberValues": [
+                {
+                  "value": "mem2",
+                  "cascadeSelection": "false"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "conceptSchemes": [
+      {
+        "agencyID": "IMF",
+        "id": "ARTEFACT",
+        "version": "1.2",
+        "name": "Maintanable artefact",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "description": "Some artefact",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "validTo": "2022-07-17T10:11:16.000000",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "annotations": [
+          {
+            "id": "1",
+            "title": null,
+            "type": "type1",
+            "value": null,
+            "text": "text",
+            "texts": {
+              "en": "text"
+            }
+          }
+        ],
+        "concepts": [
+          {
+            "annotations": [],
+            "id": "COUNTRY",
+            "name": "Country",
+            "names": {
+              "en": "Country"
+            },
+            "coreRepresentation": {}
+          }
+        ]
+      }
+    ],
+    "dataStructures": [
+      {
+        "agencyID": "IMF",
+        "id": "ARTEFACT",
+        "version": "1.2",
+        "name": "Maintanable artefact",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "description": "Some artefact",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "validTo": "2022-07-17T10:11:16.000000",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "annotations": [
+          {
+            "id": "1",
+            "title": null,
+            "type": "type1",
+            "value": null,
+            "text": "text",
+            "texts": {
+              "en": "text"
+            }
+          }
+        ],
+        "metadata": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=QUANTHUB:ECOFIN_DSD(1.2)",
+        "dataStructureComponents": {
+          "attributeList": {
+            "annotations": [],
+            "id": "AttributeDescriptor",
+            "metadataAttributeUsages": [
+              {
+                "annotations": [],
+                "metadataAttributeReference": "12",
+                "attributeRelationship": {
+                  "observation": {}
+                }
+              },
+              {
+                "annotations": [],
+                "metadataAttributeReference": "1",
+                "attributeRelationship": {
+                  "dimensions": [
+                    "dim1",
+                    "dim2"
+                  ]
+                }
+              },
+              {
+                "annotations": [],
+                "metadataAttributeReference": "2",
+                "attributeRelationship": {
+                  "none": {}
+                }
+              }
+            ],
+            "attributes": [
+              {
+                "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER_DIAGNOSTICS_COLLECTION_SCHEME(1.5.1).DATE_VALUE",
+                "annotations": [],
+                "id": "DA1",
+                "isMandatory": true,
+                "conceptRoles": [
+                  "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER(1.5.1).DATE_VALUE",
+                  "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER_DIAGNOSTICS(1.5.2).DATE_VALUE"
+                ],
+                "attributeRelationship": {
+                  "none": {}
+                },
+                "measureRelationship": [
+                  "MO"
+                ],
+                "localRepresentation": {
+                  "format": {
+                    "dataType": "AlphaNumeric",
+                    "isMultiLingual": false
+                  }
+                }
+              }
+            ]
+          },
+          "dimensionList": {
+            "annotations": [],
+            "id": "DimensionDescriptor",
+            "dimensions": [
+              {
+                "position": 1,
+                "id": "DIM1",
+                "annotations": [],
+                "type": "Dimension",
+                "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:DIMENSION(1.6.1).DATE_VALUE",
+                "conceptRoles": [],
+                "localRepresentation": {
+                  "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST(1.0)"
+                }
+              }
+            ],
+            "timeDimensions": [
+              {
+                "position": 2,
+                "id": "TIME_PERIOD",
+                "annotations": [],
+                "type": "TimeDimension",
+                "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:TIME_DIMENSION(1.6.1).DATE_VALUE",
+                "localRepresentation": {}
+              }
+            ]
+          },
+          "measureList": {
+            "annotations": [],
+            "id": "MeasureDescriptor",
+            "measures": [
+              {
+                "annotations": [],
+                "id": "MES1",
+                "isMandatory": true,
+                "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:MEASURE(1.5.2).DATE_VALUE",
+                "conceptRoles": [
+                  "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER(1.5.1).DATE_VALUE",
+                  "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER_DIAGNOSTICS(1.5.2).DATE_VALUE"
+                ],
+                "localRepresentation": {
+                  "format": {
+                    "dataType": "BasicTimePeriod",
+                    "isMultiLingual": false
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "hierarchies": [
+      {
+        "level": {
+          "names": {
+            "en": "hierarchy name"
+          },
+          "name": "hierarchy name",
+          "annotations": [],
+          "description": "hierarchy desc",
+          "id": "levId",
+          "descriptions": {
+            "en": "hierarchy desc"
+          },
+          "codingFormat": {
+            "interval": 1,
+            "isSequence": true,
+            "maxLength": 1,
+            "minLength": 1,
+            "maxValue": 1,
+            "minValue": 1,
+            "pattern": "a",
+            "startValue": 1,
+            "endValue": 1,
+            "dataType": "Alpha"
+          }
+        },
+        "annotations": [
+          {
+            "texts": {
+              "en": "text"
+            },
+            "id": "1",
+            "text": "text",
+            "title": null,
+            "type": "type1",
+            "value": null
+          }
+        ],
+        "description": "Some artefact",
+        "agencyID": "IMF",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "version": "1.2",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "name": "Maintanable artefact",
+        "hierarchicalCodes": [
+          {
+            "code": "urn:sdmx:org.sdmx.infomodel.codelist.Code=SDMX:CL_AGE(2.1.1).CL1",
+            "level": "Lev1",
+            "annotations": [],
+            "validFrom": "2022-07-17T10:11:16.345Z",
+            "validTo": "2022-07-17T10:11:16.345Z"
+          }
+        ],
+        "id": "ARTEFACT",
+        "hasFormalLevels": true,
+        "validTo": "2022-07-17T10:11:16.000000"
+      }
+    ],
+    "metadataflows": [
+      {
+        "agencyID": "IMF",
+        "id": "ARTEFACT",
+        "version": "1.2",
+        "name": "Maintanable artefact",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "description": "Some artefact",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "validTo": "2022-07-17T10:11:16.000000",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "annotations": [
+          {
+            "id": "1",
+            "title": null,
+            "type": "type1",
+            "value": null,
+            "text": "text",
+            "texts": {
+              "en": "text"
+            }
+          }
+        ],
+        "links": [
+          {
+            "urn": "urn:sdmx:org.sdmx.infomodel.metadatastructure.Metadataflow=IMF:ARTEFACT(1.2)",
+            "type": "metadataflow",
+            "rel": "self"
+          }
+        ],
+        "structure": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=IMF:METADATA(1.0.0)"
+      }
+    ],
+    "metadataStructures": [
+      {
+        "metadataStructureComponents": {
+          "metadataAttributeList": {
+            "annotations": [
+              {
+                "id": "Annot-1",
+                "text": null,
+                "title": null,
+                "type": null,
+                "value": null
+              }
+            ],
+            "metadataAttributes": [
+              {
+                "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataAttributeDescriptor=1:1(1.0).2",
+                "minOccurs": 10,
+                "localRepresentation": {
+                  "enumeration": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=EPM:dim1(1.0)"
+                },
+                "annotations": [],
+                "maxOccurs": 20,
+                "id": "1",
+                "isPresentational": true,
+                "metadataAttributes": [
+                  {
+                    "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataAttributeDescriptor=1:1(1.0).2",
+                    "minOccurs": 10,
+                    "localRepresentation": {
+                      "enumeration": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=EPM:dim1(1.0)"
+                    },
+                    "annotations": [],
+                    "maxOccurs": 20,
+                    "id": "1",
+                    "isPresentational": true
+                  }
+                ]
+              }
+            ],
+            "id": "1"
+          }
+        },
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "name": "Maintanable artefact",
+        "description": "Some artefact",
+        "annotations": [
+          {
+            "texts": {
+              "en": "text"
+            },
+            "id": "1",
+            "text": "text",
+            "title": null,
+            "type": "type1",
+            "value": null
+          }
+        ],
+        "agencyID": "IMF",
+        "id": "ARTEFACT",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "version": "1.2",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "validTo": "2022-07-17T10:11:16.000000"
+      }
+    ],
+    "representationMaps": [
+      {
+        "agencyID": "IMF",
+        "id": "ARTEFACT",
+        "version": "1.2",
+        "name": "Maintanable artefact",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "description": "Some artefact",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "validTo": "2022-07-17T10:11:16.000000",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "annotations": [
+          {
+            "id": "1",
+            "title": null,
+            "type": "type1",
+            "value": null,
+            "text": "text",
+            "texts": {
+              "en": "text"
+            }
+          }
+        ],
+        "source": [
+          {
+            "codelist": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:SOURCE(1.5.1)"
+          },
+          {
+            "dataType": "DateTime"
+          }
+        ],
+        "target": [
+          {
+            "codelist": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST_SOURCE(1.0)"
+          }
+        ],
+        "representationMappings": [
+          {
+            "annotations": [],
+            "validTo": "2022-07-17T00:00:00.000Z",
+            "validFrom": "2022-07-17T00:00:00.000Z",
+            "sourceValues": [
+              {
+                "value": "mappedValue",
+                "isRegEx": true,
+                "startIndex": 0,
+                "endIndex": 10
+              }
+            ],
+            "targetValues": [
+              "targetValue1",
+              "targetValue2"
+            ]
+          }
+        ]
+      }
+    ],
+    "dataflows": [
+      {
+        "agencyID": "IMF",
+        "id": "ARTEFACT",
+        "version": "1.2",
+        "name": "Maintanable artefact",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "description": "Some artefact",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "validTo": "2022-07-17T10:11:16.000000",
+        "validFrom": "2022-07-17T10:11:16.000000",
+        "annotations": [
+          {
+            "id": "1",
+            "title": null,
+            "type": "type1",
+            "value": null,
+            "text": "text",
+            "texts": {
+              "en": "text"
+            }
+          }
+        ],
+        "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=QUANTHUB:ECOFIN_DSD(1.2)"
+      }
+    ],
+    "dataConstraints": [
+      {
+        "annotations": [
+          {
+            "id": "1",
+            "title": null,
+            "type": "type1",
+            "value": null,
+            "text": "text",
+            "texts": {
+              "en": "text"
+            }
+          }
+        ],
+        "id": "ARTEFACT",
+        "name": "Maintanable artefact",
+        "names": {
+          "en": "Maintanable artefact",
+          "fr-CA": "artefact"
+        },
+        "description": "Some artefact",
+        "descriptions": {
+          "en": "Some artefact"
+        },
+        "version": "1.2",
+        "validTo": "2022-07-17T10:11:16Z",
+        "validFrom": "2022-07-17T10:11:16Z",
+        "agencyID": "IMF",
+        "role": "Allowed",
+        "constraintAttachment": {
+          "dataProvider": "urn:sdmx:org.sdmx.infomodel.base.DataProvider=IMF:DATA_PROVIDERS(1.0).DP"
+        },
+        "releaseCalendar": {
+          "tolerance": "Tolerance",
+          "offset": "Offset",
+          "periodicity": "Periodicity"
+        },
+        "dataKeySets": [
+          {
+            "isIncluded": true,
+            "keys": [
+              {
+                "annotations": [],
+                "keyValues": [
+                  {
+                    "id": "C1",
+                    "include": true,
+                    "removePrefix": true,
+                    "value": "Value"
+                  }
+                ],
+                "components": [
+                  {
+                    "id": "MS",
+                    "include": false,
+                    "removePrefix": true,
+                    "values": [
+                      {
+                        "value": "MEM"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "MS2",
+                    "include": false,
+                    "removePrefix": true,
+                    "timeRange": {
+                      "beforePeriod": {
+                        "period": "2023",
+                        "isInclusive": true
+                      }
+                    }
+                  }
+                ],
+                "include": true,
+                "validFrom": "2022-07-17T10:11:16Z",
+                "validTo": "2022-07-17T10:11:16Z"
+              }
+            ]
+          }
+        ],
+        "cubeRegions": [
+          {
+            "include": true,
+            "components": [
+              {
+                "id": "some component id 1",
+                "include": true,
+                "removePrefix": true,
+                "values": [
+                  {
+                    "value": "selectionValue1",
+                    "lang": "en"
+                  }
+                ]
+              },
+              {
+                "id": "some component id 2",
+                "include": true,
+                "removePrefix": true,
+                "values": [
+                  {
+                    "value": "selectionValue2",
+                    "cascadeValues": "true",
+                    "validFrom": "2020-04-12T12:00:00Z",
+                    "validTo": "2020-05-12T12:00:00Z"
+                  },
+                  {
+                    "value": "selectionValue5"
+                  }
+                ]
+              }
+            ],
+            "keyValues": [
+              {
+                "id": "123",
+                "include": true,
+                "removePrefix": true,
+                "validFrom": "2020-04-12T12:00:00Z",
+                "validTo": "2022-04-12T12:00:00Z",
+                "timeRange": {
+                  "beforePeriod": {
+                    "period": "2020",
+                    "isInclusive": false
+                  },
+                  "afterPeriod": {
+                    "period": "2021",
+                    "isInclusive": false
+                  }
+                }
+              }
+            ],
+            "annotations": [
+              {
+                "id": "Annot",
+                "title": null,
+                "type": null,
+                "value": null,
+                "text": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "schema": "https://raw.githubusercontent.com/sdmx-twg/sdmx-json/master/metadata-message/tools/schemas/2.0.0/sdmx-json-metadata-schema.json",
+    "id": "IDREF8124",
+    "test": false,
+    "prepared": "2021-11-02T09:47:41.000000",
+    "contentLanguages": [
+      "en"
+    ],
+    "sender": {
+      "id": "unknown"
+    }
+  }
+}

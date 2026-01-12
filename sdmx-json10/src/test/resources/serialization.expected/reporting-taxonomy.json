@@ -1,0 +1,88 @@
+{
+  "links": [
+    {
+      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.ReportingTaxonomy=IMF:ARTEFACT(1.2)",
+      "type": "reportingtaxonomy",
+      "rel": "self"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "1",
+      "title": null,
+      "type": "type1",
+      "value": null,
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "id": "ARTEFACT",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "version": "1.2",
+  "validTo": "2022-07-17T10:11:16Z",
+  "validFrom": "2022-07-17T10:11:16Z",
+  "agencyID": "IMF",
+  "isPartial": false,
+  "reportingCategories": [
+    {
+      "annotations": [
+        {
+          "id": "Annot",
+          "title": null,
+          "type": null,
+          "value": null,
+          "text": null
+        }
+      ],
+      "id": "RC-1",
+      "name": "ReportingCat",
+      "names": {
+        "en": "ReportingCat"
+      },
+      "description": "ReportingCat description",
+      "descriptions": {
+        "en": "ReportingCat description"
+      },
+      "provisioningMetadata": [
+        "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataS2(3.0)",
+        "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=EPM:DataS1(3.0)"
+      ],
+      "reportingCategories": [
+        {
+          "annotations": [
+            {
+              "id": "Annot",
+              "title": null,
+              "type": null,
+              "value": null,
+              "text": null
+            }
+          ],
+          "id": "RC-2",
+          "name": "ReportingCat2",
+          "names": {
+            "en": "ReportingCat2"
+          },
+          "description": "ReportingCat2 description",
+          "descriptions": {
+            "en": "ReportingCat2 description"
+          },
+          "structuralMetadata": [
+            "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=EPM:DataS2(3.0)",
+            "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=EPM:DataS1(3.0)"
+          ]
+        }
+      ]
+    }
+  ]
+}

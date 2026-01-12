@@ -1,0 +1,26 @@
+{
+  "groups": [
+    {
+      "annotations": [
+        {
+          "id": "id1"
+        },
+        {
+          "id": "id2"
+        }
+      ],
+      "id": "GroupDimensionDescriptor1",
+      "groupDimensions": [
+        "dim1",
+        "dim12"
+      ]
+    },
+    {
+      "id": "GroupDimensionDescriptor2",
+      "groupDimensions": [
+        "dim21",
+        "dim22"
+      ]
+    }
+  ]
+}

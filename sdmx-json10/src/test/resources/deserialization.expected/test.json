@@ -1,0 +1,147 @@
+{
+  "dataStructureComponents": {
+    "attributeList": {
+      "annotations": [],
+      "id": "AttributeDescriptor",
+      "metadataAttributeUsages": [],
+      "attributes": [
+        {
+          "annotations": [],
+          "id": "COMMENT",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=QUANTHUB:ECOFIN_CONCEPTS(1.0).COMMENT",
+          "isMandatory": false,
+          "conceptRoles": [],
+          "attributeRelationship": {
+            "none": {}
+          }
+        },
+        {
+          "annotations": [],
+          "id": "BASE_PER",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).BASE_PER",
+          "isMandatory": false,
+          "conceptRoles": [],
+          "attributeRelationship": {
+            "dimensions": [
+              "DATA_DOMAIN",
+              "REF_AREA",
+              "INDICATOR",
+              "COUNTERPART_AREA",
+              "FREQ"
+            ]
+          }
+        },
+        {
+          "annotations": [],
+          "id": "UNIT_MULT",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).UNIT_MULT",
+          "isMandatory": false,
+          "conceptRoles": [],
+          "attributeRelationship": {
+            "dimensions": [
+              "DATA_DOMAIN",
+              "REF_AREA",
+              "INDICATOR",
+              "COUNTERPART_AREA",
+              "FREQ"
+            ]
+          }
+        },
+        {
+          "annotations": [],
+          "id": "OBS_STATUS",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).OBS_STATUS",
+          "isMandatory": false,
+          "conceptRoles": [],
+          "attributeRelationship": {
+            "observation": {}
+          }
+        },
+        {
+          "annotations": [],
+          "id": "TIME_FORMAT",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).TIME_FORMAT",
+          "isMandatory": false,
+          "conceptRoles": [],
+          "attributeRelationship": {
+            "dimensions": [
+              "DATA_DOMAIN",
+              "REF_AREA",
+              "INDICATOR",
+              "COUNTERPART_AREA",
+              "FREQ"
+            ]
+          }
+        }
+      ]
+    },
+    "dimensionList": {
+      "annotations": [],
+      "id": "DimensionDescriptor",
+      "dimensions": [
+        {
+          "annotations": [],
+          "id": "DATA_DOMAIN",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=QUANTHUB:ECOFIN_CONCEPTS(1.0).DATA_DOMAIN",
+          "position": 0,
+          "type": "Dimension",
+          "conceptRoles": []
+        },
+        {
+          "annotations": [],
+          "id": "REF_AREA",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=QUANTHUB:ECOFIN_CONCEPTS(2.0.0-draft).REF_AREA",
+          "position": 1,
+          "type": "Dimension",
+          "conceptRoles": []
+        },
+        {
+          "annotations": [],
+          "id": "INDICATOR",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=QUANTHUB:ECOFIN_CONCEPTS(1.0).INDICATOR",
+          "position": 2,
+          "type": "Dimension",
+          "conceptRoles": []
+        },
+        {
+          "annotations": [],
+          "id": "COUNTERPART_AREA",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=QUANTHUB:ECOFIN_CONCEPTS(1.0).COUNTERPART_AREA",
+          "position": 3,
+          "type": "Dimension",
+          "conceptRoles": []
+        },
+        {
+          "annotations": [],
+          "id": "FREQ",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).FREQ",
+          "position": 4,
+          "type": "Dimension",
+          "conceptRoles": []
+        }
+      ],
+      "timeDimensions": [
+        {
+          "annotations": [],
+          "id": "TIME_PERIOD",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).TIME_PERIOD",
+          "position": 5,
+          "type": "TimeDimension"
+        }
+      ]
+    },
+    "measureList": {
+      "annotations": [],
+      "id": "MeasureDescriptor",
+      "measures": [
+        {
+          "annotations": [],
+          "id": "OBS_VALUE",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).OBS_VALUE",
+          "isMandatory": false,
+          "conceptRoles": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "agencyID": "IMF",
+  "id": "ARTEFACT",
+  "version": "1.2",
+  "name": "Maintanable artefact",
+  "names": {
+    "en": "Maintanable artefact",
+    "fr-CA": "artefact"
+  },
+  "description": "Some artefact",
+  "descriptions": {
+    "en": "Some artefact"
+  },
+  "validTo": "2022-07-17T10:11:16.000000",
+  "validFrom": "2022-07-17T10:11:16.000000",
+  "annotations": [
+    {
+      "id": "1",
+      "title": null,
+      "type": "type1",
+      "value": null,
+      "text": "text",
+      "texts": {
+        "en": "text"
+      }
+    }
+  ],
+  "metadata": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=QUANTHUB:ECOFIN_DSD(1.2)",
+  "dataStructureComponents": {
+    "attributeList": null,
+    "dimensionList": {
+      "annotations": [],
+      "id": "DimensionDescriptor",
+      "dimensions": [
+        {
+          "position": 1,
+          "id": "DIM1",
+          "annotations": [],
+          "type": "Dimension",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:DIMENSION(1.6.1).DATE_VALUE",
+          "conceptRoles": [
+            "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ADVANCED_RELEASE_CALANDER(1.5.1).DATE_VALUE"
+          ],
+          "localRepresentation": {
+            "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CODELIST(1.0)"
+          }
+        }
+      ],
+      "timeDimensions": [
+        {
+          "position": 2,
+          "id": "TIME_PERIOD",
+          "annotations": [],
+          "type": "TimeDimension",
+          "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:TIME_DIMENSION(1.6.1).DATE_VALUE",
+          "localRepresentation": {
+            "format": {
+              "dataType": "BasicTimePeriod"
+            }
+          }
+        }
+      ]
+    },
+    "measureList": null
+  }
+}

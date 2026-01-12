@@ -5,20 +5,16 @@ Based on the latest version of the [SDMX 3.0 Specifications](https://sdmx.org/?p
 statistical data and metadata among international organizations, central banks, and national statistical institutes.
 
 ## Packages
-- `sdmx30-infomodel` module contains java classes which represent SDMX 3.0 Information Model (Structure Artifacts) such as Data Structure Definitions (DSDs), Metadata Structure Definitions (MSDs), Code Lists, Concept Schemes, and Data and Metadata flows and others.
+- `sdmx30-infomodel` module contains java classes which represent SDMX 3.0 Information Model (Structure Artifacts) such as Data Structure Definitions (DSDs), Metadata Structure Definitions (MSDs), Code Lists, Concept Schemes, and Data and Metadata flows and others. 
+- `sdmx-json10` module providing serialization to JSON 1.0 format for SDMX 2.1
+- `sdmx-json20` module providing serialization to JSON 2.0 format for SDMX 3.0
+- `sdmx-ml21` module providing serialization to ML 2.1 format for SDMX 2.1
+- `sdmx-ml30` module providing serialization to ML 3.0 format for SDMX 3.0
 
-## Roadmap
-
-The following modules are currently on project's roadmap for 2023:
-- `sdmx30-serialization` module providing (de)serialization to SDMX-JSON, SDMX-ML and SDMX-CSV formats for data and metadata.
-- `sdmx30-reporting` module with models describing to Data and Metadata Reporting.
-- `sdmx30-client` REST client for SDMX registry.
-
-Listed above is a subject for extension and other modules might be implemented as well.
 
 ## Requirements
 
-- Java JDK 11 and higher
+- Java JDK 17 and higher
 
 ## Installation
 
@@ -28,11 +24,60 @@ Listed above is a subject for extension and other modules might be implemented a
     <dependency>
         <groupId>com.epam.jsdmx</groupId>
         <artifactId>sdmx30-infomodel</artifactId>
-        <version>1.0.0</version>
+        <version>2.0.0</version>
     </dependency>
 
 #### Gradle:
-    compile(group: 'com.epam.jsdmx', name: 'sdmx30-infomodel', version: '1.0.0')
+    compile(group: 'com.epam.jsdmx', name: 'sdmx30-infomodel', version: '2.0.0')
+
+### sdmx-json10
+
+#### Maven:
+    <dependency>
+        <groupId>com.epam.jsdmx</groupId>
+        <artifactId>sdmx-json10</artifactId>
+        <version>2.0.0</version>
+    </dependency>
+
+#### Gradle:
+    compile(group: 'com.epam.jsdmx', name: 'sdmx-json10', version: '2.0.0')
+
+### sdmx-json20
+
+#### Maven:
+    <dependency>
+        <groupId>com.epam.jsdmx</groupId>
+        <artifactId>sdmx-json20</artifactId>
+        <version>2.0.0</version>
+    </dependency>
+
+#### Gradle:
+    compile(group: 'com.epam.jsdmx', name: 'sdmx-json20', version: '2.0.0')
+
+### sdmx-ml21
+
+#### Maven:
+    <dependency>
+        <groupId>com.epam.jsdmx</groupId>
+        <artifactId>sdmx-ml21</artifactId>
+        <version>2.0.0</version>
+    </dependency>
+
+#### Gradle:
+    compile(group: 'com.epam.jsdmx', name: 'sdmx-ml21', version: '2.0.0')
+
+
+### sdmx-ml30
+
+#### Maven:
+    <dependency>
+        <groupId>com.epam.jsdmx</groupId>
+        <artifactId>sdmx-ml30</artifactId>
+        <version>2.0.0</version>
+    </dependency>
+
+#### Gradle:
+    compile(group: 'com.epam.jsdmx', name: 'sdmx-ml30', version: '2.0.0')
 
 ## License
 Project is distributed under the Apache License 2.0. See [LICENSE](LICENSE) for more information.
