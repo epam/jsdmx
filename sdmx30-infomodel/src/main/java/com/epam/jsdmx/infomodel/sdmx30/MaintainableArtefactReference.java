@@ -4,20 +4,21 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
-@Data
+@Getter
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = false)
 public class MaintainableArtefactReference implements ArtefactReference {
 
     protected String id;
     protected String organisationId;
     protected StructureClass structureClass;
     protected VersionReference version;
+
+    private transient int cachedHashCode;
+    private transient boolean hashCodeComputed;
 
     public MaintainableArtefactReference(String id, String organisationId, VersionReference version, StructureClass structureClass) {
         this.id = id;
@@ -96,6 +97,65 @@ public class MaintainableArtefactReference implements ArtefactReference {
 
     @Override
     public String toString() {
-        return (structureClass != null ? structureClass.getSimpleName() : "null") + "=" + organisationId + ":" + id + "(" + getVersionString() + ")";
+        return (structureClass != null ? structureClass.getSimpleName() : "null")
+            + "=" + organisationId + ":" + id + "(" + getVersionString() + ")";
+    }
+
+    public void setId(String id) {
+        this.id = id;
+        invalidateHashCode();
+    }
+
+    public void setOrganisationId(String organisationId) {
+        this.organisationId = organisationId;
+        invalidateHashCode();
+    }
+
+    public void setStructureClass(StructureClass structureClass) {
+        this.structureClass = structureClass;
+        invalidateHashCode();
+    }
+
+    public void setVersion(VersionReference version) {
+        this.version = version;
+        invalidateHashCode();
+    }
+
+    protected void invalidateHashCode() {
+        this.cachedHashCode = 0;
+        this.hashCodeComputed = false;
+    }
+
+    protected int computeHashCode() {
+        int result = Objects.hashCode(id);
+        result = 31 * result + Objects.hashCode(organisationId);
+        result = 31 * result + Objects.hashCode(structureClass);
+        result = 31 * result + Objects.hashCode(version);
+        return result;
+    }
+
+    @Override
+    public int hashCode() {
+        if (hashCodeComputed) {
+            return cachedHashCode;
+        }
+
+        cachedHashCode = computeHashCode();
+        hashCodeComputed = true;
+        return cachedHashCode;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof MaintainableArtefactReference that)) {
+            return false;
+        }
+        return Objects.equals(id, that.id)
+            && Objects.equals(organisationId, that.organisationId)
+            && Objects.equals(structureClass, that.structureClass)
+            && Objects.equals(version, that.version);
     }
 }
