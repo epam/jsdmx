@@ -5,16 +5,12 @@ import static java.util.stream.Collectors.toMap;
 import java.util.Map;
 import java.util.Objects;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
 
 @NoArgsConstructor
 @Getter
-@Setter
-@EqualsAndHashCode(callSuper = true)
 public class IdentifiableArtefactReferenceImpl
     extends MaintainableArtefactReference
     implements ArtefactReference {
@@ -76,6 +72,18 @@ public class IdentifiableArtefactReferenceImpl
         this.itemId = Objects.requireNonNull(from.getItemId());
     }
 
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+        invalidateHashCode();
+    }
+
+    @Override
+    protected int computeHashCode() {
+        int result = super.computeHashCode();
+        result = 31 * result + Objects.hashCode(itemId);
+        return result;
+    }
+
     @Override
     public boolean isItemReference() {
         return StringUtils.isNotEmpty(itemId);
@@ -92,6 +100,7 @@ public class IdentifiableArtefactReferenceImpl
         return parentType();
     }
 
+    @Override
     public String getUrn() {
         final String urn = super.getUrn();
         if (itemId != null) {
@@ -100,6 +109,7 @@ public class IdentifiableArtefactReferenceImpl
         return urn;
     }
 
+    @Override
     public ArtefactReference getMaintainableArtefactReference() {
         return new MaintainableArtefactReference(
             getId(),
@@ -121,7 +131,18 @@ public class IdentifiableArtefactReferenceImpl
 
     @Override
     public String toString() {
-        String superString = super.toString();
-        return superString + "." + itemId;
+        return super.toString() + "." + itemId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof IdentifiableArtefactReferenceImpl that)) {
+            return false;
+        }
+        return super.equals(o)
+            && Objects.equals(itemId, that.itemId);
     }
 }
