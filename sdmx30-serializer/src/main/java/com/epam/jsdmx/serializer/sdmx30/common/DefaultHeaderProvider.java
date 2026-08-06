@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Locale;
 
 import com.epam.jsdmx.infomodel.sdmx30.DefaultLocaleHolder;
+import com.epam.jsdmx.infomodel.sdmx30.DefaultSenderIdHolder;
 import com.epam.jsdmx.infomodel.sdmx30.Party;
 
 import lombok.SneakyThrows;
@@ -33,7 +34,7 @@ public class DefaultHeaderProvider {
         header.setContentLanguages(getDefaultLocales());
         header.setTest(false);
         header.setPrepared(Instant.now());
-        header.setSender(generateUnknownParty());
+        header.setSender(generateSenderParty());
         return header;
     }
 
@@ -41,9 +42,9 @@ public class DefaultHeaderProvider {
         return "IDREF" + RandomUtils.nextInt(1000, 9999);
     }
 
-    private Party generateUnknownParty() {
+    private Party generateSenderParty() {
         return Party.builder()
-            .id("unknown")
+            .id(DefaultSenderIdHolder.INSTANCE.get())
             .build();
     }
 
