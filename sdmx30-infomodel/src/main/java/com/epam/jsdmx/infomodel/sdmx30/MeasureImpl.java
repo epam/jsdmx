@@ -19,8 +19,8 @@ public class MeasureImpl
     extends ComponentImpl
     implements Measure {
 
-    private int minOccurs;
-    private int maxOccurs;
+    private int minOccurs = 1;
+    private int maxOccurs = 1;
     private List<ArtefactReference> conceptRoles = new ArrayList<>();
 
     public MeasureImpl(Measure from) {
