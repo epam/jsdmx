@@ -1,6 +1,7 @@
 package com.epam.jsdmx.infomodel.sdmx30;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
@@ -20,9 +21,10 @@ public class Version {
 
     public static final Pattern PATTERN = Pattern.compile("\\d+\\.\\d+(\\.\\d+(-\\w+)?)?");
 
-    private final String value;
     private final short[] componentsArray;
     private final String extension;
+
+    private String value;
 
     public Version(Version other) {
         this.value = other.value;
@@ -38,7 +40,6 @@ public class Version {
 
     private Version(short major, short minor, short patch, String extension) {
         validateComponents(major, minor, patch);
-        this.value = major + "." + minor + "." + patch + (StringUtils.isNotEmpty(extension) ? "-" + extension : "");
         this.componentsArray = new short[]{major, minor, patch};
         this.extension = extension;
     }
@@ -85,7 +86,11 @@ public class Version {
     }
 
     public String getValue() {
-        return this.value;
+        if (this.value == null) {
+            // may be null only for 3-component version
+            value = componentsArray[0] + "." + componentsArray[1] + "." + componentsArray[2] + (StringUtils.isNotEmpty(extension) ? "-" + extension : "");
+        }
+        return value;
     }
 
     public short getMajor() {
@@ -120,25 +125,23 @@ public class Version {
 
     @Override
     public String toString() {
-        return value;
+        return getValue();
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (!(o instanceof Version)) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
         Version version = (Version) o;
-
-        return value.equals(version.value);
+        return Arrays.equals(componentsArray, version.componentsArray) && Objects.equals(extension, version.extension);
     }
 
     @Override
     public int hashCode() {
-        return value.hashCode();
+        int result = Arrays.hashCode(componentsArray);
+        result = 31 * result + Objects.hashCode(extension);
+        return result;
     }
 }
